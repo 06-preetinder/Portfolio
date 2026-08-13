@@ -22,7 +22,7 @@ export default function VinylMark({ size = 220 }) {
         />
         <text fill="#c8a24d" fontFamily="JetBrains Mono, monospace" fontSize="9" letterSpacing="3">
           <textPath href="#circlePath" startOffset="0%">
-            PREETINDERJEET SINGH · CAT. PS-001 · MACHINE LEARNING · RESEARCH ·
+            · PREETINDERJEET SINGH · CAT. PS-001 · MACHINE LEARNING · RESEARCH ·
           </textPath>
         </text>
         <circle cx="100" cy="100" r="30" fill="#0b0b0d" stroke="#c8a24d" strokeWidth="1" />
