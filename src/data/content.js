@@ -10,7 +10,7 @@ export const profile = {
   location: "Ludhiana, Punjab",
   linkedin: "https://www.linkedin.com/in/preetinderjeet-singh-4840a627b/",
   email: "singhpreetinder229@gmail.com",
-  github: "https://github.com/", // placeholder — swap in your handle
+  github: "https://github.com/06-preetinder", // placeholder — swap in your handle
 };
 
 // CAT. NO. mirrors a record label's catalog numbering — each release gets one.
@@ -56,7 +56,7 @@ export const projects = [
     title: "This Portfolio",
     blurb: "Designed and built end-to-end through directed AI collaboration — architecture, content, and interaction decisions were mine; execution was accelerated by working with AI as a build partner, not a crutch.",
     image: null,
-    github: "#",
+    github: "https://github.com/06-preetinder/Portfolio",
     loom: "#",
     tag: "meta",
     featured: true,
@@ -134,7 +134,7 @@ export const epoch = {
   tagline: "The signal, and the case against it.",
   description:
     "The world does not pause to explain itself, and neither, most weeks, does AI research. Papers arrive faster than anyone can read them. Launches happen faster than anyone can verify them. Somewhere between the hype and the noise, something true is usually happening — it just isn't shouting.\n\n\"The Epoch\" is a weekly attempt to find that thing anyway. Every Friday, one dispatch: the research, launches, and shifts in AI that actually matter this week, for founders, researchers, and the people deciding what to build next — not a summary of everything, but a judgment about what was worth your attention.\n\nWe are not interested in being first. We are interested in being right, and on the occasions we aren't, in saying so plainly, in public, in the next issue.\n\nEach issue carries its own counter-argument. If we tell you why something matters, we also tell you why it might not.",
-  linkedinUrl: "https://www.linkedin.com/in/preetinderjeet-singh-4840a627b/",
+  linkedinUrl: "https://www.linkedin.com/company/the-epoch/ ",
   issues: [
     {
       id: 4,
