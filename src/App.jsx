@@ -6,10 +6,13 @@ import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Research from "./pages/Research";
 import Epoch from "./pages/Epoch";
+import IntroReveal from "./components/IntroReveal";
+
 
 export default function App() {
   return (
     <>
+      <IntroReveal />
       <div className="grain" aria-hidden="true" />
       <Nav />
       <main className="min-h-screen">
