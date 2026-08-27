@@ -59,7 +59,7 @@ export const projects = [
     cat: "PS-005",
     title: "This Portfolio",
     blurb: "Designed and built end-to-end through directed AI collaboration — architecture, content, and interaction decisions were mine; execution was accelerated by working with AI as a build partner, not a crutch.",
-    image: "./five.jpg",
+    image: "/projects/five.jpg",
     github: "https://github.com/06-preetinder/Portfolio",
     Loom:"#",
     Link: "https://portfolio-three-ebon-uqi92omx1z.vercel.app/",
