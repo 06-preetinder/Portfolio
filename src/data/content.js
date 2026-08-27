@@ -19,7 +19,7 @@ export const projects = [
     cat: "PS-001",
     title: "AI Offer Letter Agent",
     blurb: "A RAG-based offer letter generator that grounds every letter in real company policy — retrieval-augmented generation, deterministic salary computation, and a summarization agent, deployed end to end.",
-    image:  "/projects/one.png", // drop an image path here, e.g. "/projects/one.jpg"
+    image:  "/projects/one.jpg", // drop an image path here, e.g. "/projects/one.jpg"
     github: "https://github.com/06-preetinder/Ai-OfferLetter-Gen",
     loom: "https://drive.google.com/file/d/1_6LSDqEExGGYjsikuZ7hJ5JY8ul7uG9K/view?usp=drive_link",
     LInk: "https://ai-offerletter-gen.onrender.com",
@@ -29,7 +29,7 @@ export const projects = [
     cat: "PS-002",
     title: "Marketing Multi-Agent System",
     blurb: "A 3-agent marketing automation system with a live, visible polyglot memory architecture — short-term, long-term, and episodic memory in SQLite, semantic knowledge graph in Neo4j.",
-    image: "/assets/projects/two.png",
+    image: "/projects/two.jpg",
     github: "https://github.com/06-preetinder/Multi-Agent-Marketing-System",
     loom: "https://drive.google.com/file/d/1XIinjIxNPPX6-mzfqDa0ByLi_2cju8gb/view?usp=drive_link",
     Link:"https://multi-agent-marketing-system.onrender.com",
@@ -59,7 +59,7 @@ export const projects = [
     cat: "PS-005",
     title: "This Portfolio",
     blurb: "Designed and built end-to-end through directed AI collaboration — architecture, content, and interaction decisions were mine; execution was accelerated by working with AI as a build partner, not a crutch.",
-    image: "/projects/five.png",
+    image: "/projects/five.jpg",
     github: "https://github.com/06-preetinder/Portfolio",
     Loom:"#",
     Link: "https://portfolio-three-ebon-uqi92omx1z.vercel.app/",
