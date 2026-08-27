@@ -29,7 +29,7 @@ export const projects = [
     cat: "PS-002",
     title: "Marketing Multi-Agent System",
     blurb: "A 3-agent marketing automation system with a live, visible polyglot memory architecture — short-term, long-term, and episodic memory in SQLite, semantic knowledge graph in Neo4j.",
-    image: "/projects/two.png",
+    image: "/assets/projects/two.png",
     github: "https://github.com/06-preetinder/Multi-Agent-Marketing-System",
     loom: "https://drive.google.com/file/d/1XIinjIxNPPX6-mzfqDa0ByLi_2cju8gb/view?usp=drive_link",
     Link:"https://multi-agent-marketing-system.onrender.com",
