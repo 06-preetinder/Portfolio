@@ -1,31 +1,6 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { epoch } from "../data/content";
-
-const typeStyles = {
-  paper: {
-    label: "Paper",
-    border: "border-brass/50",
-    badge: "border-brass text-brass",
-    glow: "hover:border-brass",
-  },
-  news: {
-    label: "News",
-    border: "border-rust/50",
-    badge: "border-rust text-rust",
-    glow: "hover:border-rust",
-  },
-};
-
 export default function Epoch() {
-  const [index, setIndex] = useState(0); // 0 = latest (issues array is newest-first)
-  const issue = epoch.issues[index];
-  const style = typeStyles[issue.type] ?? typeStyles.news;
-
-  const goPrev = () =>
-    setIndex((i) => Math.min(i + 1, epoch.issues.length - 1)); // older
-  const goNext = () => setIndex((i) => Math.max(i - 1, 0)); // newer
-
+  
   return (
     <section className="max-w-6xl mx-auto px-6 md:px-10 pt-36 pb-28">
       <p className="eyebrow mb-3">04 — The Epoch</p>
@@ -52,34 +27,7 @@ export default function Epoch() {
         Follow on LinkedIn →
       </a>
 
-      {/* Issue browser */}
-      <div className="mt-24 hairline pt-12">
-        <div className="flex items-end justify-between mb-10">
-          <div>
-            <p className="eyebrow mb-2">Issue archive</p>
-            <h2 className="font-display text-3xl md:text-4xl uppercase">
-              {index === 0 ? "This week" : "Browse issues"}
-            </h2>
-          </div>
-          <div className="flex gap-3">
-            <button
-              onClick={goPrev}
-              disabled={index === epoch.issues.length - 1}
-              aria-label="Older issue"
-              className="w-10 h-10 flex items-center justify-center border border-paper/25 font-mono text-sm hover:border-brass hover:text-brass transition-colors disabled:opacity-25 disabled:pointer-events-none"
-            >
-              ←
-            </button>
-            <button
-              onClick={goNext}
-              disabled={index === 0}
-              aria-label="Newer issue"
-              className="w-10 h-10 flex items-center justify-center border border-paper/25 font-mono text-sm hover:border-brass hover:text-brass transition-colors disabled:opacity-25 disabled:pointer-events-none"
-            >
-              →
-            </button>
-          </div>
-        </div>
+  
 
         {/* "LinkedIn window" card — styled preview, not a live embed */}
         <AnimatePresence mode="wait">

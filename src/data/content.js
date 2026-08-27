@@ -140,38 +140,5 @@ export const epoch = {
   description:
     "The world does not pause to explain itself, and neither, most weeks, does AI research. Papers arrive faster than anyone can read them. Launches happen faster than anyone can verify them. Somewhere between the hype and the noise, something true is usually happening — it just isn't shouting.\n\n\"The Epoch\" is a weekly attempt to find that thing anyway. Every Friday, one dispatch: the research, launches, and shifts in AI that actually matter this week, for founders, researchers, and the people deciding what to build next — not a summary of everything, but a judgment about what was worth your attention.\n\nWe are not interested in being first. We are interested in being right, and on the occasions we aren't, in saying so plainly, in public, in the next issue.\n\nEach issue carries its own counter-argument. If we tell you why something matters, we also tell you why it might not.",
   linkedinUrl: "https://www.linkedin.com/company/the-epoch/ ",
-  issues: [
-    {
-      id: 4,
-      date: "Aug 08, 2026",
-      type: "news",
-      headline: "Issue 04 — This week in AI",
-      summary: "Weekly roundup placeholder — swap in the real issue summary.",
-      link: "#",
-    },
-    {
-      id: 3,
-      date: "Aug 01, 2026",
-      type: "paper",
-      headline: "Issue 03 — Paper spotlight",
-      summary: "Research spotlight placeholder — includes the public correction on a prior issue's launch-date claim.",
-      link: "#",
-    },
-    {
-      id: 2,
-      date: "Jul 25, 2026",
-      type: "news",
-      headline: "Issue 02 — This week in AI",
-      summary: "Weekly roundup placeholder — swap in the real issue summary.",
-      link: "#",
-    },
-    {
-      id: 1,
-      date: "Jul 18, 2026",
-      type: "news",
-      headline: "Issue 01 — This week in AI",
-      summary: "The first dispatch — placeholder summary.",
-      link: "#",
-    },
-  ],
+ 
 };
