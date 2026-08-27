@@ -67,6 +67,14 @@ export default function Projects() {
                 >
                   Walkthrough →
                 </a>
+                <a
+                  href={p.Link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-paper hover:text-brass transition-colors"
+                >
+                  Demo Link →
+                </a>
               </div>
             </div>
           </motion.div>
