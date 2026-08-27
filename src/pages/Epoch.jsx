@@ -27,64 +27,7 @@ export default function Epoch() {
         Follow on LinkedIn →
       </a>
 
-  
 
-        {/* "LinkedIn window" card — styled preview, not a live embed */}
-        <AnimatePresence mode="wait">
-          <motion.a
-            key={issue.id}
-            href={issue.link}
-            target="_blank"
-            rel="noreferrer"
-            initial={{ opacity: 0, x: 16 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -16 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className={`block bg-ink-2 border ${style.border} ${style.glow} p-8 md:p-10 transition-colors group`}
-          >
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <span
-                  className={`font-mono text-[10px] uppercase tracking-widest border ${style.badge} px-3 py-1`}
-                >
-                  {style.label}
-                </span>
-                <span className="font-mono text-xs text-paper-dim">
-                  {issue.date}
-                </span>
-              </div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-paper-dim/50">
-                in/preetinderjeet-singh
-              </span>
-            </div>
-
-            <h3 className="font-display text-2xl md:text-3xl uppercase leading-tight group-hover:text-brass transition-colors">
-              {issue.headline}
-            </h3>
-            <p className="mt-4 text-paper-dim leading-relaxed max-w-2xl">
-              {issue.summary}
-            </p>
-
-            <span className="mt-6 inline-block font-mono text-xs uppercase tracking-widest text-paper group-hover:text-brass transition-colors">
-              Read on LinkedIn →
-            </span>
-          </motion.a>
-        </AnimatePresence>
-
-        {/* Dots */}
-        <div className="flex gap-2 mt-8">
-          {epoch.issues.map((iss, i) => (
-            <button
-              key={iss.id}
-              onClick={() => setIndex(i)}
-              aria-label={`Go to issue ${iss.id}`}
-              className={`h-1.5 transition-all ${
-                i === index ? "w-8 bg-brass" : "w-1.5 bg-paper/20 hover:bg-paper/40"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
