@@ -42,6 +42,7 @@ export const projects = [
     image: null,
     github: "",
     loom: "#",
+    Link:"#",
     tag: "systems",
   },
   {
@@ -51,6 +52,7 @@ export const projects = [
     image: null,
     github: "#",
     loom: "#",
+    Link: "#",
     tag: "ml",
   },
   {
