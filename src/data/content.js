@@ -22,7 +22,7 @@ export const projects = [
     image:  "/projects/one.jpg", // drop an image path here, e.g. "/projects/one.jpg"
     github: "https://github.com/06-preetinder/Ai-OfferLetter-Gen",
     loom: "https://drive.google.com/file/d/1_6LSDqEExGGYjsikuZ7hJ5JY8ul7uG9K/view?usp=drive_link",
-    LInk: "https://ai-offerletter-gen.onrender.com",
+    Link: "https://ai-offerletter-gen.onrender.com",
     tag: "Gen Ai, Rag",
   },
   {
