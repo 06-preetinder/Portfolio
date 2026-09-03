@@ -1,16 +1,24 @@
 export default function MemeMarquee() {
-  // Pure atmospheric, dark academia, telemetry, chess, and discipline photos
-  // Zero project screenshots included per user requirement
+  // Curated dark academia, classical history & atmospheric images provided directly by user
   const images = [
-    "/gallery/telemetry.jpg",
-    "/gallery/code.jpg",
-    "/gallery/chess.jpg",
-    "/candid/chess-books.jpg",
-    "/gallery/drone.jpg",
-    "/candid/vintage-study.jpg",
-    "/gallery/nightcity.jpg",
-    "/gallery/discipline.jpg",
-    "/candid/dark-academia-books.jpg",
+    "/marquee/machiavelli.jpg",
+    "/marquee/julius_caesar.jpg",
+    "/marquee/alexander_the_great.jpg",
+    "/marquee/kingdom_of_heaven.jpg",
+    "/marquee/silent.jpg",
+    "/marquee/eyes_never_lie.jpg",
+    "/marquee/cool_dark_academia.jpg",
+    "/marquee/scroll_01.jpg",
+    "/marquee/scroll_02.jpg",
+    "/marquee/scroll_03.jpg",
+    "/marquee/scroll_04.jpg",
+    "/marquee/scroll_05.jpg",
+    "/marquee/scroll_06.jpg",
+    "/marquee/scroll_07.jpg",
+    "/marquee/scroll_08.jpg",
+    "/marquee/scroll_09.jpg",
+    "/marquee/scroll_10.jpg",
+    "/marquee/scroll_extra_17.jpg",
   ];
 
   return (
