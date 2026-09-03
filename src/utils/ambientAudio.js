@@ -44,7 +44,7 @@ class AudioEngine {
 
     this.currentTrack = 0;
     this.audio = null;
-    this.isMuted = true;
+    this.isMuted = false; // Initial state: playing on load
     this.targetVolume = 0.35;
     this.fadeInterval = null;
   }

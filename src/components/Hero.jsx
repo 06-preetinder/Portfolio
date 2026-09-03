@@ -4,7 +4,7 @@ import { profile } from "../data/content";
 
 export default function Hero() {
   const [activeTrack, setActiveTrack] = useState(0);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const canvasRef = useRef(null);
 
   const tracks = [
@@ -308,6 +308,31 @@ export default function Hero() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Autoplay music on initial load, unblocking seamlessly on first gesture if restricted
+  useEffect(() => {
+    ambientAudio.setMuted(false);
+    ambientAudio.playTrack(0);
+
+    const unlockAudio = () => {
+      if (!ambientAudio.isMuted && (!ambientAudio.audio || ambientAudio.audio.paused)) {
+        ambientAudio.playTrack(activeTrack);
+      }
+      window.removeEventListener("pointerdown", unlockAudio);
+      window.removeEventListener("scroll", unlockAudio);
+      window.removeEventListener("keydown", unlockAudio);
+    };
+
+    window.addEventListener("pointerdown", unlockAudio, { passive: true });
+    window.addEventListener("scroll", unlockAudio, { passive: true });
+    window.addEventListener("keydown", unlockAudio, { passive: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", unlockAudio);
+      window.removeEventListener("scroll", unlockAudio);
+      window.removeEventListener("keydown", unlockAudio);
+    };
+  }, [activeTrack]);
 
   const handleTrackChange = (idx) => {
     setActiveTrack(idx);
