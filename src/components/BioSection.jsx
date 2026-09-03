@@ -124,12 +124,14 @@ export default function BioSection() {
 
           <p className="lowercase">{profile.currentFocus}</p>
 
-          {/* Personal Discipline / Stats with lilac accent */}
-          {profile.records.map((r, i) => (
-            <p key={i} className="lowercase">
-              {r.label} <span style={{ color: "#c4a7e7" }}>{r.value}</span> {r.suffix}
-            </p>
-          ))}
+          {/* Physical & Discipline Records */}
+          <div className="space-y-1 pt-1">
+            {profile.records.map((r, i) => (
+              <p key={i} className="lowercase">
+                {r.label} <span style={{ color: "#c4a7e7" }}>{r.value}</span> {r.suffix}
+              </p>
+            ))}
+          </div>
 
           {/* Expandable previous stuff i did */}
           <details open id="past-work" style={{ scrollMarginTop: "200px" }}>

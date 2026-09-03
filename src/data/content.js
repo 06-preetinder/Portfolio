@@ -15,78 +15,98 @@ export const profile = {
   currentRole: "i'm currently ML R&D lead @ Lupex Space. coordinating simulation-based ML pipelines in the aerospace and defense domain (missile classification and hypersonic trajectory prediction under NDA).",
   currentFocus: "alongside aerospace work, i conduct faculty-advised research on spatio-temporal flood risk intelligence and adaptive multi-UAV disaster response coordination.",
   records: [
+    { label: "physique:", value: "6 feet", suffix: "lean build & six-pack abs." },
     { label: "new chin-up record of", value: "17", suffix: "in a row." },
-    { label: "rubik's cube pr of", value: "17.12", suffix: "seconds (cfop)." },
+    { label: "push-up volume of", value: "50+", suffix: "clean reps in a set." },
+    { label: "new core record of", value: "2 minute", suffix: "plank hold & crunches." },
     { label: "efficientnet-b0 edge model at", value: "87.08%", suffix: "test accuracy on tflite." },
   ],
   pastWork: [
     "leading simulation-based ML pipelines for missile classification and hypersonic trajectory prediction at Lupex Space",
+    "co-authored paper accepted for presentation at ICAAV 2026 (DRDO-organized) on adaptive multi-UAV disaster coordination",
     "founder & writer of The Epoch — weekly AI research digest dissecting signal vs noise for founders and researchers",
-    "faculty-advised research in explainable flood-risk modeling (Spatio-Temporal GNNs) and multi-UAV coordination",
-    "built from-scratch backpropagation neural network in pure NumPy (84% MNIST accuracy without autograd libraries)",
+    "designed explainable flood-risk methodology with Random Forest, SHAP (identified ~47ha threshold), and panel regression",
     "fine-tuned EfficientNet-B0 with Dr. Sandeep Singh Sandha (PhD UCLA) for smart-city edge waste classification",
     "engineered 3-agent marketing automation system with live polyglot memory (SQLite + Neo4j semantic graph)",
+    "scoped RAG admissions assistant & QR-code attendance system for K-12 school at 3S Scholars",
   ],
   personalManifesto: `hey, i'm preetinder, and i build systems where failure is not a statistical footnote.
 
-if i could introduce myself through this window of a website: i spend half my time overthinking mathematical formulations, a quarter of my time splattering out working code and models in intense concentrated sprints, and another quarter doing pull-ups, running, or reading papers in silence.
+if i could introduce myself through this window of a website: i spend half my time overthinking mathematical formulations, a quarter of my time splattering out working code and models in intense concentrated sprints, and another quarter doing pull-ups, pushups, running, or reading books in silence.
 
 i care more about why a model makes a decision than another decimal point of accuracy. in aerospace and disaster response, ungrounded confidence is catastrophic.
 
-things i like: deterministic pipelines, clean math, pull-ups, cold showers, and reading research preprints at 2am.
+things i like: deterministic pipelines, clean math, 6-foot pull-up discipline, cold water, dark academia books, and reading research preprints at 2am.
 things i don't like: ungrounded hype, black-box trust without explainability, and redundant effort.`,
+  books: {
+    intro: "i played chess competitively for years before shifting focus to mathematical modeling and ML. alongside chess, i spend hours immersed in books — dark academia literature that shaped how i view human intent, absurdity, and discipline: dostoevsky, jane austen, kafka, camus, and friedrich nietzsche.",
+    authors: [
+      { name: "Fyodor Dostoevsky", note: "Crime and Punishment, Notes from Underground" },
+      { name: "Franz Kafka", note: "The Trial, Metamorphosis" },
+      { name: "Albert Camus", note: "The Myth of Sisyphus, The Stranger" },
+      { name: "Jane Austen", note: "Pride and Prejudice, Persuasion" },
+      { name: "Friedrich Nietzsche", note: "Beyond Good and Evil, Thus Spoke Zarathustra" },
+    ],
+  },
 };
 
-export const featuredProject = {
-  announcement: "new! (2026) AI Offer Letter Agent & Marketing Multi-Agent Architecture",
-  title: "AI Offer Letter Agent",
-  link: "https://ai-offerletter-gen.onrender.com",
-  previewImage: "/projects/one.jpg",
-  description: "RAG-based offer letter generation grounding every output in verified company policy — deterministic compensation calculation, summarization agent, and audit trail deployed end to end.",
+export const publication = {
+  title: "Adaptive Multi-UAV Coordination for Efficient Disaster Response Under Uncertainty",
+  paperId: "Paper 090",
+  conference: "ICAAV 2026 (DRDO-organized conference, presented Aug 2026)",
+  statusBadge: "Accepted for presentation",
+  authors: "Co-author — GNDEC Ludhiana × NIT Delhi",
+  summary: "Co-authored and presented a paper on coordination strategies for multiple autonomous agents (UAVs) operating under uncertainty and degraded RF communication in disaster response. Extended abstract accepted for the conference's Book of Abstracts; full paper under further review for Springer proceedings.",
 };
 
 export const projects = [
   {
-    cat: "PS-001",
-    title: "AI Offer Letter Agent",
-    blurb: "A RAG-based offer letter generator that grounds every letter in real company policy — retrieval-augmented generation, deterministic salary computation, and a summarization agent, deployed end to end.",
-    image: "/projects/one.jpg",
-    github: "https://github.com/06-preetinder/Ai-OfferLetter-Gen",
-    loom: "https://drive.google.com/file/d/1_6LSDqEExGGYjsikuZ7hJ5JY8ul7uG9K/view?usp=drive_link",
-    Link: "https://ai-offerletter-gen.onrender.com",
-    tag: "rag",
-    featured: true,
-  },
-  {
-    cat: "PS-002",
-    title: "Marketing Multi-Agent System",
-    blurb: "A 3-agent marketing automation system with a live, visible polyglot memory architecture — short-term, long-term, and episodic memory in SQLite, semantic knowledge graph in Neo4j.",
+    cat: "PRJ-01",
+    title: "Multi-Agent Marketing System",
+    subtitle: "3-agent automation with polyglot memory",
+    blurb: "A 3-agent marketing automation system with a live, visible polyglot memory architecture — short-term, long-term, and episodic memory in SQLite, semantic knowledge graph in Neo4j, with real-time WebSocket telemetry.",
     image: "/projects/two.jpg",
     github: "https://github.com/06-preetinder/Multi-Agent-Marketing-System",
     loom: "https://drive.google.com/file/d/1XIinjIxNPPX6-mzfqDa0ByLi_2cju8gb/view?usp=drive_link",
     Link: "https://multi-agent-marketing-system.onrender.com",
-    tag: "agentic-ai",
+    tag: "LangChain · Flask · Socket.IO · SQLite · Neo4j · Docker",
     featured: true,
   },
   {
-    cat: "PS-003",
-    title: "Napoléon — Intelligent Web Crawler",
-    blurb: "An AI-powered web crawler that understands intent — semantic relevance scoring, entity extraction, keyword extraction, and security scanning, with interactive graph visualization of what it finds.",
+    cat: "PRJ-02",
+    title: "AI Offer Letter Agent",
+    subtitle: "RAG-based document generation system",
+    blurb: "A RAG-based offer letter generator that grounds every letter in real company policy — retrieval-augmented generation, deterministic non-LLM salary computation, and an independent summarization agent deployed end-to-end.",
+    image: "/projects/one.jpg",
+    github: "https://github.com/06-preetinder/Ai-OfferLetter-Gen",
+    loom: "https://drive.google.com/file/d/1_6LSDqEExGGYjsikuZ7hJ5JY8ul7uG9K/view?usp=drive_link",
+    Link: "https://ai-offerletter-gen.onrender.com",
+    tag: "FastAPI · React · LangChain · Pinecone · Docker · Render",
+    featured: true,
+  },
+  {
+    cat: "PRJ-03",
+    title: "Explainable Flood Risk Intelligence",
+    subtitle: "Research preprint — lead author & methodology",
+    blurb: "Trained Random Forest on 640 spatio-temporal observations (73.4% accuracy, 0.859 ROC-AUC). Integrated SHAP attribution to identify a nonlinear deforestation threshold (~47 ha) driving flood risk, with panel regression and ARIMA forecasting.",
+    image: "/gallery/telemetry.jpg",
+    github: "https://github.com/06-preetinder",
+    loom: "#",
+    Link: "#",
+    tag: "Random Forest · SHAP · ARIMA · Panel Regression · Geo-Spatial",
+    featured: true,
+  },
+  {
+    cat: "PRJ-04",
+    title: "Napoléon — Intent-Aware AI Web Crawler",
+    subtitle: "Semantic crawler with knowledge graph visualization",
+    blurb: "An AI-powered web crawler that scores crawled pages by semantic relevance using sentence-transformer embeddings, combined with spaCy entity extraction, KeyBERT keyword extraction, and Pyvis/NetworkX graph visualization.",
     image: "/projects/three.jpg",
     github: "https://github.com/06-preetinder/napolean-web",
     loom: "#",
     Link: "#",
-    tag: "nlp",
-  },
-  {
-    cat: "PS-004",
-    title: "This Portfolio",
-    blurb: "Ethereal, dark-matter personal site inspired by jia.build. Custom Web Audio ambient synthesizer, infinite marquee, scroll animations, and live LinkedIn-synced Epoch digest.",
-    image: "/projects/five.jpg",
-    github: "https://github.com/06-preetinder/Portfolio",
-    loom: "#",
-    Link: "https://portfolio-three-ebon-uqi92omx1z.vercel.app/",
-    tag: "meta",
+    tag: "Python · Sentence-Transformers · spaCy · KeyBERT · NetworkX",
+    featured: true,
   },
 ];
 
@@ -99,13 +119,26 @@ export const experience = [
     description:
       "Leading a team of ML R&D interns, coordinating directly with the co-founder on simulation-based ML pipelines in the aerospace/defense domain — focused on missile classification and hypersonic trajectory prediction research.",
     bullets: [
+      "Extended and hardened internal RAG/agent systems in production",
       "Overseeing technical direction and work of the intern team, reporting directly to the co-founder",
-      "Building data pipelines and modeling workflows supporting simulation-driven research (methodology and results confidential under NDA)",
+      "Designing LSTM, PINN, and Transformer models for hypersonic simulation telemetry (under NDA)",
     ],
   },
   {
     cat: "EXP-02",
-    role: "Founder & Writer",
+    role: "Contractual Developer",
+    org: "3S Scholars",
+    period: "Aug 2026 — Present",
+    description:
+      "Scoped a RAG-based admissions/curriculum AI assistant alongside a deployment-grade QR-code attendance system for a K-12 school, reporting directly to the CEO.",
+    bullets: [
+      "Designing SQL schema, CSV data pipelines, and role-based access control",
+      "Building automated backup pipelines to keep records analysis-ready",
+    ],
+  },
+  {
+    cat: "EXP-03",
+    role: "Founder & Technical Writer",
     org: "The Epoch",
     period: "Jul 2026 — Present",
     description:
@@ -116,46 +149,17 @@ export const experience = [
     ],
   },
   {
-    cat: "EXP-03",
-    role: "Data Science Intern",
-    org: "Punjab AI Excellence",
+    cat: "EXP-04",
+    role: "Data Science Intern / Research Fellow",
+    org: "Punjab AI Excellence (PAI)",
     period: "Jun 2025 — Jul 2025",
     description:
       "Built an AI-based waste classification system for smart city applications, under the guidance of Dr. Sandeep Singh Sandha (PhD, UCLA).",
     bullets: [
-      "Trained a baseline CNN, then fine-tuned EfficientNet-B0 via transfer learning — 87.08% test accuracy across 5 waste categories",
-      "Curated and combined TrashNet with 3,000+ manually collected images to address class imbalance",
-      "Optimized the model for edge deployment via TensorFlow Lite",
+      "Fine-tuned EfficientNet-B0 via transfer learning — 87.08% test accuracy across 5 categories",
+      "Curated and cleaned a 3,000+ image dataset, correcting class imbalance across five categories",
+      "Optimized and deployed model with TensorFlow Lite for real-time edge inference",
     ],
-  },
-  {
-    cat: "EXP-04",
-    role: "AI Trainee",
-    org: "Apptechies",
-    period: "Jun 2025 — Aug 2025",
-    description:
-      "Implemented a neural network from scratch using only NumPy — forward propagation, backpropagation, and gradient descent, without relying on high-level ML frameworks.",
-    bullets: [
-      "Trained the from-scratch network on MNIST, reaching ~84% accuracy using hand-derived backpropagation — no autograd, no optimizer libraries",
-      "Built a first-principles understanding of the math underlying neural networks before working with abstracted frameworks",
-    ],
-  },
-];
-
-export const research = [
-  {
-    cat: "RES-01",
-    title: "An Explainable AI-Based Spatio-Temporal Flood Risk Intelligence System",
-    subtitle: "Using Hydrological and Ecological Factors",
-    status: "Preprint — coming soon",
-    summary: "Graph neural network model incorporating hydrological elevation, precipitation grids, and soil moisture telemetry to deliver interpretable inundation predictions with attention attribution maps.",
-  },
-  {
-    cat: "RES-02",
-    title: "Adaptive Multi-UAV Coordination for Efficient Disaster Response under Uncertainty",
-    subtitle: "Decentralized Reinforcement Learning in Degraded RF Environments",
-    status: "Preprint — coming soon",
-    summary: "Multi-agent swarm coordination protocol maintaining search-and-rescue coverage when GPS and high-bandwidth telemetry are intermittently severed.",
   },
 ];
 
@@ -217,7 +221,7 @@ export const appreciation = [
     rot: "5deg",
   },
   {
-    quote: "hi indra, this is one of the coolest portfolio websites i have come across. love the aerospace R&D work and the chin-up discipline.",
+    quote: "hi indra, this is one of the coolest portfolio websites i have come across. love the aerospace R&D work and the 6ft physical discipline.",
     date: "july 26th, 2026, 4:57pm",
     author: "anonymous",
     country: "IN",
@@ -231,7 +235,7 @@ export const appreciation = [
     rot: "4deg",
   },
   {
-    quote: "wow this is one of the coolest websites i’ve seen. the ambient sound and aesthetics are immaculate.",
+    quote: "wow this is one of the coolest websites i’ve seen. the ambient sound and dark academia aesthetics are immaculate.",
     date: "july 24th, 2026, 12:24pm",
     author: "anonymous",
     country: "IN",
@@ -249,11 +253,11 @@ export const appreciation = [
 export const thoughts = [
   {
     date: "aug 30th, 2026, 11pm",
-    text: "missile simulation batch 41 finished. 0.94 F1 on hypersonic re-entry profile. day 1 of godly c++ optimizations.",
+    text: "missile simulation batch 41 finished. 0.94 F1 on hypersonic re-entry profile. 50 pushups and 2 minute plank before bed.",
   },
   {
     date: "aug 29th, 2026, 9pm",
-    text: "solved rubik's cube in 22 seconds officially in competition! 4.5 months in. disciplined repetition pays.",
+    text: "reading Dostoevsky's Notes from Underground. the psychology of spite versus cold mathematical logic. fascinating parallels to objective functions.",
   },
   {
     date: "aug 27th, 2026, 8pm",
@@ -261,7 +265,7 @@ export const thoughts = [
   },
   {
     date: "aug 26th, 2026, 9:43pm",
-    text: "day 620 of chin-ups and pull-ups (40). 20 leg lifts. today was quite cool and crazy. never give up guys.",
+    text: "day 620 of chin-ups and pull-ups (40). 60 crunches. today was quite cool and crazy. never give up guys.",
   },
   {
     date: "aug 24th, 2026, 8:15pm",
@@ -269,48 +273,43 @@ export const thoughts = [
   },
   {
     date: "aug 20th, 2026, 6:18pm",
-    text: "day 618 of chin-ups and pull-ups (40). 20 leg lifts. old friend called from university. appreciative of how far we've journeyed.",
+    text: "reading Camus between pipeline runs. 'one must imagine Sisyphus happy' — feels like debugging convergence on sparse gradients.",
   },
   {
     date: "aug 16th, 2026, 11pm",
-    text: "woke up 7:30am, 2 mile run. black tea, roasted almonds. all home-cooked. pushed crucial safety pipeline to staging in one day.",
+    text: "woke up 7:30am, 2 mile run. black tea, roasted almonds. pushed 3S Scholars attendance schema to staging.",
   },
   {
     date: "aug 11th, 2026, 8:55am",
-    text: "612 of chin-ups and pull-ups (40). 20 leg lifts. 6am to 9pm workday, deeply rewarding.",
-  },
-  {
-    date: "aug 7th, 2026, 9:19pm",
-    text: "140 wpm monkeytype, day 65. building clean keyboard habits for long coding sessions.",
+    text: "612 of chin-ups and pull-ups (40). 50 pushups. 6am to 9pm workday, deeply rewarding.",
   },
   {
     date: "may 22nd, 2026, 8:50pm",
-    text: "day 581 of chin-ups and pull-ups (40). new chin-up record of 17 in a row.",
-  },
-  {
-    date: "may 20th, 2026, 12:07am",
-    text: "new rubik's cube pr of 17.12 sec on day 39. solved with cfop (2 look oll, pll skip, bottom cross).",
+    text: "new chin-up record of 17 in a row. 6 feet lean build paying off in upper body leverage.",
   },
 ];
 
-export const resumeData = {
-  downloadUrl: "/resume.pdf",
-  lastUpdated: "August 2026",
-  headline: "Machine Learning Research Engineer & Systems Architect",
-  highlights: [
-    { title: "Lupex Space", role: "ML R&D Engineer (Lead)", span: "2026 — Present" },
-    { title: "The Epoch", role: "Founder & Technical Writer", span: "2026 — Present" },
-    { title: "Punjab AI Excellence", role: "Data Science Researcher", span: "2025" },
-    { title: "Apptechies", role: "AI Research Trainee", span: "2025" },
-  ],
-  education: {
-    institution: "Bachelor of Technology, Computer Science & Engineering",
-    focus: "Machine Learning, Numerical Optimization & Distributed Systems",
+export const resumeVersions = [
+  {
+    id: "agentic",
+    label: "AI / Agentic Engineer Resume",
+    shortLabel: "AI Agentic",
+    downloadUrl: "/resumes/Preetinderjeet_Singh_AI_Agentic_Resume.pdf",
+    focus: "RAG Pipelines, Multi-Agent Orchestration, Polyglot Memory (SQLite + Neo4j), MCP & Google ADK",
+    primary: true,
   },
-  skills: [
-    "PyTorch", "Python", "NumPy (From-scratch Neural Nets)", "TensorFlow Lite",
-    "RAG & Agentic Workflows", "Neo4j Knowledge Graphs", "SQLite Polyglot Memory",
-    "Hypersonic Simulation Telemetry", "Explainable AI (GNN / Attribution)", "C++"
-  ],
-};
-
+  {
+    id: "ml",
+    label: "Machine Learning / Deep Learning Resume",
+    shortLabel: "ML & Aerospace",
+    downloadUrl: "/resumes/Preetinderjeet_Singh_ML_Engineer_Resume.pdf",
+    focus: "PyTorch, PINN, LSTM, Transformers, Hypersonic Trajectory Prediction, Edge TFLite",
+  },
+  {
+    id: "data",
+    label: "Data Science & Analytics Resume",
+    shortLabel: "Data Science",
+    downloadUrl: "/resumes/Preetinderjeet_Singh_Data_Science_Resume.pdf",
+    focus: "Statistical Modeling, Explainable AI (SHAP), ARIMA Forecasting, Panel Regression",
+  },
+];

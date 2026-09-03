@@ -1,18 +1,16 @@
-import { projects } from "../data/content";
-
 export default function MemeMarquee() {
-  // Collection of imagery: project previews and telemetry artifacts
+  // Pure atmospheric, dark academia, telemetry, chess, and discipline photos
+  // Zero project screenshots included per user requirement
   const images = [
     "/gallery/telemetry.jpg",
     "/gallery/code.jpg",
     "/gallery/chess.jpg",
+    "/candid/chess-books.jpg",
     "/gallery/drone.jpg",
-    "/gallery/rubiks.jpg",
+    "/candid/vintage-study.jpg",
     "/gallery/nightcity.jpg",
     "/gallery/discipline.jpg",
-    "/projects/one.jpg",
-    "/projects/two.jpg",
-    "/projects/three.jpg",
+    "/candid/dark-academia-books.jpg",
   ];
 
   return (
