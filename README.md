@@ -43,16 +43,9 @@ Built for **Preetinderjeet Singh (Indra)** — AI & Agentic Engineer, Aerospace 
 ### 3. Curated Grayscale Marquee (`MemeMarquee.jsx`)
 - **18 Curated Frames**: Infinite-scroll marquee featuring authentic classical art, historical figures (Julius Caesar, Alexander the Great, Machiavelli), dark academia photography, and cinematic stills.
 
-### 4. Interactive Philosophy Cipher Scrambler (`PhilosophyScrambler.jsx`)
-- **Monospace ASCII Engine**: Inspired by `jia.build`'s character scrambling mechanics (`@#%&*+=~:.λ∂∇`).
-- **Dynamic Decryption**: Cycles through 6 theorems connecting aerospace physics, non-linear dynamics, and classical philosophy:
-  - *"we solve for minimum energy paths under chaotic bounds."*
-  - *"one must imagine sisyphus happy before the gradient converges."*
-  - *"to think is to calculate in the dark until the trajectory holds."*
-  - *"the psychology of spite versus cold mathematical optimization."*
-  - *"blessed with love and victory, yet the loss function never rests."*
-  - *"in the middle of winter, i found within me an invincible summer."*
-- **Tactile Interaction**: Hovering perturbs the glyphs; clicking cycles to the next theorem with progressive resolution.
+### 4. ASCII Art Portrait Reveal (`AsciiPortrait.jsx`)
+- **Scroll-Linked Fade**: A mid-page monochromatic SVG ASCII art portrait (`/ascii-portrait.svg`) that gracefully fades into view as you scroll.
+- **Minimalist Telemetry**: Subtitled with the quiet maxim `signals under uncertainty`.
 
 ### 5. Literary Grounding & Philosophy Collage (`AuthorsCollage.jsx`)
 - **Dark Academia Heritage**: Handcrafted literary cards highlighting core philosophical foundations:
@@ -116,7 +109,7 @@ Portfolio/
 │   │   ├── MemeMarquee.jsx           # Infinite 18-image ribbon
 │   │   ├── Nav.jsx                   # Minimalist top navigation
 │   │   ├── PersonalStory.jsx         # August candid photos & personal narrative
-│   │   ├── PhilosophyScrambler.jsx   # Interactive monospace cipher scrambler
+│   │   ├── AsciiPortrait.jsx         # Monochromatic ASCII portrait reveal
 │   │   ├── QuestionsSection.jsx      # Live Q&A and email dispatch
 │   │   ├── ResumeSection.jsx         # Targeted resume download center
 │   │   └── ThoughtsSection.jsx       # Micro-journal updates
