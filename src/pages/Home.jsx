@@ -6,7 +6,7 @@ import ResumeSection from "../components/ResumeSection";
 import AppreciationSection from "../components/AppreciationSection";
 import PersonalStory from "../components/PersonalStory";
 import AuthorsCollage from "../components/AuthorsCollage";
-import LaurelBranch from "../components/LaurelBranch";
+import PhilosophyScrambler from "../components/PhilosophyScrambler";
 import FloatingCursorQuote from "../components/FloatingCursorQuote";
 import ThoughtsSection from "../components/ThoughtsSection";
 import EpochSection from "../components/EpochSection";
@@ -45,8 +45,8 @@ export default function Home() {
       {/* Personal Manifesto & Candid Photos */}
       <PersonalStory />
 
-      {/* Classical Dark Academia Laurel Branch */}
-      <LaurelBranch />
+      {/* Interactive Philosophy Scrambler Cipher */}
+      <PhilosophyScrambler />
 
       {/* Pinterest-style Authors & Quotes Collage right above Epoch */}
       <AuthorsCollage />
