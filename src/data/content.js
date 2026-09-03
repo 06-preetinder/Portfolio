@@ -364,3 +364,27 @@ export const resumeVersions = [
     focus: "Statistical Modeling, Explainable AI (SHAP), ARIMA Forecasting, Panel Regression",
   },
 ];
+
+export const initialQuestions = [
+  {
+    id: "q-01",
+    q: "what model architecture are you using for hypersonic prediction?",
+    a: "spatio-temporal neural ode with adaptive numerical solver. details under NDA, but stability bounds matter more than loss.",
+    time: "aug 28th, 2026",
+    status: "answered",
+  },
+  {
+    id: "q-02",
+    q: "how can i contribute to The Epoch or submit a paper?",
+    a: "dm me on twitter or email with a paper preprint and the counter-argument for why it might fail in production.",
+    time: "aug 24th, 2026",
+    status: "answered",
+  },
+  {
+    id: "q-03",
+    q: "why do you connect classical chess with machine learning simulations?",
+    a: "chess is purely adversarial search under perfect information. simulation safety requires anticipating edge-case actions before the loss gradient blows up.",
+    time: "aug 18th, 2026",
+    status: "answered",
+  },
+];
