@@ -62,6 +62,8 @@ class AudioEngine {
     if (this.audio) {
       try {
         this.audio.pause();
+        this.audio.currentTime = 0;
+        this.audio.src = "";
       } catch (e) {}
     }
 

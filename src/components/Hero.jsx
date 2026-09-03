@@ -309,30 +309,30 @@ export default function Hero() {
     };
   }, []);
 
-  // Autoplay music on initial load, unblocking seamlessly on first gesture if restricted
+  // Autoplay music on initial load once, unblocking seamlessly on first gesture if restricted
   useEffect(() => {
     ambientAudio.setMuted(false);
     ambientAudio.playTrack(0);
 
     const unlockAudio = () => {
       if (!ambientAudio.isMuted && (!ambientAudio.audio || ambientAudio.audio.paused)) {
-        ambientAudio.playTrack(activeTrack);
+        ambientAudio.playTrack(ambientAudio.currentTrack);
       }
       window.removeEventListener("pointerdown", unlockAudio);
       window.removeEventListener("scroll", unlockAudio);
       window.removeEventListener("keydown", unlockAudio);
     };
 
-    window.addEventListener("pointerdown", unlockAudio, { passive: true });
-    window.addEventListener("scroll", unlockAudio, { passive: true });
-    window.addEventListener("keydown", unlockAudio, { passive: true });
+    window.addEventListener("pointerdown", unlockAudio, { passive: true, once: true });
+    window.addEventListener("scroll", unlockAudio, { passive: true, once: true });
+    window.addEventListener("keydown", unlockAudio, { passive: true, once: true });
 
     return () => {
       window.removeEventListener("pointerdown", unlockAudio);
       window.removeEventListener("scroll", unlockAudio);
       window.removeEventListener("keydown", unlockAudio);
     };
-  }, [activeTrack]);
+  }, []);
 
   const handleTrackChange = (idx) => {
     setActiveTrack(idx);
