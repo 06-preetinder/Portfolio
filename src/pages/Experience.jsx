@@ -1,61 +1,41 @@
-import { motion } from "framer-motion";
 import { experience } from "../data/content";
 
 export default function Experience() {
   return (
-    <section className="max-w-6xl mx-auto px-6 md:px-10 pt-36 pb-28">
-      <p className="eyebrow mb-3">02 — Credits</p>
-      <h1 className="font-display text-6xl md:text-7xl uppercase leading-none">
-        Track record
-      </h1>
-      <p className="mt-6 max-w-xl text-paper-dim text-lg">
-        In chronological order, most recent first. Every credit is a real
-        role, not a line on a résumé nobody checks.
-      </p>
+    <div className="min-h-screen bg-black text-white font-serif px-6 md:px-16 lg:px-24 pt-32 pb-24">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl md:text-5xl lowercase glow-text mb-2">experience / credits</h1>
+        <p className="text-white/70 text-base mb-12">
+          engineering, research, and technical leadership track record.
+        </p>
 
-      <div className="mt-20 flex flex-col">
-        {experience.map((e, i) => (
-          <motion.div
-            key={e.cat}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, delay: i * 0.05 }}
-            className="grid md:grid-cols-[100px_1fr_200px] gap-4 md:gap-10 py-10 hairline items-start"
-          >
-            <span className="font-mono text-xs text-brass">{e.cat}</span>
+        <div className="space-y-8">
+          {experience.map((e) => (
+            <div
+              key={e.cat}
+              className="border-hairline p-6 md:p-8 bg-black/50 hover:border-white transition-all"
+            >
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-3">
+                <div>
+                  <h2 className="text-xl md:text-2xl lowercase glow-text">{e.role}</h2>
+                  <p className="text-white/80 text-base mt-0.5">{e.org}</p>
+                </div>
+                <span className="font-mono text-xs text-white/50">{e.period}</span>
+              </div>
 
-            <div>
-              <h2 className="font-display text-2xl md:text-3xl uppercase leading-tight">
-                {e.role}
-              </h2>
-              <p className="font-mono text-xs uppercase tracking-widest text-brass mt-2 mb-5">
-                {e.org}
-              </p>
-              <p className="text-paper-dim leading-relaxed max-w-2xl">
-                {e.description}
-              </p>
-              {e.bullets && (
-                <ul className="mt-4 space-y-2">
-                  {e.bullets.map((b, j) => (
-                    <li
-                      key={j}
-                      className="flex gap-3 text-sm text-paper-dim leading-relaxed max-w-2xl"
-                    >
-                      <span className="text-brass shrink-0">—</span>
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <p className="text-white/75 text-sm leading-relaxed mt-4 mb-4">{e.description}</p>
+
+              <ul className="list-disc list-inside space-y-1 text-xs md:text-sm text-white/85">
+                {e.bullets.map((b, idx) => (
+                  <li key={idx} className="leading-relaxed">
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <span className="font-mono text-xs text-paper-dim md:text-right">
-              {e.period}
-            </span>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,62 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0b0b0d;
-  --color-ink-2: #131316;
-  --color-paper: #efeae0;
-  --color-paper-dim: #b9b4a8;
-  --color-brass: #c8a24d;
-  --color-brass-dim: #8f7539;
-  --color-rust: #a8432b;
-  --color-steel: #6b7280;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-lavender: #c4a7e7;
+  --color-dim: rgba(255, 255, 255, 0.7);
 
-  --font-display: "Anton", sans-serif;
-  --font-body: "Space Grotesk", sans-serif;
+  --font-serif: "EB Garamond", Garamond, Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
 body {
   margin: 0;
-  background-color: var(--color-ink);
-  color: var(--color-paper);
-  font-family: var(--font-body);
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-serif);
   -webkit-font-smoothing: antialiased;
-}
-::selection { background: var(--color-brass); color: var(--color-ink); }
-
-.grain {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-.eyebrow {
-  font-family: var(--font-mono);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  color: var(--color-brass);
+::selection {
+  background: rgba(196, 167, 231, 0.3);
+  color: #ffffff;
 }
 
-.hairline { border-top: 1px solid rgba(239, 234, 224, 0.14); }
+/* Ethereal text glows matching jia.build */
+.glow-text {
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.7), 0 0 28px rgba(255, 255, 255, 0.3);
+}
+
+.glow-subtle {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+}
+
+.drop-glow {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 24px rgba(255, 255, 255, 0.3));
+}
+
+/* Hairline border boxes */
+.border-hairline {
+  border: 0.5px solid white;
+  border-radius: 0.125rem;
+}
+
+.border-hairline-dim {
+  border: 0.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.125rem;
+}
+
+/* Vignetted radial gradient pod */
+.vignette-pod {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, transparent 60%);
+}
+
+/* Infinite Marquee Track */
+.meme-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.meme-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+}
+
+.meme-marquee:hover .meme-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tilted Appreciation Cards */
+.appreciation-card {
+  border: 0.5px solid white;
+  border-radius: 0.125rem;
+  background: #000000;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.appreciation-card:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.22);
+  z-index: 20;
+}
+
+/* Sleek Thoughts & Questions Scrollbar */
+.thoughts-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.thoughts-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.thoughts-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thoughts-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+}
+
+.thoughts-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
   }
-}
-
-a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--color-brass);
-  outline-offset: 3px;
+  .meme-marquee-track {
+    animation: none !important;
+  }
 }

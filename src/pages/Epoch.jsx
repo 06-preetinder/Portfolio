@@ -1,33 +1,23 @@
+import EpochSection from "../components/EpochSection";
 import { epoch } from "../data/content";
+
 export default function Epoch() {
-  
   return (
-    <section className="max-w-6xl mx-auto px-6 md:px-10 pt-36 pb-28">
-      <p className="eyebrow mb-3">04 — The Epoch</p>
-      <h1 className="font-display text-6xl md:text-7xl uppercase leading-none">
-        The Epoch
-      </h1>
-      <p className="mt-6 font-display text-2xl md:text-3xl text-brass italic normal-case">
-        {epoch.tagline}
-      </p>
+    <div className="min-h-screen bg-black text-white font-serif px-6 md:px-16 lg:px-24 pt-28 pb-24">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl md:text-5xl lowercase glow-text mb-2">the epoch</h1>
+        <p className="text-white/70 italic text-base md:text-lg mb-8">
+          "{epoch.tagline}"
+        </p>
 
-      {/* Description */}
-      <div className="mt-14 max-w-3xl space-y-5 text-paper-dim leading-relaxed text-lg">
-        {epoch.description.split("\n\n").map((para, i) => (
-          <p key={i}>{para}</p>
-        ))}
+        <div className="border-hairline p-6 md:p-8 bg-black/40 text-white/85 text-sm md:text-base leading-relaxed space-y-4 mb-8">
+          {epoch.description.split("\n\n").map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+
+        <EpochSection />
       </div>
-
-      <a
-        href={epoch.linkedinUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-block mt-8 font-mono text-xs uppercase tracking-widest border border-brass/50 text-brass px-6 py-3 hover:bg-brass hover:text-ink transition-colors"
-      >
-        Follow on LinkedIn →
-      </a>
-
-
-    </section>
+    </div>
   );
 }

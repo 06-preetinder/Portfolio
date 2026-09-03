@@ -4,27 +4,21 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
-import Research from "./pages/Research";
 import Epoch from "./pages/Epoch";
-import IntroReveal from "./components/IntroReveal";
-
 
 export default function App() {
   return (
-    <>
-      <IntroReveal />
-      <div className="grain" aria-hidden="true" />
+    <div className="min-h-screen bg-black text-white selection:bg-[#c4a7e7]/30">
       <Nav />
-      <main className="min-h-screen">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
-          <Route path="/research" element={<Research />} />
           <Route path="/epoch" element={<Epoch />} />
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

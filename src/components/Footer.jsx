@@ -2,34 +2,46 @@ import { profile } from "../data/content";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="hairline mt-32">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 flex flex-col md:flex-row justify-between gap-10">
+    <footer className="relative z-10 border-t border-white/20 py-12 px-6 md:px-16 lg:px-24 text-white font-serif">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6 text-sm">
         <div>
-          <p className="font-display text-3xl md:text-4xl leading-none">
-            Working on something
-            <br />
-            <span className="text-brass">consequential?</span>
-          </p>
-          <p className="mt-4 text-paper-dim max-w-md">
-            If it's a problem where getting it wrong actually costs something,
-            I'd like to talk.
+          <p className="glow-text text-base lowercase">{profile.shortName}</p>
+          <p className="text-white/50 text-xs font-mono mt-1">
+            © {new Date().getFullYear()} {profile.name} • {profile.location}
           </p>
         </div>
-        <div className="flex flex-col gap-2 font-mono text-sm uppercase tracking-wider">
-          <a href={`mailto:${profile.email}`} className="text-paper hover:text-brass transition-colors">
-            Email
+
+        <div className="flex items-center gap-6 font-mono text-xs lowercase">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:opacity-70 underline"
+          >
+            github
           </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-paper hover:text-brass transition-colors">
-            LinkedIn
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:opacity-70 underline"
+          >
+            linkedin
           </a>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="text-paper hover:text-brass transition-colors">
-            GitHub
+          <a
+            href={`mailto:${profile.email}`}
+            className="hover:opacity-70 underline"
+          >
+            email
+          </a>
+          <a
+            href="/resume.pdf"
+            download
+            className="hover:opacity-70 underline text-[#c4a7e7]"
+          >
+            resume
           </a>
         </div>
-      </div>
-      <div className="max-w-6xl mx-auto px-6 md:px-10 pb-10 flex justify-between text-xs font-mono text-paper-dim/60">
-        <span>© {new Date().getFullYear()} {profile.name}</span>
-        <span>{profile.location}</span>
       </div>
     </footer>
   );
