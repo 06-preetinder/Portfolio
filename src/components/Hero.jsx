@@ -309,34 +309,51 @@ export default function Hero() {
     };
   }, []);
 
+  const [isPlaying, setIsPlaying] = useState(false);
+
   // Autoplay music on initial load once, unblocking seamlessly on first gesture if restricted
   useEffect(() => {
     ambientAudio.setMuted(false);
     ambientAudio.playTrack(0);
 
-    const unlockAudio = () => {
-      if (!ambientAudio.isMuted && (!ambientAudio.audio || ambientAudio.audio.paused)) {
-        ambientAudio.playTrack(ambientAudio.currentTrack);
+    const checkPlayState = () => {
+      if (ambientAudio.audio && !ambientAudio.audio.paused) {
+        setIsPlaying(true);
+      } else {
+        setIsPlaying(false);
       }
-      window.removeEventListener("pointerdown", unlockAudio);
-      window.removeEventListener("scroll", unlockAudio);
-      window.removeEventListener("keydown", unlockAudio);
     };
 
-    window.addEventListener("pointerdown", unlockAudio, { passive: true, once: true });
-    window.addEventListener("scroll", unlockAudio, { passive: true, once: true });
-    window.addEventListener("keydown", unlockAudio, { passive: true, once: true });
+    const interval = setInterval(checkPlayState, 300);
+
+    const unlockAudio = () => {
+      if (!ambientAudio.isMuted) {
+        if (!ambientAudio.audio || ambientAudio.audio.paused) {
+          ambientAudio.playTrack(ambientAudio.currentTrack);
+        }
+      }
+      setIsPlaying(true);
+      ["click", "mousedown", "pointerdown", "touchstart", "keydown"].forEach((evt) => {
+        window.removeEventListener(evt, unlockAudio);
+      });
+    };
+
+    ["click", "mousedown", "pointerdown", "touchstart", "keydown"].forEach((evt) => {
+      window.addEventListener(evt, unlockAudio, { passive: true });
+    });
 
     return () => {
-      window.removeEventListener("pointerdown", unlockAudio);
-      window.removeEventListener("scroll", unlockAudio);
-      window.removeEventListener("keydown", unlockAudio);
+      clearInterval(interval);
+      ["click", "mousedown", "pointerdown", "touchstart", "keydown"].forEach((evt) => {
+        window.removeEventListener(evt, unlockAudio);
+      });
     };
   }, []);
 
   const handleTrackChange = (idx) => {
     setActiveTrack(idx);
     setIsMuted(false);
+    setIsPlaying(true);
     ambientAudio.setMuted(false);
     ambientAudio.playTrack(idx);
   };
@@ -344,6 +361,7 @@ export default function Hero() {
   const handleToggleMute = () => {
     const nextMuted = ambientAudio.toggleMute();
     setIsMuted(nextMuted);
+    setIsPlaying(!nextMuted);
   };
 
   return (
@@ -372,6 +390,14 @@ export default function Hero() {
             "linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,1) 100%)",
         }}
       />
+
+      {/* If browser blocked autoplay before user's first gesture, show sleek cue */}
+      {!isPlaying && !isMuted && (
+        <div className="absolute bottom-16 right-6 md:right-10 z-30 font-mono text-[10px] text-white/70 border-hairline-dim px-2.5 py-1 bg-black/80 tracking-wider flex items-center gap-2 pointer-events-none animate-pulse">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#c4a7e7] animate-ping" />
+          <span>[ click anywhere to start music ]</span>
+        </div>
+      )}
 
       {/* Track selector buttons at bottom right */}
       <div className="absolute bottom-9 right-16 md:right-24 z-30 flex items-center gap-4 md:gap-6 glow-text">
