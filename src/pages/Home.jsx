@@ -6,7 +6,7 @@ import ResumeSection from "../components/ResumeSection";
 import AppreciationSection from "../components/AppreciationSection";
 import PersonalStory from "../components/PersonalStory";
 import AuthorsCollage from "../components/AuthorsCollage";
-import AsciiPortrait from "../components/AsciiPortrait";
+import VajraTree from "../components/VajraTree";
 import FloatingCursorQuote from "../components/FloatingCursorQuote";
 import ThoughtsSection from "../components/ThoughtsSection";
 import EpochSection from "../components/EpochSection";
@@ -45,8 +45,8 @@ export default function Home() {
       {/* Personal Manifesto & Candid Photos */}
       <PersonalStory />
 
-      {/* ASCII Art Portrait Reveal */}
-      <AsciiPortrait />
+      {/* Vajra Dendritic Tree Generative Art */}
+      <VajraTree />
 
       {/* Pinterest-style Authors & Quotes Collage right above Epoch */}
       <AuthorsCollage />
