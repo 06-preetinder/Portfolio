@@ -1,4 +1,4 @@
-# Indra — Preetinderjeet Singh
+# Indra : Preetinderjeet Singh
 
 <p align="center">
   <em>"one who is blessed with love and victory."</em>
@@ -16,7 +16,7 @@
 
 A bespoke personal portfolio and digital salon inspired by the minimal, honest aesthetic of **`jia.build`**, fused with **dark academia**, classical literature, and rigorous aerospace engineering telemetry.
 
-Built for **Preetinderjeet Singh (Indra)** — AI & Agentic Engineer, Aerospace Researcher at Lupex Space, and Founder of *The Epoch* weekly research digest.
+Built for **Preetinderjeet Singh (Indra)** : AI & Agentic Engineer, Aerospace Researcher at Lupex Space, and Founder of *The Epoch* weekly research digest.
 
 ---
 
@@ -34,11 +34,11 @@ Built for **Preetinderjeet Singh (Indra)** — AI & Agentic Engineer, Aerospace 
 - **HTML5 Web Audio**: Studio-quality playback with crossfades, volume ramping, and loop control.
 - **Autoplay on Load**: Automatically begins playback on site visit, equipped with a universal first-gesture listener (`click`, `touch`, `scroll`, `keydown`) to seamlessly satisfy modern browser autoplay policies.
 - **5-Track Curated Lineup**:
-  1. **`golden brown`** — The Stranglers *(Lead Track / Baroque Harpsichord)*
-  2. **`stan`** — Eminem
-  3. **`babydoll`** — Dominic Fike
-  4. **`far from any road`** — The Handsome Family *(True Detective Theme)*
-  5. **`music to watch boys to`** — Lana Del Rey
+  1. **`golden brown`** : The Stranglers *(Lead Track / Baroque Harpsichord)*
+  2. **`stan`** : Eminem
+  3. **`babydoll`** : Dominic Fike
+  4. **`far from any road`** : The Handsome Family *(True Detective Theme)*
+  5. **`music to watch boys to`** : Lana Del Rey
 
 ### 3. Curated Grayscale Marquee (`MemeMarquee.jsx`)
 - **18 Curated Frames**: Infinite-scroll marquee featuring authentic classical art, historical figures (Julius Caesar, Alexander the Great, Machiavelli), dark academia photography, and cinematic stills.

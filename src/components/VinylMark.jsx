@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 // The site's signature element: a rotating catalog label, styled like a
-// vinyl record's center label — ties the "record label" concept to something
+// vinyl record's center label : ties the "record label" concept to something
 // concrete instead of decorative gold-on-black.
 export default function VinylMark({ size = 220 }) {
   return (

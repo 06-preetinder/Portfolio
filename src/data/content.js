@@ -7,7 +7,7 @@ export const profile = {
   shortName: "Indra",
   nameMeaning: "one who is blessed with love and victory.",
   tagline: "ML systems where the failure mode is expensive.",
-  intro: "i'm preetinder (Indra) — one who is blessed with love and victory. building ML systems where the failure mode is expensive: aerospace simulation, hypersonic trajectory prediction, and explainable flood risk.",
+  intro: "i'm preetinder (Indra), one who is blessed with love and victory. building ML systems where the failure mode is expensive: aerospace simulation, hypersonic trajectory prediction, and explainable flood risk.",
   location: "Ludhiana, Punjab",
   coordinates: "30.901° N, 75.857° E",
   linkedin: "https://www.linkedin.com/in/preetinderjeet-singh-4840a627b/",
@@ -26,7 +26,7 @@ export const profile = {
   pastWork: [
     "leading simulation-based ML pipelines for missile classification and hypersonic trajectory prediction at Lupex Space",
     "co-authored paper accepted for presentation at ICAAV 2026 (DRDO-organized) on adaptive multi-UAV disaster coordination",
-    "founder & writer of The Epoch — weekly AI research digest dissecting signal vs noise for founders and researchers",
+    "founder & writer of The Epoch: weekly AI research digest dissecting signal vs noise for founders and researchers",
     "designed explainable flood-risk methodology with Random Forest, SHAP (identified ~47ha threshold), and panel regression",
     "fine-tuned EfficientNet-B0 with Dr. Sandeep Singh Sandha (PhD UCLA) for smart-city edge waste classification",
     "engineered 3-agent marketing automation system with live polyglot memory (SQLite + Neo4j semantic graph)",
@@ -40,7 +40,7 @@ i care more about why a model makes a decision than another decimal point of acc
 
 things i like: deterministic pipelines, clean math, 6-foot pull-up discipline, cold water, dark academia books, and reading research preprints at 2am.
 things i don't like: ungrounded hype, black-box trust without explainability, and redundant effort.`,
-  chessNote: "i played chess competitively for years before shifting focus to mathematical modeling. alongside chess, i spend hours immersed in books — dark academia literature that shaped how i view human intent, absurdity, and discipline.",
+  chessNote: "i played chess competitively for years before shifting focus to mathematical modeling. alongside chess, i spend hours immersed in books: dark academia literature that shaped how i view human intent, absurdity, and discipline.",
 };
 
 export const authorCollage = [
@@ -106,7 +106,7 @@ export const publication = {
   paperId: "Paper 090",
   conference: "ICAAV 2026 (DRDO-organized conference, presented Aug 2026)",
   statusBadge: "Accepted for presentation",
-  authors: "Co-author — GNDEC Ludhiana × NIT Delhi",
+  authors: "Co-author, GNDEC Ludhiana × NIT Delhi",
   summary: "Co-authored and presented a paper on coordination strategies for multiple autonomous agents (UAVs) operating under uncertainty and degraded RF communication in disaster response. Extended abstract accepted for the conference's Book of Abstracts; full paper under further review for Springer proceedings.",
 };
 
@@ -115,7 +115,7 @@ export const projects = [
     cat: "PRJ-01",
     title: "Multi-Agent Marketing System",
     subtitle: "3-agent automation with polyglot memory",
-    blurb: "A 3-agent marketing automation system with a live, visible polyglot memory architecture — short-term, long-term, and episodic memory in SQLite, semantic knowledge graph in Neo4j, with real-time WebSocket telemetry.",
+    blurb: "A 3-agent marketing automation system with a live, visible polyglot memory architecture: short-term, long-term, and episodic memory in SQLite, semantic knowledge graph in Neo4j, with real-time WebSocket telemetry.",
     image: "/projects/agent-graph.jpg",
     github: "https://github.com/06-preetinder/Multi-Agent-Marketing-System",
     loom: "https://drive.google.com/file/d/1XIinjIxNPPX6-mzfqDa0ByLi_2cju8gb/view?usp=drive_link",
@@ -127,7 +127,7 @@ export const projects = [
     cat: "PRJ-02",
     title: "AI Offer Letter Agent",
     subtitle: "RAG-based document generation system",
-    blurb: "A RAG-based offer letter generator that grounds every letter in real company policy — retrieval-augmented generation, deterministic non-LLM salary computation, and an independent summarization agent deployed end-to-end.",
+    blurb: "A RAG-based offer letter generator that grounds every letter in real company policy: retrieval-augmented generation, deterministic non-LLM salary computation, and an independent summarization agent deployed end-to-end.",
     image: "/projects/rag-doc.jpg",
     github: "https://github.com/06-preetinder/Ai-OfferLetter-Gen",
     loom: "https://drive.google.com/file/d/1_6LSDqEExGGYjsikuZ7hJ5JY8ul7uG9K/view?usp=drive_link",
@@ -138,7 +138,7 @@ export const projects = [
   {
     cat: "PRJ-03",
     title: "Explainable Flood Risk Intelligence",
-    subtitle: "Research preprint — lead author & methodology",
+    subtitle: "Research preprint: lead author & methodology",
     blurb: "Trained Random Forest on 640 spatio-temporal observations (73.4% accuracy, 0.859 ROC-AUC). Integrated SHAP attribution to identify a nonlinear deforestation threshold (~47 ha) driving flood risk, with panel regression and ARIMA forecasting.",
     image: "/projects/flood-gis.jpg",
     github: "https://github.com/06-preetinder",
@@ -149,7 +149,7 @@ export const projects = [
   },
   {
     cat: "PRJ-04",
-    title: "Napoléon — Intent-Aware AI Web Crawler",
+    title: "Napoléon: Intent-Aware AI Web Crawler",
     subtitle: "Semantic crawler with knowledge graph visualization",
     blurb: "An AI-powered web crawler that scores crawled pages by semantic relevance using sentence-transformer embeddings, combined with spaCy entity extraction, KeyBERT keyword extraction, and Pyvis/NetworkX graph visualization.",
     image: "/projects/napoleon.jpg",
@@ -166,9 +166,9 @@ export const experience = [
     cat: "EXP-01",
     role: "Machine Learning Research and Development Engineer",
     org: "Lupex Space",
-    period: "Jun 2026 — Present",
+    period: "Jun 2026 - Present",
     description:
-      "Leading a team of ML R&D interns, coordinating directly with the co-founder on simulation-based ML pipelines in the aerospace/defense domain — focused on missile classification and hypersonic trajectory prediction research.",
+      "Leading a team of ML R&D interns, coordinating directly with the co-founder on simulation-based ML pipelines in the aerospace/defense domain, focused on missile classification and hypersonic trajectory prediction research.",
     bullets: [
       "Extended and hardened internal RAG/agent systems in production",
       "Overseeing technical direction and work of the intern team, reporting directly to the co-founder",
@@ -179,7 +179,7 @@ export const experience = [
     cat: "EXP-02",
     role: "Contractual Developer",
     org: "3S Scholars",
-    period: "Aug 2026 — Present",
+    period: "Aug 2026 - Present",
     description:
       "Scoped a RAG-based admissions/curriculum AI assistant alongside a deployment-grade QR-code attendance system for a K-12 school, reporting directly to the CEO.",
     bullets: [
@@ -191,9 +191,9 @@ export const experience = [
     cat: "EXP-03",
     role: "Founder & Technical Writer",
     org: "The Epoch",
-    period: "Jul 2026 — Present",
+    period: "Jul 2026 - Present",
     description:
-      "Every Friday, regardless of whether the week deserved it, an issue goes out. That's the whole discipline — not brilliance, not certainty about what matters, just the refusal to skip the week.",
+      "Every Friday, regardless of whether the week deserved it, an issue goes out. That's the whole discipline: not brilliance, not certainty about what matters, just the refusal to skip the week.",
     bullets: [
       "Write, source, and design a weekly AI research digest for founders and researchers, end to end",
       "Corrections run in the open, in the next issue, not quietly fixed and forgotten",
@@ -203,11 +203,11 @@ export const experience = [
     cat: "EXP-04",
     role: "Data Science Intern / Research Fellow",
     org: "Punjab AI Excellence (PAI)",
-    period: "Jun 2025 — Jul 2025",
+    period: "Jun 2025 - Jul 2025",
     description:
       "Built an AI-based waste classification system for smart city applications, under the guidance of Dr. Sandeep Singh Sandha (PhD, UCLA).",
     bullets: [
-      "Fine-tuned EfficientNet-B0 via transfer learning — 87.08% test accuracy across 5 categories",
+      "Fine-tuned EfficientNet-B0 via transfer learning: 87.08% test accuracy across 5 categories",
       "Curated and cleaned a 3,000+ image dataset, correcting class imbalance across five categories",
       "Optimized and deployed model with TensorFlow Lite for real-time edge inference",
     ],
@@ -217,7 +217,7 @@ export const experience = [
 export const epoch = {
   tagline: "The signal, and the case against it.",
   description:
-    "The world does not pause to explain itself, and neither, most weeks, does AI research. Papers arrive faster than anyone can read them. Launches happen faster than anyone can verify them. Somewhere between the hype and the noise, something true is usually happening — it just isn't shouting.\n\n\"The Epoch\" is a weekly attempt to find that thing anyway. Every Friday, one dispatch: the research, launches, and shifts in AI that actually matter this week, for founders, researchers, and the people deciding what to build next — not a summary of everything, but a judgment about what was worth your attention.\n\nWe are not interested in being first. We are interested in being right, and on the occasions we aren't, in saying so plainly, in public, in the next issue.\n\nEach issue carries its own counter-argument. If we tell you why something matters, we also tell you why it might not.",
+    "The world does not pause to explain itself, and neither, most weeks, does AI research. Papers arrive faster than anyone can read them. Launches happen faster than anyone can verify them. Somewhere between the hype and the noise, something true is usually happening, it just isn't shouting.\n\n\"The Epoch\" is a weekly attempt to find that thing anyway. Every Friday, one dispatch: the research, launches, and shifts in AI that actually matter this week, for founders, researchers, and the people deciding what to build next: not a summary of everything, but a judgment about what was worth your attention.\n\nWe are not interested in being first. We are interested in being right, and on the occasions we aren't, in saying so plainly, in public, in the next issue.\n\nEach issue carries its own counter-argument. If we tell you why something matters, we also tell you why it might not.",
   linkedinUrl: "https://www.linkedin.com/company/the-epoch/",
   dispatches: [
     {
@@ -324,7 +324,7 @@ export const thoughts = [
   },
   {
     date: "aug 20th, 2026, 6:18pm",
-    text: "reading Camus between pipeline runs. 'one must imagine Sisyphus happy' — feels like debugging convergence on sparse gradients.",
+    text: "reading Camus between pipeline runs. 'one must imagine Sisyphus happy', feels like debugging convergence on sparse gradients.",
   },
   {
     date: "aug 16th, 2026, 11pm",

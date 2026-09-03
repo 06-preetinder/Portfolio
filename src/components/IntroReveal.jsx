@@ -25,7 +25,7 @@ useEffect(() => {
         PS · CAT. PS-000
       </motion.span>
 
-      {/* expanding window — transparent box with a huge black shadow around it */}
+      {/* expanding window : transparent box with a huge black shadow around it */}
       <motion.div
         initial={{ width: 6, height: 6 }}
         animate={{ width: "220vmax", height: "220vmax" }}
