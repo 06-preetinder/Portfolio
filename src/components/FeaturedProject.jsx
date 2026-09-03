@@ -20,12 +20,14 @@ export default function FeaturedProject() {
         <h3 className="text-xl md:text-2xl text-white glow-text mb-2">
           {publication.title}
         </h3>
-        <p className="text-white/80 text-sm leading-relaxed mb-2">
+        <p className="text-white/80 text-sm leading-relaxed">
           {publication.summary}
         </p>
-        <p className="text-white/50 text-xs font-mono">
-          {publication.authors}
-        </p>
+        {publication.authors && (
+          <p className="text-white/50 text-xs font-mono mt-2">
+            {publication.authors}
+          </p>
+        )}
       </div>
 
       {/* 4 Projects Showcase */}

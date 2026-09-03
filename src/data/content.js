@@ -106,7 +106,6 @@ export const publication = {
   paperId: "Paper 090",
   conference: "ICAAV 2026 (DRDO-organized conference, presented Aug 2026)",
   statusBadge: "Accepted for presentation",
-  authors: "Co-author with GNDEC Ludhiana & NIT Delhi",
   summary: "Co-authored and presented a paper on coordination strategies for multiple autonomous agents (UAVs) operating under uncertainty and degraded RF communication in disaster response. Extended abstract accepted for the conference's Book of Abstracts; full paper under further review for Springer proceedings.",
 };
 
