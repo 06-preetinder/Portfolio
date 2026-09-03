@@ -14,7 +14,7 @@ export default function Hero() {
     { id: 3, label: "nocturnal sf (calm night)" },
   ];
 
-  // Celestial Canvas: Starfield + Big Dipper + Virgo Constellation + Shooting Stars
+  // Celestial Canvas: Starfield + Big Dipper + Virgo + Cassiopeia + Shooting Stars + Indra's Divine Lightning
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -31,17 +31,16 @@ export default function Hero() {
     window.addEventListener("resize", handleResize);
 
     // 1. Ambient Background Twinkling Stars
-    const backgroundStars = Array.from({ length: 80 }, () => ({
+    const backgroundStars = Array.from({ length: 95 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: Math.random() * 1.2 + 0.4,
+      radius: Math.random() * 1.3 + 0.35,
       baseAlpha: Math.random() * 0.5 + 0.2,
       pulseSpeed: Math.random() * 0.03 + 0.01,
       phase: Math.random() * Math.PI * 2,
     }));
 
     // 2. Big Dipper (Ursa Major) Coordinates (normalized [0, 1])
-    // Placed in upper left-center
     const bigDipperRaw = [
       { name: "Alkaid", x: 0.12, y: 0.18 },
       { name: "Mizar", x: 0.17, y: 0.22 },
@@ -52,17 +51,10 @@ export default function Hero() {
       { name: "Dubhe", x: 0.36, y: 0.31 },
     ];
     const bigDipperEdges = [
-      [0, 1],
-      [1, 2],
-      [2, 3],
-      [3, 4],
-      [4, 5],
-      [5, 6],
-      [6, 3],
+      [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 3],
     ];
 
-    // 3. Virgo Constellation Coordinates (normalized [0, 1])
-    // Placed in right quadrant, centered around Spica (alpha Virginis)
+    // 3. Virgo Constellation (♍) with Spica α
     const virgoRaw = [
       { name: "Spica", x: 0.82, y: 0.36, isSpica: true },
       { name: "Heze", x: 0.77, y: 0.28 },
@@ -74,25 +66,29 @@ export default function Hero() {
       { name: "Syrma", x: 0.86, y: 0.44 },
     ];
     const virgoEdges = [
-      [0, 1], // Spica to Heze
-      [1, 2], // Heze to Porrima
-      [2, 3], // Porrima to Auva
-      [3, 4], // Auva to Vindemiatrix
-      [3, 5], // Auva to Zavijava
-      [5, 6], // Zavijava to Zaniah
-      [6, 2], // Zaniah to Porrima
-      [0, 7], // Spica to Syrma
+      [0, 1], [1, 2], [2, 3], [3, 4], [3, 5], [5, 6], [6, 2], [0, 7],
     ];
 
-    // 4. Shooting Stars (Meteors) Engine
+    // 4. Cassiopeia (Queen of the Northern Sky - Iconic W-shape)
+    const cassiopeiaRaw = [
+      { name: "Caph", x: 0.45, y: 0.14 },
+      { name: "Schedar", x: 0.49, y: 0.19 },
+      { name: "Navi", x: 0.53, y: 0.13 },
+      { name: "Ruchbah", x: 0.57, y: 0.18 },
+      { name: "Segin", x: 0.61, y: 0.14 },
+    ];
+    const cassiopeiaEdges = [
+      [0, 1], [1, 2], [2, 3], [3, 4],
+    ];
+
+    // 5. Shooting Stars (Meteors)
     const shootingStars = [];
     let lastMeteorTime = Date.now();
 
     const spawnMeteor = () => {
-      // Spawn from top or top-right towards bottom-left
-      const startX = Math.random() * (width * 0.8) + width * 0.1;
+      const startX = Math.random() * (width * 0.85) + width * 0.1;
       const startY = Math.random() * (height * 0.35);
-      const angle = (Math.PI / 4) + (Math.random() - 0.5) * 0.3; // roughly 45 degrees
+      const angle = Math.PI / 4 + (Math.random() - 0.5) * 0.35;
       const speed = Math.random() * 8 + 12;
 
       shootingStars.push({
@@ -100,11 +96,53 @@ export default function Hero() {
         y: startY,
         vx: -Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
-        length: Math.random() * 80 + 70,
+        length: Math.random() * 80 + 75,
         life: 1.0,
         decay: Math.random() * 0.02 + 0.015,
         thickness: Math.random() * 1.5 + 1.2,
       });
+    };
+
+    // 6. Indra's Divine Lightning (Vajra) Generator
+    let activeLightning = null;
+    let skyFlashAlpha = 0;
+    let lastLightningTime = Date.now();
+
+    const createLightningBolt = (startX, startY, endX, endY) => {
+      const segments = [];
+      const generateBranch = (x1, y1, x2, y2, depth) => {
+        if (depth <= 0) {
+          segments.push({ x1, y1, x2, y2 });
+          return;
+        }
+        const midX = (x1 + x2) / 2 + (Math.random() - 0.5) * Math.abs(x2 - x1) * 0.6;
+        const midY = (y1 + y2) / 2 + (Math.random() - 0.5) * 25;
+        generateBranch(x1, y1, midX, midY, depth - 1);
+        generateBranch(midX, midY, x2, y2, depth - 1);
+
+        // Sub-fork branch
+        if (depth === 3 && Math.random() < 0.6) {
+          const forkX = midX + (Math.random() - 0.5) * 90;
+          const forkY = midY + Math.random() * 60 + 20;
+          generateBranch(midX, midY, forkX, forkY, depth - 2);
+        }
+      };
+      generateBranch(startX, startY, endX, endY, 5);
+      return segments;
+    };
+
+    const triggerLightning = () => {
+      // Indra's celestial strike from high atmosphere
+      const startX = Math.random() * (width * 0.7) + width * 0.15;
+      const startY = Math.random() * (height * 0.15);
+      const endX = startX + (Math.random() - 0.5) * (width * 0.25);
+      const endY = startY + Math.random() * (height * 0.45) + (height * 0.25);
+
+      activeLightning = {
+        segments: createLightningBolt(startX, startY, endX, endY),
+        life: 1.0,
+      };
+      skyFlashAlpha = 0.16; // soft atmospheric illumination
     };
 
     let time = 0;
@@ -112,6 +150,13 @@ export default function Hero() {
     const render = () => {
       time += 1;
       ctx.clearRect(0, 0, width, height);
+
+      // --- Ambient Sky Flash from Divine Lightning ---
+      if (skyFlashAlpha > 0.005) {
+        ctx.fillStyle = `rgba(247, 215, 115, ${skyFlashAlpha * 0.35})`; // golden ambient illumination
+        ctx.fillRect(0, 0, width, height);
+        skyFlashAlpha *= 0.78;
+      }
 
       // --- Draw Twinkling Background Stars ---
       backgroundStars.forEach((star) => {
@@ -122,104 +167,100 @@ export default function Hero() {
         ctx.fill();
       });
 
-      // --- Draw Big Dipper ---
-      const bdPoints = bigDipperRaw.map((s) => ({
-        x: s.x * width,
-        y: s.y * height,
-        name: s.name,
-      }));
+      // --- Helper: Draw Constellation ---
+      const drawConstellation = (rawStars, edges, lineStroke, label, labelXOffset, labelYOffset, isVirgo = false) => {
+        const points = rawStars.map((s) => ({
+          x: s.x * width,
+          y: s.y * height,
+          name: s.name,
+          isSpica: s.isSpica,
+        }));
 
-      // Constellation lines
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.22)";
-      ctx.lineWidth = 0.75;
-      ctx.setLineDash([3, 4]);
-      bigDipperEdges.forEach(([i, j]) => {
-        ctx.beginPath();
-        ctx.moveTo(bdPoints[i].x, bdPoints[i].y);
-        ctx.lineTo(bdPoints[j].x, bdPoints[j].y);
-        ctx.stroke();
-      });
-      ctx.setLineDash([]);
-
-      // Stars
-      bdPoints.forEach((p) => {
-        // Outer subtle glow
-        const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 6);
-        glow.addColorStop(0, "rgba(255, 255, 255, 0.9)");
-        glow.addColorStop(1, "rgba(255, 255, 255, 0)");
-        ctx.fillStyle = glow;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 1.8, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      // Big Dipper Label
-      ctx.font = "10px monospace";
-      ctx.fillStyle = "rgba(255, 255, 255, 0.35)";
-      ctx.fillText("[ ursa major ]", bdPoints[3].x - 10, bdPoints[3].y - 12);
-
-      // --- Draw Virgo Constellation ---
-      const virgoPoints = virgoRaw.map((s) => ({
-        x: s.x * width,
-        y: s.y * height,
-        name: s.name,
-        isSpica: s.isSpica,
-      }));
-
-      // Constellation lines
-      ctx.strokeStyle = "rgba(196, 167, 231, 0.28)"; // subtle lavender tint
-      ctx.lineWidth = 0.75;
-      ctx.setLineDash([3, 4]);
-      virgoEdges.forEach(([i, j]) => {
-        ctx.beginPath();
-        ctx.moveTo(virgoPoints[i].x, virgoPoints[i].y);
-        ctx.lineTo(virgoPoints[j].x, virgoPoints[j].y);
-        ctx.stroke();
-      });
-      ctx.setLineDash([]);
-
-      // Stars
-      virgoPoints.forEach((p) => {
-        if (p.isSpica) {
-          // Bright Spica star with lavender halo
-          const spicaGlow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 10);
-          spicaGlow.addColorStop(0, "rgba(215, 195, 255, 0.95)");
-          spicaGlow.addColorStop(0.4, "rgba(196, 167, 231, 0.45)");
-          spicaGlow.addColorStop(1, "rgba(196, 167, 231, 0)");
-          ctx.fillStyle = spicaGlow;
+        // Dashed constellation lines
+        ctx.strokeStyle = lineStroke;
+        ctx.lineWidth = 0.75;
+        ctx.setLineDash([3, 4]);
+        edges.forEach(([i, j]) => {
           ctx.beginPath();
-          ctx.arc(p.x, p.y, 10, 0, Math.PI * 2);
-          ctx.fill();
+          ctx.moveTo(points[i].x, points[i].y);
+          ctx.lineTo(points[j].x, points[j].y);
+          ctx.stroke();
+        });
+        ctx.setLineDash([]);
 
-          ctx.fillStyle = "#ffffff";
+        // Stars
+        points.forEach((p) => {
+          if (p.isSpica) {
+            // Spica bright star with lavender/gold aura
+            const spicaGlow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 11);
+            spicaGlow.addColorStop(0, "rgba(255, 245, 210, 0.95)");
+            spicaGlow.addColorStop(0.4, "rgba(247, 215, 115, 0.5)");
+            spicaGlow.addColorStop(1, "rgba(196, 167, 231, 0)");
+            ctx.fillStyle = spicaGlow;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 11, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = "#ffffff";
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.font = "9px monospace";
+            ctx.fillStyle = "rgba(247, 215, 115, 0.85)";
+            ctx.fillText("spica α", p.x + 8, p.y + 3);
+          } else {
+            ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 1.7, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        });
+
+        // Constellation Label
+        ctx.font = "10px monospace";
+        ctx.fillStyle = lineStroke.replace("0.22", "0.45").replace("0.28", "0.5");
+        ctx.fillText(label, points[0].x + labelXOffset, points[0].y + labelYOffset);
+      };
+
+      // Draw Big Dipper (Ursa Major)
+      drawConstellation(bigDipperRaw, bigDipperEdges, "rgba(255, 255, 255, 0.22)", "[ ursa major ]", -15, -12);
+
+      // Draw Virgo (♍)
+      drawConstellation(virgoRaw, virgoEdges, "rgba(196, 167, 231, 0.28)", "[ virgo ♍ ]", -25, 26, true);
+
+      // Draw Cassiopeia (Queen W)
+      drawConstellation(cassiopeiaRaw, cassiopeiaEdges, "rgba(247, 215, 115, 0.25)", "[ cassiopeia ]", -20, -10);
+
+      // --- Draw Indra's Divine Lightning Bolt ---
+      const now = Date.now();
+      if (now - lastLightningTime > 5500 + Math.random() * 4500) {
+        triggerLightning();
+        lastLightningTime = now;
+      }
+
+      if (activeLightning && activeLightning.life > 0) {
+        const lAlpha = activeLightning.life;
+        ctx.lineWidth = 1.6;
+        ctx.strokeStyle = `rgba(255, 248, 220, ${lAlpha * 0.95})`; // brilliant golden-white core
+        ctx.shadowColor = "rgba(247, 215, 115, 0.8)";
+        ctx.shadowBlur = 12;
+
+        activeLightning.segments.forEach((seg) => {
           ctx.beginPath();
-          ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
-          ctx.fill();
+          ctx.moveTo(seg.x1, seg.y1);
+          ctx.lineTo(seg.x2, seg.y2);
+          ctx.stroke();
+        });
 
-          ctx.font = "9px monospace";
-          ctx.fillStyle = "rgba(196, 167, 231, 0.85)";
-          ctx.fillText("spica α", p.x + 8, p.y + 3);
-        } else {
-          ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      });
-
-      // Virgo Label
-      ctx.font = "10px monospace";
-      ctx.fillStyle = "rgba(196, 167, 231, 0.45)";
-      ctx.fillText("[ virgo ♍ ]", virgoPoints[0].x - 30, virgoPoints[0].y + 24);
+        // Reset shadow
+        ctx.shadowBlur = 0;
+        activeLightning.life -= 0.12; // fast lightning fade
+        if (activeLightning.life <= 0) activeLightning = null;
+      }
 
       // --- Spawn and Draw Shooting Stars ---
-      const now = Date.now();
-      if (now - lastMeteorTime > 2400 + Math.random() * 2000) {
+      if (now - lastMeteorTime > 2600 + Math.random() * 2200) {
         spawnMeteor();
         lastMeteorTime = now;
       }
@@ -235,13 +276,12 @@ export default function Hero() {
           continue;
         }
 
-        // Tail calculation
         const tailX = m.x - (m.vx / Math.hypot(m.vx, m.vy)) * m.length;
         const tailY = m.y - (m.vy / Math.hypot(m.vx, m.vy)) * m.length;
 
         const grad = ctx.createLinearGradient(tailX, tailY, m.x, m.y);
         grad.addColorStop(0, "rgba(255, 255, 255, 0)");
-        grad.addColorStop(0.7, `rgba(196, 167, 231, ${m.life * 0.4})`);
+        grad.addColorStop(0.7, `rgba(247, 215, 115, ${m.life * 0.45})`);
         grad.addColorStop(1, `rgba(255, 255, 255, ${m.life * 0.95})`);
 
         ctx.strokeStyle = grad;
@@ -251,7 +291,6 @@ export default function Hero() {
         ctx.lineTo(m.x, m.y);
         ctx.stroke();
 
-        // Meteor Head Spark
         ctx.fillStyle = `rgba(255, 255, 255, ${m.life})`;
         ctx.beginPath();
         ctx.arc(m.x, m.y, m.thickness * 1.2, 0, Math.PI * 2);
@@ -283,22 +322,28 @@ export default function Hero() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black flex flex-col justify-center items-center">
-      {/* Canvas ambient backdrop with constellations & shooting stars */}
+      {/* Canvas ambient backdrop with constellations, shooting stars & Indra lightning */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
 
-      {/* Atmospheric center text */}
-      <div className="relative z-20 text-center px-6 select-none max-w-2xl mx-auto">
-        <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-serif font-normal lowercase tracking-tight glow-text mb-2">
-          {profile.shortName}
+      {/* Atmospheric center text with Divine Golden Glow */}
+      <div className="relative z-20 text-center px-6 select-none max-w-3xl mx-auto">
+        {/* Title: Capitalized Indra with divine presence */}
+        <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-serif font-normal tracking-tight glow-text mb-4">
+          Indra
         </h1>
 
-        {/* Name Meaning & Identity subtitle directly under indra */}
-        <p className="text-white/70 text-xs md:text-sm font-serif italic lowercase tracking-wider mb-4 drop-glow">
-          (preetinderjeet) — one who is blessed with love and victory.
-        </p>
+        {/* Subtitle: Name meaning capitalized accordingly with elevated font styling */}
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <span className="h-[0.5px] w-6 md:w-12 bg-gradient-to-r from-transparent to-[#f7d77e]/60" />
+          <p className="glow-gold-divine text-xs sm:text-sm md:text-base lg:text-lg font-serif italic tracking-[0.16em] uppercase">
+            One Who Is Blessed With Love and Victory
+          </p>
+          <span className="h-[0.5px] w-6 md:w-12 bg-gradient-to-l from-transparent to-[#f7d77e]/60" />
+        </div>
 
-        <p className="text-white/80 text-base md:text-lg font-serif lowercase italic max-w-xl mx-auto drop-glow">
-          "{profile.tagline}"
+        {/* Focus note */}
+        <p className="font-mono text-[11px] md:text-xs text-white/50 tracking-widest lowercase">
+          [ aerospace simulation · trajectory prediction · explainable intelligence ]
         </p>
       </div>
 
@@ -351,7 +396,7 @@ export default function Hero() {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+            <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
             <line x1="22" x2="16" y1="9" y2="15" />
             <line x1="16" x2="22" y1="9" y2="15" />
           </svg>

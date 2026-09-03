@@ -30,27 +30,35 @@ export default function FeaturedProject() {
 
       {/* 4 Projects Showcase */}
       <div className="vignette-pod max-w-5xl w-full p-4 md:p-12 rounded-3xl">
-        <p className="text-white text-base md:text-lg mb-8 px-4 md:px-0 glow-text lowercase">
-          selected builds & research projects ({projects.length})
-        </p>
+        <div className="flex items-baseline justify-between mb-8 px-4 md:px-0">
+          <p className="text-white text-base md:text-lg glow-text lowercase">
+            selected builds & research projects ({projects.length})
+          </p>
+          <span className="font-mono text-xs text-white/40">
+            // strictly verified implementations
+          </span>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8 px-2 md:px-0">
-          {projects.map((p) => (
+          {projects.map((p, idx) => (
             <div
               key={p.cat}
               className="border-hairline p-5 bg-black/60 hover:border-white transition-all flex flex-col justify-between group"
+              style={{
+                transform: idx % 2 === 0 ? "rotate(-0.3deg)" : "rotate(0.3deg)",
+              }}
             >
               <div>
                 <a
                   href={p.Link && p.Link !== "#" ? p.Link : p.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="block mb-4 overflow-hidden border-hairline-dim"
+                  className="block mb-4 overflow-hidden border-hairline-dim bg-white/5"
                 >
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="w-full h-44 object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                    className="w-full h-44 object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                     loading="lazy"
                   />
                 </a>
