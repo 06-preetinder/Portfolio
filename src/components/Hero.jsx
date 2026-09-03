@@ -8,12 +8,11 @@ export default function Hero() {
   const canvasRef = useRef(null);
 
   const tracks = [
-    { id: 0, label: "dark academia piano" },
-    { id: 1, label: "golden brown" },
-    { id: 2, label: "stan" },
-    { id: 3, label: "babydoll" },
-    { id: 4, label: "far from any road" },
-    { id: 5, label: "music to watch boys to" },
+    { id: 0, label: "golden brown" },
+    { id: 1, label: "stan" },
+    { id: 2, label: "babydoll" },
+    { id: 3, label: "far from any road" },
+    { id: 4, label: "music to watch boys to" },
   ];
 
   // Celestial Canvas: Starfield + Big Dipper + Virgo + Cassiopeia + Shooting Stars + Indra's Divine Lightning

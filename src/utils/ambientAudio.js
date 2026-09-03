@@ -1,48 +1,41 @@
 // High-fidelity Audio Engine playing real recorded audio files
 // Tracks:
 // 0: Dark Academia Piano (Erik Satie - Gymnopédie No. 1)
-// 0: Dark Academia Piano (Erik Satie)
-// 1: Golden Brown (The Stranglers)
-// 2: Stan (Eminem)
-// 3: Babydoll (Dominic Fike)
-// 4: Far From Any Road (The Handsome Family)
-// 5: Music to Watch Boys To (Lana Del Rey)
+// 0: Golden Brown (The Stranglers)
+// 1: Stan (Eminem)
+// 2: Babydoll (Dominic Fike)
+// 3: Far From Any Road (The Handsome Family)
+// 4: Music to Watch Boys To (Lana Del Rey)
 
 class AudioEngine {
   constructor() {
     this.tracks = [
       {
         id: 0,
-        name: "dark academia piano (erik satie)",
-        label: "dark academia piano",
-        src: "/audio/dark_academia_piano.m4a",
-      },
-      {
-        id: 1,
         name: "golden brown (the stranglers)",
         label: "golden brown",
         src: "/audio/golden_brown.m4a",
       },
       {
-        id: 2,
+        id: 1,
         name: "stan (eminem)",
         label: "stan",
         src: "/audio/stan_eminem.m4a",
       },
       {
-        id: 3,
+        id: 2,
         name: "babydoll (dominic fike)",
         label: "babydoll",
         src: "/audio/babydoll_dominic_fike.m4a",
       },
       {
-        id: 4,
+        id: 3,
         name: "far from any road (the handsome family)",
         label: "far from any road",
         src: "/audio/far_from_any_road.m4a",
       },
       {
-        id: 5,
+        id: 4,
         name: "music to watch boys to (lana del rey)",
         label: "music to watch boys to",
         src: "/audio/music_to_watch_boys_to.m4a",
