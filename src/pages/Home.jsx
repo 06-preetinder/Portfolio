@@ -7,6 +7,7 @@ import AppreciationSection from "../components/AppreciationSection";
 import PersonalStory from "../components/PersonalStory";
 import AuthorsCollage from "../components/AuthorsCollage";
 import AsciiPortrait from "../components/AsciiPortrait";
+import PhilosophyScrambler from "../components/PhilosophyScrambler";
 import FloatingCursorQuote from "../components/FloatingCursorQuote";
 import ThoughtsSection from "../components/ThoughtsSection";
 import EpochSection from "../components/EpochSection";
@@ -47,6 +48,9 @@ export default function Home() {
 
       {/* ASCII Art Portrait Reveal */}
       <AsciiPortrait />
+
+      {/* Philosophy Monospace Scrambler Cipher */}
+      <PhilosophyScrambler />
 
       {/* Pinterest-style Authors & Quotes Collage right above Epoch */}
       <AuthorsCollage />
