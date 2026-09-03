@@ -8,10 +8,10 @@ export default function Hero() {
   const canvasRef = useRef(null);
 
   const tracks = [
-    { id: 0, label: "things i am afraid of (august)" },
-    { id: 1, label: "hiawatha hill, favorite place in the world" },
-    { id: 2, label: "signals under uncertainty" },
-    { id: 3, label: "nocturnal sf (calm night)" },
+    { id: 0, label: "dark academia piano" },
+    { id: 1, label: "stan (eminem)" },
+    { id: 2, label: "babydoll (ari abdul)" },
+    { id: 3, label: "music to watch boys to (lana del rey)" },
   ];
 
   // Celestial Canvas: Starfield + Big Dipper + Virgo + Cassiopeia + Shooting Stars + Indra's Divine Lightning
@@ -153,7 +153,7 @@ export default function Hero() {
 
       // --- Ambient Sky Flash from Divine Lightning ---
       if (skyFlashAlpha > 0.005) {
-        ctx.fillStyle = `rgba(247, 215, 115, ${skyFlashAlpha * 0.35})`; // golden ambient illumination
+        ctx.fillStyle = `rgba(255, 255, 255, ${skyFlashAlpha * 0.22})`; // subtle white ambient illumination
         ctx.fillRect(0, 0, width, height);
         skyFlashAlpha *= 0.78;
       }
@@ -230,7 +230,7 @@ export default function Hero() {
       drawConstellation(virgoRaw, virgoEdges, "rgba(196, 167, 231, 0.28)", "[ virgo ♍ ]", -25, 26, true);
 
       // Draw Cassiopeia (Queen W)
-      drawConstellation(cassiopeiaRaw, cassiopeiaEdges, "rgba(247, 215, 115, 0.25)", "[ cassiopeia ]", -20, -10);
+      drawConstellation(cassiopeiaRaw, cassiopeiaEdges, "rgba(255, 255, 255, 0.22)", "[ cassiopeia ]", -20, -10);
 
       // --- Draw Indra's Divine Lightning Bolt ---
       const now = Date.now();
@@ -241,10 +241,10 @@ export default function Hero() {
 
       if (activeLightning && activeLightning.life > 0) {
         const lAlpha = activeLightning.life;
-        ctx.lineWidth = 1.6;
-        ctx.strokeStyle = `rgba(255, 248, 220, ${lAlpha * 0.95})`; // brilliant golden-white core
-        ctx.shadowColor = "rgba(247, 215, 115, 0.8)";
-        ctx.shadowBlur = 12;
+        ctx.lineWidth = 1.4;
+        ctx.strokeStyle = `rgba(255, 255, 255, ${lAlpha * 0.95})`; // ethereal white core
+        ctx.shadowColor = "rgba(255, 255, 255, 0.6)";
+        ctx.shadowBlur = 10;
 
         activeLightning.segments.forEach((seg) => {
           ctx.beginPath();
@@ -281,7 +281,7 @@ export default function Hero() {
 
         const grad = ctx.createLinearGradient(tailX, tailY, m.x, m.y);
         grad.addColorStop(0, "rgba(255, 255, 255, 0)");
-        grad.addColorStop(0.7, `rgba(247, 215, 115, ${m.life * 0.45})`);
+        grad.addColorStop(0.7, `rgba(255, 255, 255, ${m.life * 0.35})`);
         grad.addColorStop(1, `rgba(255, 255, 255, ${m.life * 0.95})`);
 
         ctx.strokeStyle = grad;
@@ -325,25 +325,16 @@ export default function Hero() {
       {/* Canvas ambient backdrop with constellations, shooting stars & Indra lightning */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
 
-      {/* Atmospheric center text with Divine Golden Glow */}
-      <div className="relative z-20 text-center px-6 select-none max-w-3xl mx-auto">
-        {/* Title: Capitalized Indra with divine presence */}
-        <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-serif font-normal tracking-tight glow-text mb-4">
+      {/* Clean minimalist center text matching jia.build */}
+      <div className="relative z-20 text-center px-6 select-none max-w-xl mx-auto">
+        {/* Title: Clean minimalist Indra */}
+        <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-serif font-normal tracking-tight glow-text mb-2">
           Indra
         </h1>
 
-        {/* Subtitle: Name meaning capitalized accordingly with elevated font styling */}
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="h-[0.5px] w-6 md:w-12 bg-gradient-to-r from-transparent to-[#f7d77e]/60" />
-          <p className="glow-gold-divine text-xs sm:text-sm md:text-base lg:text-lg font-serif italic tracking-[0.16em] uppercase">
-            One Who Is Blessed With Love and Victory
-          </p>
-          <span className="h-[0.5px] w-6 md:w-12 bg-gradient-to-l from-transparent to-[#f7d77e]/60" />
-        </div>
-
-        {/* Focus note */}
-        <p className="font-mono text-[11px] md:text-xs text-white/50 tracking-widest lowercase">
-          [ aerospace simulation · trajectory prediction · explainable intelligence ]
+        {/* Subtitle: Clean ethereal white lowercase italic */}
+        <p className="text-white/60 text-xs md:text-sm font-serif italic tracking-wider lowercase">
+          one who is blessed with love and victory.
         </p>
       </div>
 

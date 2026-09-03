@@ -30,9 +30,9 @@ export default function PersonalStory() {
             </p>
             <div className="border-hairline overflow-hidden max-w-sm">
               <img
-                src="/candid/chess-books.jpg"
-                alt="Competitive chess calculation"
-                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                src="/candid/anime-study.jpg"
+                alt="Aesthetic dark academia study and chess calculation"
+                className="w-full h-auto object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
                 loading="lazy"
               />
             </div>
@@ -47,9 +47,9 @@ export default function PersonalStory() {
           >
             <div className="border-hairline overflow-hidden">
               <img
-                src="/candid/city-walk.jpg"
-                alt="Night walks in the city"
-                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                src="/candid/anime-night.jpg"
+                alt="Aesthetic anime night city walk"
+                className="w-full h-auto object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
                 loading="lazy"
               />
             </div>

@@ -1,150 +1,112 @@
-// Web Audio API generative ambient synthesizer
-// Produces atmospheric drone soundscapes matching jia.build without external files
+// High-fidelity Audio Engine playing real recorded audio files
+// Tracks:
+// 0: Dark Academia Piano (Erik Satie - Gymnopédie No. 1)
+// 1: Stan by Eminem
+// 2: Babydoll by Ari Abdul
+// 3: Music to Watch Boys To by Lana Del Rey
 
-class AmbientAudioEngine {
+class AudioEngine {
   constructor() {
-    this.ctx = null;
-    this.oscillators = [];
-    this.gainNode = null;
-    this.filterNode = null;
-    this.lfo = null;
-    this.lfoGain = null;
-    this.isPlaying = false;
-    this.currentTrack = 0;
-    this.isMuted = true;
-  }
-
-  init() {
-    if (!this.ctx) {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContext) return false;
-      this.ctx = new AudioContext();
-    }
-    if (this.ctx.state === 'suspended') {
-      this.ctx.resume();
-    }
-    return true;
-  }
-
-  getPresets() {
-    return [
+    this.tracks = [
       {
         id: 0,
-        name: "things i am afraid of (august)",
-        shortName: "1",
-        frequencies: [130.81, 196.00, 261.63, 311.13, 392.00],
-        filterFreq: 420,
-        lfoSpeed: 0.15,
-        type: "sine",
+        name: "dark academia piano (erik satie)",
+        label: "dark academia piano",
+        src: "/audio/dark_academia_piano.m4a",
       },
       {
         id: 1,
-        name: "hiawatha hill, favorite place in the world",
-        shortName: "2",
-        frequencies: [92.50, 138.59, 185.00, 277.18],
-        filterFreq: 360,
-        lfoSpeed: 0.08,
-        type: "triangle",
+        name: "stan (eminem)",
+        label: "stan (eminem)",
+        src: "/audio/stan_eminem.m4a",
       },
       {
         id: 2,
-        name: "signals under uncertainty",
-        shortName: "3",
-        frequencies: [73.42, 110.00, 164.81, 220.00],
-        filterFreq: 480,
-        lfoSpeed: 0.22,
-        type: "sine",
+        name: "babydoll (ari abdul)",
+        label: "babydoll (ari abdul)",
+        src: "/audio/babydoll.m4a",
       },
       {
         id: 3,
-        name: "nocturnal sf (calm night)",
-        shortName: "4",
-        frequencies: [110.00, 164.81, 246.94, 329.63],
-        filterFreq: 520,
-        lfoSpeed: 0.12,
-        type: "sine",
+        name: "music to watch boys to (lana del rey)",
+        label: "music to watch boys to (lana del rey)",
+        src: "/audio/music_to_watch_boys_to.m4a",
       },
     ];
+
+    this.currentTrack = 0;
+    this.audio = null;
+    this.isMuted = true;
+    this.targetVolume = 0.35;
+    this.fadeInterval = null;
+  }
+
+  getPresets() {
+    return this.tracks;
   }
 
   playTrack(index) {
-    if (!this.init()) return;
-    this.stop();
-
-    const presets = this.getPresets();
-    const preset = presets[index] || presets[0];
+    const track = this.tracks[index] || this.tracks[0];
     this.currentTrack = index;
-    const now = this.ctx.currentTime;
 
-    this.gainNode = this.ctx.createGain();
-    this.gainNode.gain.setValueAtTime(0.0001, now);
-    this.gainNode.gain.exponentialRampToValueAtTime(this.isMuted ? 0.0001 : 0.08, now + 1.2);
+    if (this.fadeInterval) clearInterval(this.fadeInterval);
 
-    this.filterNode = this.ctx.createBiquadFilter();
-    this.filterNode.type = "lowpass";
-    this.filterNode.frequency.setValueAtTime(preset.filterFreq, now);
-
-    this.lfo = this.ctx.createOscillator();
-    this.lfoGain = this.ctx.createGain();
-    this.lfo.frequency.setValueAtTime(preset.lfoSpeed, now);
-    this.lfoGain.gain.setValueAtTime(80, now);
-    this.lfo.connect(this.lfoGain);
-    this.lfoGain.connect(this.filterNode.frequency);
-    this.lfo.start();
-
-    this.oscillators = preset.frequencies.map((freq, i) => {
-      const osc = this.ctx.createOscillator();
-      const voiceGain = this.ctx.createGain();
-      osc.type = preset.type;
-      const detune = (i % 2 === 0 ? 1 : -1) * (i * 3.5);
-      osc.frequency.setValueAtTime(freq, now);
-      osc.detune.setValueAtTime(detune, now);
-      voiceGain.gain.setValueAtTime(1 / preset.frequencies.length, now);
-
-      osc.connect(voiceGain);
-      voiceGain.connect(this.filterNode);
-      osc.start();
-      return osc;
-    });
-
-    this.filterNode.connect(this.gainNode);
-    this.gainNode.connect(this.ctx.destination);
-    this.isPlaying = true;
-  }
-
-  stop() {
-    if (this.oscillators.length > 0) {
-      this.oscillators.forEach((osc) => {
-        try {
-          osc.stop();
-          osc.disconnect();
-        } catch (e) {}
-      });
-      this.oscillators = [];
-    }
-    if (this.lfo) {
+    if (this.audio) {
       try {
-        this.lfo.stop();
-        this.lfo.disconnect();
+        this.audio.pause();
       } catch (e) {}
-      this.lfo = null;
     }
-    this.isPlaying = false;
+
+    this.audio = new Audio(track.src);
+    this.audio.loop = true;
+    this.audio.preload = "auto";
+    this.audio.volume = this.isMuted ? 0 : this.targetVolume;
+
+    if (!this.isMuted) {
+      this.audio.play().catch((err) => {
+        console.warn("Audio play prevented:", err);
+      });
+    }
   }
 
   setMuted(muted) {
     this.isMuted = muted;
-    if (!this.gainNode || !this.ctx) return;
-    const now = this.ctx.currentTime;
-    this.gainNode.gain.cancelScheduledValues(now);
-    if (muted) {
-      this.gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.5);
-    } else {
-      if (!this.isPlaying) {
+    if (!this.audio) {
+      if (!muted) {
         this.playTrack(this.currentTrack);
-      } else {
-        this.gainNode.gain.exponentialRampToValueAtTime(0.08, now + 0.6);
       }
+      return;
+    }
+
+    if (this.fadeInterval) clearInterval(this.fadeInterval);
+
+    if (muted) {
+      // Smooth fade out
+      let vol = this.audio.volume;
+      this.fadeInterval = setInterval(() => {
+        vol -= 0.05;
+        if (vol <= 0.02) {
+          this.audio.volume = 0;
+          this.audio.pause();
+          clearInterval(this.fadeInterval);
+        } else {
+          this.audio.volume = Math.max(0, vol);
+        }
+      }, 40);
+    } else {
+      // Smooth fade in
+      this.audio.volume = 0;
+      this.audio.play().catch(() => {});
+      let vol = 0;
+      this.fadeInterval = setInterval(() => {
+        vol += 0.05;
+        if (vol >= this.targetVolume) {
+          this.audio.volume = this.targetVolume;
+          clearInterval(this.fadeInterval);
+        } else {
+          this.audio.volume = Math.min(this.targetVolume, vol);
+        }
+      }, 40);
     }
   }
 
@@ -152,6 +114,15 @@ class AmbientAudioEngine {
     this.setMuted(!this.isMuted);
     return this.isMuted;
   }
+
+  stop() {
+    if (this.fadeInterval) clearInterval(this.fadeInterval);
+    if (this.audio) {
+      try {
+        this.audio.pause();
+      } catch (e) {}
+    }
+  }
 }
 
-export const ambientAudio = new AmbientAudioEngine();
+export const ambientAudio = new AudioEngine();

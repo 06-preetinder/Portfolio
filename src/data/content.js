@@ -152,7 +152,7 @@ export const projects = [
     title: "Napoléon — Intent-Aware AI Web Crawler",
     subtitle: "Semantic crawler with knowledge graph visualization",
     blurb: "An AI-powered web crawler that scores crawled pages by semantic relevance using sentence-transformer embeddings, combined with spaCy entity extraction, KeyBERT keyword extraction, and Pyvis/NetworkX graph visualization.",
-    image: "/projects/crawler-matrix.jpg",
+    image: "/projects/napoleon.jpg",
     github: "https://github.com/06-preetinder/napolean-web",
     loom: "#",
     Link: "#",
