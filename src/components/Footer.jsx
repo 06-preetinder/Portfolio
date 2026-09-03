@@ -35,8 +35,8 @@ export default function Footer() {
             email
           </a>
           <a
-            href="/resume.pdf"
-            download
+            href="/resumes/Preetinderjeet_Singh_AI_Agentic_Resume.pdf"
+            download="Preetinderjeet_Singh_AI_Agentic_Resume.pdf"
             className="hover:opacity-70 underline text-[#c4a7e7]"
           >
             resume
