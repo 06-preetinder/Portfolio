@@ -78,7 +78,7 @@ export default function ResumeSection() {
             <span className="text-white/50">Appointments:</span> Lupex Space (ML R&D Lead) • 3S Scholars (Contractual Dev) • Punjab AI Excellence (Research Fellow)
           </p>
           <p>
-            <span className="text-white/50">Publication:</span> ICAAV 2026 (DRDO-organized, Paper 090) : Accepted for presentation
+            <span className="text-white/50">Publication:</span> ICAAV 2026 (DRDO-organized, Paper 090) · Accepted for presentation
           </p>
         </div>
       </div>

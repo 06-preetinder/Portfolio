@@ -30,7 +30,7 @@ export default function AppreciationSection() {
                 [{card.date}]
               </p>
               <p className="mt-1 flex items-center gap-1.5 flex-wrap text-white/80 lowercase">
-                <span>, {card.author}</span>
+                <span>by {card.author}</span>
                 {/* Clean country badge */}
                 <span className="font-mono text-[10px] px-1 border-hairline-dim text-white/70">
                   {card.country}

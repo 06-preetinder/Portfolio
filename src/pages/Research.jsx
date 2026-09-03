@@ -4,12 +4,12 @@ import { research } from "../data/content";
 export default function Research() {
   return (
     <section className="max-w-6xl mx-auto px-6 md:px-10 pt-36 pb-28">
-      <p className="eyebrow mb-3">03 : Research</p>
+      <p className="eyebrow mb-3">03 / Research</p>
       <h1 className="font-display text-6xl md:text-7xl uppercase leading-none">
         In progress
       </h1>
       <p className="mt-6 max-w-xl text-paper-dim text-lg">
-        Faculty-advised research, currently in preprint. Full entries: abstracts, methods, results, go up on submission.
+        Faculty-advised research, currently in preprint. Full write-ups with abstracts, methodology, and empirical findings will be published upon formal submission.
       </p>
 
       <div className="mt-20 grid md:grid-cols-2 gap-px bg-paper/10">
@@ -41,7 +41,7 @@ export default function Research() {
       </div>
 
       <p className="mt-16 font-mono text-xs text-paper-dim/60 max-w-md">
-        Faculty-advised research at GNDEC. Full write-ups: methodology, results, figures, added once each paper moves past preprint.
+        Faculty-advised research at GNDEC. Full methodology, benchmarks, and figures are added once each paper moves past preprint.
       </p>
     </section>
   );

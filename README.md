@@ -1,4 +1,4 @@
-# Indra : Preetinderjeet Singh
+# Indra / Preetinderjeet Singh
 
 <p align="center">
   <em>"one who is blessed with love and victory."</em>
@@ -16,7 +16,7 @@
 
 A bespoke personal portfolio and digital salon inspired by the minimal, honest aesthetic of **`jia.build`**, fused with **dark academia**, classical literature, and rigorous aerospace engineering telemetry.
 
-Built for **Preetinderjeet Singh (Indra)** : AI & Agentic Engineer, Aerospace Researcher at Lupex Space, and Founder of *The Epoch* weekly research digest.
+Built for **Preetinderjeet Singh (Indra)** · AI & Agentic Engineer, Aerospace Researcher at Lupex Space, and Founder of *The Epoch* weekly research digest.
 
 ---
 
