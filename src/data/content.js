@@ -218,9 +218,28 @@ export const epoch = {
   description:
     "The world does not pause to explain itself, and neither, most weeks, does AI research. Papers arrive faster than anyone can read them. Launches happen faster than anyone can verify them. Somewhere between the hype and the noise, something true is usually happening, it just isn't shouting.\n\n\"The Epoch\" is a weekly attempt to find that thing anyway. Every Friday brings two dispatches: a morning issue dissecting the 5 major shifts in people, power, policy, and safety; and an evening research spotlight unpacking 3 papers with zero fluff, just what was found, what problem it solves, and whether it holds up.\n\nWe are not interested in being first. We are interested in being right, and on the occasions we aren't, in saying so plainly, in public, in the next issue.\n\nEach issue carries its own counter-argument. If we tell you why something matters, we also tell you why it might not.",
   linkedinUrl: "https://www.linkedin.com/company/the-epoch/",
-  currentTotalIssues: 7,
+  currentTotalIssues: 8,
   schedule: "Two releases every Friday: Morning Issue + Evening Papers",
   dispatches: [
+        {
+            "id": "epoch-08",
+            "type": "issue",
+            "issueNumber": "Issue 08",
+            "title": "The line we've tracked since Issue 03 just got crossed.",
+            "date": "August 29 - September 4, 2026",
+            "readTime": "5 min read",
+            "signal": "OpenAI confirms Astra as the first model to cross the 'Critical' cybersecurity threshold with 100% on ExploitBench and chained zero-days; Sony Music & Warner Chappell sue Anthropic naming CEO Dario Amodei personally; Nvidia acquires Hugging Face for $12.9B; Google ships Gemini 3.8 Flash Cyber via invite-only Fairwind Program; Dell books $60.9B in AI server orders.",
+            "caseAgainstIt": "This lands the same week OpenAI's security practices are scrutinized over the Hugging Face breach: the company that just admitted its containment failed is asking the public to trust its judgment on when Critical capabilities are safe to ship.",
+            "topics": [
+                "AI Safety",
+                "Litigation",
+                "Nvidia Acquisition",
+                "Cyber Defense",
+                "Server Demand"
+            ],
+            "pdfUrl": "/epoch/the-epoch-issue-08.pdf",
+            "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+        },
     {
         "id": "issue-07",
         "type": "issue",
