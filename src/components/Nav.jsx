@@ -36,9 +36,6 @@ export default function Nav() {
         <a href="#work" className="hover:opacity-70 transition-opacity">
           work
         </a>
-        <a href="#experience" className="hover:opacity-70 transition-opacity">
-          experience
-        </a>
         <a href="#epoch" className="hover:opacity-70 transition-opacity">
           epoch
         </a>
