@@ -237,7 +237,6 @@ export const epoch = {
                 "Cyber Defense",
                 "Server Demand"
             ],
-            "pdfUrl": "/epoch/the-epoch-issue-08.pdf",
             "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
         },
     {
@@ -256,7 +255,6 @@ export const epoch = {
             "Labor Market",
             "Consumer Privacy"
         ],
-        "pdfUrl": "/epoch/the-epoch-issue-07.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -273,7 +271,6 @@ export const epoch = {
             "AI for Science",
             "Containment Policy"
         ],
-        "pdfUrl": "/epoch/the-epoch-papers-issue-07.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -292,7 +289,6 @@ export const epoch = {
             "Public Sentiment",
             "Labor Market"
         ],
-        "pdfUrl": "/epoch/the-epoch-issue-06.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -309,7 +305,6 @@ export const epoch = {
             "Agent Architecture",
             "Security Disclosure"
         ],
-        "pdfUrl": "/epoch/the-epoch-papers-issue-06.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -328,7 +323,6 @@ export const epoch = {
             "Scale",
             "EU AI Act"
         ],
-        "pdfUrl": "/epoch/the-epoch-issue-05.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -345,7 +339,6 @@ export const epoch = {
             "Offensive Security",
             "Research Integrity"
         ],
-        "pdfUrl": "/epoch/the-epoch-papers-issue-05.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -364,7 +357,6 @@ export const epoch = {
             "Governance",
             "Labor Market"
         ],
-        "pdfUrl": "/epoch/the-epoch-issue-04.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -381,7 +373,6 @@ export const epoch = {
             "Synthetic Biology",
             "Safety Methodology"
         ],
-        "pdfUrl": "/epoch/the-epoch-papers-issue-04.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -400,7 +391,6 @@ export const epoch = {
             "Platform Accountability",
             "Governance"
         ],
-        "pdfUrl": "/epoch/the-epoch-issue-03.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -417,7 +407,6 @@ export const epoch = {
             "Algorithmic Fairness",
             "Research Integrity"
         ],
-        "pdfUrl": "/epoch/the-epoch-papers-issue-03.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -436,7 +425,6 @@ export const epoch = {
             "Litigation",
             "Governance"
         ],
-        "pdfUrl": null,
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -453,7 +441,6 @@ export const epoch = {
             "Generative Theory",
             "Research Integrity"
         ],
-        "pdfUrl": null,
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -472,7 +459,6 @@ export const epoch = {
             "Global Governance",
             "Sovereign AI"
         ],
-        "pdfUrl": "/epoch/the-epoch-issue-01.pdf",
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
@@ -489,7 +475,6 @@ export const epoch = {
             "Brain-Computer Interface",
             "Agentic Coding"
         ],
-        "pdfUrl": null,
         "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     }
 ],

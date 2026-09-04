@@ -172,24 +172,8 @@ export default function EpochSection() {
               </div>
 
               {/* Footer action links */}
-              <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap justify-between items-center gap-2 font-mono text-[11px]">
-                {post.pdfUrl ? (
-                  <a
-                    href={post.pdfUrl}
-                    download
-                    className="text-white/70 hover:text-white underline flex items-center gap-1.5"
-                  >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    <span>download slides / pdf →</span>
-                  </a>
-                ) : (
-                  <span className="text-white/30">[ slides on linkedin ]</span>
-                )}
-
+              <div className="mt-4 pt-3 border-t border-white/10 flex justify-between items-center font-mono text-[11px]">
+                <span className="text-white/40">the epoch archive</span>
                 <a
                   href={post.linkedinPostUrl || epoch.linkedinUrl}
                   target="_blank"
