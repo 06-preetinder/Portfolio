@@ -391,6 +391,17 @@ export default function Hero() {
         }}
       />
 
+      {/* 30s Executive Speedrun cue bottom-left */}
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent("open-dossier"))}
+        aria-label="Open 30-second Recruiter Dossier"
+        className="absolute bottom-9 left-6 md:left-10 z-30 flex items-center gap-2 font-mono text-[11px] text-white/70 hover:text-white border-hairline-dim px-3 py-1.5 bg-black/60 hover:bg-white/10 hover:border-white/50 backdrop-blur-sm rounded-full transition-all cursor-pointer glow-text"
+      >
+        <span className="w-1.5 h-1.5 rounded-full bg-[#c4a7e7] animate-pulse" />
+        <span>[ 30s recruiter speedrun ]</span>
+        <kbd className="hidden sm:inline-block text-[9px] text-white/40 bg-white/10 px-1 rounded">⌘K</kbd>
+      </button>
+
       {/* If browser blocked autoplay before user's first gesture, show sleek cue */}
       {!isPlaying && !isMuted && (
         <div className="absolute bottom-16 right-6 md:right-10 z-30 font-mono text-[10px] text-white/70 border-hairline-dim px-2.5 py-1 bg-black/80 tracking-wider flex items-center gap-2 pointer-events-none animate-pulse">

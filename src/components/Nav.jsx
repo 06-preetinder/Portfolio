@@ -29,12 +29,15 @@ export default function Nav() {
       </div>
 
       {/* Navigation links top-right */}
-      <nav className="pointer-events-auto absolute top-6 right-6 md:top-8 md:right-10 lg:top-10 lg:right-16 flex items-center gap-5 md:gap-8 text-white text-sm md:text-base font-serif lowercase glow-text">
+      <nav className="pointer-events-auto absolute top-6 right-6 md:top-8 md:right-10 lg:top-10 lg:right-16 flex items-center gap-4 sm:gap-6 md:gap-7 text-white text-sm md:text-base font-serif lowercase glow-text">
         <a href="#about" className="hover:opacity-70 transition-opacity">
           about
         </a>
         <a href="#work" className="hover:opacity-70 transition-opacity">
           work
+        </a>
+        <a href="#experience" className="hover:opacity-70 transition-opacity">
+          experience
         </a>
         <a href="#epoch" className="hover:opacity-70 transition-opacity">
           epoch
@@ -45,6 +48,17 @@ export default function Nav() {
         <a href="#questions" className="hover:opacity-70 transition-opacity">
           contact
         </a>
+
+        {/* Recruiter speedrun trigger button */}
+        <button
+          onClick={() => window.dispatchEvent(new CustomEvent("open-dossier"))}
+          aria-label="Open 30-second Recruiter Dossier"
+          className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-white/25 bg-white/5 hover:bg-white/10 hover:border-white text-[11px] font-mono tracking-wider text-white/90 transition-all cursor-pointer"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-[#c4a7e7] animate-pulse" />
+          <span>dossier</span>
+          <kbd className="hidden lg:inline-block text-[9px] text-white/40 bg-white/10 px-1 rounded">⌘K</kbd>
+        </button>
       </nav>
     </header>
   );

@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import MemeMarquee from "../components/MemeMarquee";
 import BioSection from "../components/BioSection";
 import FeaturedProject from "../components/FeaturedProject";
+import ExperienceSection from "../components/ExperienceSection";
 import ResumeSection from "../components/ResumeSection";
 import AppreciationSection from "../components/AppreciationSection";
 import PersonalStory from "../components/PersonalStory";
@@ -36,6 +37,9 @@ export default function Home() {
 
       {/* 4 Projects Showcase & Publication */}
       <FeaturedProject />
+
+      {/* Career Dossier & 3-Pillar Value Thesis */}
+      <ExperienceSection />
 
       {/* Targeted Resume Center */}
       <ResumeSection />
