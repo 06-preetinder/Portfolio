@@ -14,7 +14,7 @@ export default function ResumeSection() {
               curriculum vitae / targeted resumes
             </h2>
             <p className="text-sm text-white/70 font-mono">
-              [3 specialized tracks: ai agentic, ml & aerospace, data science]
+              [3 specialized tracks: ai agentic, ml & systems, data science]
             </p>
           </div>
 

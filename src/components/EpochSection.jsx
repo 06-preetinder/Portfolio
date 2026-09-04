@@ -118,8 +118,8 @@ export default function EpochSection() {
           </button>
         </div>
 
-        {/* Dispatches List */}
-        <div className="space-y-4">
+        {/* Dispatches List (Contained scrollable feed to keep page length elegant) */}
+        <div className="max-h-[640px] overflow-y-auto thoughts-scroll pr-1.5 sm:pr-2 space-y-4">
           {filteredPosts.map((post) => (
             <div
               key={post.id}
@@ -185,6 +185,15 @@ export default function EpochSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Scroll cue and archive counter footer */}
+        <div className="mt-4 pt-3 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 font-mono text-[11px] text-white/40">
+          <span>showing {filteredPosts.length} releases in archive</span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c4a7e7] animate-pulse" />
+            <span>scroll feed · two releases every friday</span>
+          </span>
         </div>
       </div>
     </section>

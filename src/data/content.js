@@ -7,15 +7,15 @@ export const profile = {
   shortName: "Indra",
   nameMeaning: "one who is blessed with love and victory.",
   tagline: "ML systems where the failure mode is expensive.",
-  intro: "i'm preetinder (Indra). i build ML systems where failure is expensive, focusing on aerospace simulation, hypersonic trajectory prediction, and explainable flood risk.",
+  intro: "i'm preetinder (Indra). i build autonomous agentic systems, production ML pipelines, and full-stack software where reliability and deterministic performance matter.",
   location: "Ludhiana, Punjab",
   coordinates: "30.901° N, 75.857° E",
   linkedin: "https://www.linkedin.com/in/preetinderjeet-singh-4840a627b/",
   email: "singhpreetinder229@gmail.com",
   github: "https://github.com/06-preetinder",
   twitter: "https://x.com/preetinder_06",
-  currentRole: "i'm currently ML R&D lead @ Lupex Space. coordinating simulation-based ML pipelines in the aerospace and defense domain (missile classification and hypersonic trajectory prediction under NDA).",
-  currentFocus: "alongside aerospace work, i conduct faculty-advised research on spatio-temporal flood risk intelligence and adaptive multi-UAV disaster response coordination.",
+  currentRole: "i'm currently ML R&D lead @ Lupex Space, developing simulation ML pipelines and neural surrogate models under NDA. alongside this, i build autonomous agentic workflows and production AI software.",
+  currentFocus: "my core focus is autonomous agent architectures (state graphs, polyglot memory, tool orchestration), high-performance ML backends, and faculty-advised research on spatio-temporal intelligence.",
   records: [
     { label: "physique:", value: "6 feet", suffix: "lean build & six-pack abs." },
     { label: "new chin-up record of", value: "17", suffix: "in a row." },
@@ -24,7 +24,7 @@ export const profile = {
     { label: "efficientnet-b0 edge model at", value: "87.08%", suffix: "test accuracy on tflite." },
   ],
   pastWork: [
-    "leading simulation-based ML pipelines for missile classification and hypersonic trajectory prediction at Lupex Space",
+    "leading simulation-based ML pipelines and neural surrogate models at Lupex Space (under NDA)",
     "co-authored paper accepted for presentation at ICAAV 2026 (DRDO-organized) on adaptive multi-UAV disaster coordination",
     "founder and writer at The Epoch, a weekly AI research digest separating real signal from research noise",
     "designed explainable flood-risk methodology with Random Forest, SHAP (identified ~47ha threshold), and panel regression",
@@ -36,7 +36,7 @@ export const profile = {
 
 if i could introduce myself through this window of a website: i spend half my time overthinking mathematical formulations, a quarter of my time splattering out working code and models in intense concentrated sprints, and another quarter doing pull-ups, pushups, running, or reading books in silence.
 
-i care more about why a model makes a decision than another decimal point of accuracy. in aerospace and disaster response, ungrounded confidence is catastrophic.
+i care more about why a model makes a decision than another decimal point of accuracy. in production AI systems and automated workflows, ungrounded confidence is catastrophic.
 
 things i like: deterministic pipelines, clean math, 6-foot pull-up discipline, cold water, dark academia books, and reading research preprints at 2am.
 things i don't like: ungrounded hype, black-box trust without explainability, and redundant effort.`,
@@ -167,11 +167,11 @@ export const experience = [
     org: "Lupex Space",
     period: "Jun 2026 - Present",
     description:
-      "Leading a team of ML R&D interns, coordinating directly with the co-founder on simulation-based ML pipelines in the aerospace/defense domain, focused on missile classification and hypersonic trajectory prediction research.",
+      "Leading an ML R&D intern team, reporting directly to the co-founder, developing simulation-based ML pipelines, surrogate neural models, and high-dimensional trajectory analytics under NDA.",
     bullets: [
-      "Extended and hardened internal RAG/agent systems in production",
-      "Overseeing technical direction and work of the intern team, reporting directly to the co-founder",
-      "Designing LSTM, PINN, and Transformer models for hypersonic simulation telemetry (under NDA)",
+      "Extended and hardened production agent and RAG systems with deterministic validation layers",
+      "Directing the technical roadmap for the intern team, reporting directly to the co-founder",
+      "Designing LSTM, PINN, and Transformer models for simulation telemetry and trajectory prediction (under NDA)",
     ],
   },
   {
@@ -528,7 +528,7 @@ export const appreciation = [
 export const thoughts = [
   {
     date: "aug 30th, 2026, 11pm",
-    text: "missile simulation batch 41 finished. 0.94 F1 on hypersonic re-entry profile. 50 pushups and 2 minute plank before bed.",
+    text: "neural surrogate simulation batch 41 finished. 0.94 F1 on aerodynamic re-entry profile. 50 pushups and 2 minute plank before bed.",
   },
   {
     date: "aug 29th, 2026, 9pm",
@@ -576,9 +576,9 @@ export const resumeVersions = [
   {
     id: "ml",
     label: "Machine Learning / Deep Learning Resume",
-    shortLabel: "ML & Aerospace",
+    shortLabel: "ML & Systems",
     downloadUrl: "/resumes/Preetinderjeet_Singh_ML_Engineer_Resume.pdf",
-    focus: "PyTorch, PINN, LSTM, Transformers, Hypersonic Trajectory Prediction, Edge TFLite",
+    focus: "PyTorch, PINN, LSTM, Transformers, Neural Surrogate Modeling, Edge TFLite",
   },
   {
     id: "data",

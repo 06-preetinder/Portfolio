@@ -103,8 +103,8 @@ export default function RecruiterDossierModal({ isOpen, onClose }) {
             </span>
           </div>
           <p className="text-white/80 text-xs sm:text-sm leading-relaxed font-serif">
-            AI &amp; Agentic Systems Engineer specializing in autonomous multi-agent coordination,
-            deterministic memory graphs, and high-consequence aerospace simulation.
+            AI &amp; Systems Engineer specializing in autonomous multi-agent orchestration,
+            production ML pipelines, and deterministic state architectures.
           </p>
         </div>
 
@@ -184,7 +184,7 @@ export default function RecruiterDossierModal({ isOpen, onClose }) {
                 i am preetinder (indra), a computer science student at GNDEC Ludhiana (8 CGPA) and machine learning R&amp;D engineer at Lupex Space.
               </p>
               <p>
-                my work centers on how models reason over time: designing multi-tier memory graphs for LLM agents, running surrogate neural networks for aerospace simulations at Lupex Space, and proving coordination algorithms under uncertainty for autonomous systems (ICAAV 2026).
+                my work centers on software systems architecture and applied machine learning: designing multi-tier memory graphs for autonomous LLM agents, engineering production RAG pipelines, and developing neural surrogate models for complex physical simulations under NDA at Lupex Space.
               </p>
               <p>
                 outside the terminal, i write <em>The Epoch</em> every Friday to dissect frontier AI research preprints, train with bodyweight discipline, and study classical literature and chess. i build software with the premise that explainability, clean mathematical bounds, and deterministic behavior matter more than raw benchmark claims.
@@ -244,7 +244,7 @@ export default function RecruiterDossierModal({ isOpen, onClose }) {
                   trained on high-consequence failure modes
                 </span>
                 <p className="text-xs text-white/75 leading-relaxed">
-                  most candidates with early-career experience have only cloned tutorial chatbots. i lead an R&amp;D intern team at Lupex Space on aerospace simulation pipelines where numerical instability ruins runs, and co-authored a peer-reviewed DRDO conference paper (ICAAV 2026).
+                  most candidates with early-career experience have only cloned tutorial chatbots. i lead an R&amp;D intern team at Lupex Space on simulation ML pipelines where numerical stability is paramount, and co-authored a peer-reviewed DRDO conference paper (ICAAV 2026).
                 </p>
               </div>
               <div className="p-2.5 bg-black/40 border-l-2 border-white/40 rounded-r">
@@ -326,7 +326,7 @@ export default function RecruiterDossierModal({ isOpen, onClose }) {
             >
               <div className="flex items-center gap-2">
                 <span className="font-mono text-xs text-white/50 group-hover:text-white">[ 2 ]</span>
-                <span className="text-xs sm:text-sm">download ml & aerospace resume</span>
+                <span className="text-xs sm:text-sm">download ml & systems resume</span>
               </div>
               <span className="font-mono text-[10px] text-white/40">pdf</span>
             </a>
