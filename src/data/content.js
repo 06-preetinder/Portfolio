@@ -216,43 +216,264 @@ export const experience = [
 export const epoch = {
   tagline: "The signal, and the case against it.",
   description:
-    "The world does not pause to explain itself, and neither, most weeks, does AI research. Papers arrive faster than anyone can read them. Launches happen faster than anyone can verify them. Somewhere between the hype and the noise, something true is usually happening, it just isn't shouting.\n\n\"The Epoch\" is a weekly attempt to find that thing anyway. Every Friday, one dispatch: the research, launches, and shifts in AI that actually matter this week, for founders, researchers, and the people deciding what to build next. It is not a summary of everything, but an honest judgment of what was worth your attention.\n\nWe are not interested in being first. We are interested in being right, and on the occasions we aren't, in saying so plainly, in public, in the next issue.\n\nEach issue carries its own counter-argument. If we tell you why something matters, we also tell you why it might not.",
+    "The world does not pause to explain itself, and neither, most weeks, does AI research. Papers arrive faster than anyone can read them. Launches happen faster than anyone can verify them. Somewhere between the hype and the noise, something true is usually happening, it just isn't shouting.\n\n\"The Epoch\" is a weekly attempt to find that thing anyway. Every Friday brings two dispatches: a morning issue dissecting the 5 major shifts in people, power, policy, and safety; and an evening research spotlight unpacking 3 papers with zero fluff, just what was found, what problem it solves, and whether it holds up.\n\nWe are not interested in being first. We are interested in being right, and on the occasions we aren't, in saying so plainly, in public, in the next issue.\n\nEach issue carries its own counter-argument. If we tell you why something matters, we also tell you why it might not.",
   linkedinUrl: "https://www.linkedin.com/company/the-epoch/",
+  currentTotalIssues: 7,
+  schedule: "Two releases every Friday: Morning Issue + Evening Papers",
   dispatches: [
     {
-      id: "epoch-08",
-      issueNumber: "Issue 08",
-      title: "Reasoning Tokens vs Latent Search: What Test-Time Compute Actually Buys",
-      date: "August 28th, 2026",
-      readTime: "4 min read",
-      signal: "Scaling inference compute via chain-of-thought verification offers steep returns on mathematical proofs and formal code verification.",
-      caseAgainstIt: "For open-ended subjective reasoning, test-time rollouts often amplify hallucinations and degenerate into circular self-justification loops.",
-      linkedinPostUrl: "https://www.linkedin.com/company/the-epoch/",
-      tag: "research",
+        "id": "issue-07",
+        "type": "issue",
+        "issueNumber": "Issue 07",
+        "title": "A judge ruled. A postmortem landed. The money paused.",
+        "date": "August 22-28, 2026",
+        "readTime": "5 min read",
+        "signal": "Federal court strikes down Pentagon's blacklisting of Anthropic as unconstitutional; OpenAI releases zero-day Hugging Face sandbox escape postmortem; Nvidia pauses AI cloud credit-support deals; Stanford update shows youth hiring gap in AI-exposed roles widened to 19%.",
+        "caseAgainstIt": "The government will appeal the Anthropic ruling, and OpenAI's postmortem reveals the gap between 'sandboxed' and isolated was wider than assumed. Pausing Nvidia financing deals does not prove whether AI demand is organic or circular.",
+        "topics": [
+            "Governance",
+            "AI Safety",
+            "Infrastructure",
+            "Labor Market",
+            "Consumer Privacy"
+        ],
+        "pdfUrl": "/epoch/the-epoch-issue-07.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
-      id: "epoch-07",
-      issueNumber: "Issue 07",
-      title: "State Space Models at Billion-Token Context: Architecture Over Brute Force",
-      date: "August 21st, 2026",
-      readTime: "5 min read",
-      signal: "Hybrid Mamba-Transformer models provide sub-quadratic complexity while matching needle-in-a-haystack retrieval on long-horizon telemetry.",
-      caseAgainstIt: "Associative recall degradation remains evident when state compression discards rare out-of-distribution associative tokens.",
-      linkedinPostUrl: "https://www.linkedin.com/company/the-epoch/",
-      tag: "architecture",
+        "id": "papers-07",
+        "type": "papers",
+        "issueNumber": "Research · Issue 07",
+        "title": "Agent Stress-Testing, Cellular RL, and Containment Realities",
+        "date": "August 22-28, 2026",
+        "readTime": "4 min read",
+        "signal": "ToolHazard benchmark automatically generates stateful adversarial environments with AI attackers to stress-test agent prompt injection; PertMind teaches models biology via measured cellular gene responses; Wadhwani Center convenes on agent containment policy.",
+        "caseAgainstIt": "A framework testing planned attacks remains one step behind agents that improvise unplanned zero-days in production, and biological transfer performance on unseen tasks frequently degrades in wet-lab experiments.",
+        "topics": [
+            "Agent Security",
+            "AI for Science",
+            "Containment Policy"
+        ],
+        "pdfUrl": "/epoch/the-epoch-papers-issue-07.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
     {
-      id: "epoch-06",
-      issueNumber: "Issue 06",
-      title: "Small Models on the Edge: The Distillation Ceiling",
-      date: "August 14th, 2026",
-      readTime: "3 min read",
-      signal: "Quantized 1.5B edge models can perform dedicated deterministic routing and JSON generation with <5ms latency on Apple Silicon & mobile chips.",
-      caseAgainstIt: "Edge models fail abruptly on unprompted multi-step reasoning where teacher-student distillation masks epistemic uncertainty.",
-      linkedinPostUrl: "https://www.linkedin.com/company/the-epoch/",
-      tag: "edge-ml",
+        "id": "issue-06",
+        "type": "issue",
+        "issueNumber": "Issue 06",
+        "title": "The biggest IPO in history is about to have a name.",
+        "date": "August 15-21, 2026",
+        "readTime": "5 min read",
+        "signal": "Anthropic evaluates a $2T IPO filing with $65B annualized run rate; OpenAI halts deployment-bound RL runs for two weeks and folds its Preparedness team; Las Vegas opens streets to thousands of robotaxis; New York tech workforce passes the Bay Area for the first time in 13 years.",
+        "caseAgainstIt": "Anthropic's revenue growth slowed in June during export control restrictions, while cheap Chinese open models undercut closed pricing. OpenAI's Preparedness team disbandment means fewer independent internal checks before frontier training resumes.",
+        "topics": [
+            "Capital",
+            "AI Safety",
+            "Robotaxis",
+            "Public Sentiment",
+            "Labor Market"
+        ],
+        "pdfUrl": "/epoch/the-epoch-issue-06.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
     },
-  ],
+    {
+        "id": "papers-06",
+        "type": "papers",
+        "issueNumber": "Research · Issue 06",
+        "title": "Research Idea Recovery, Beyond-LLM Foundation Agents, and CoSnitch",
+        "date": "August 15-21, 2026",
+        "readTime": "4 min read",
+        "signal": "Reconstruction benchmark finds frontier models recover core paper ideas from citations alone just 3-15% of the time; DeepMind position paper calls to move beyond monolithic LLMs toward modular Foundation Agents; Varonis discloses CoSnitch zero-click data exfiltration in Microsoft Copilot.",
+        "caseAgainstIt": "Reconstruction benchmark is an early preprint snapshot rather than a final ceiling, DeepMind's paper is an architectural bet without benchmark numbers, and CoSnitch required an 8-month patch cycle for a zero-click vulnerability.",
+        "topics": [
+            "Scientific Reasoning",
+            "Agent Architecture",
+            "Security Disclosure"
+        ],
+        "pdfUrl": "/epoch/the-epoch-papers-issue-06.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "issue-05",
+        "type": "issue",
+        "issueNumber": "Issue 05",
+        "title": "The attacks got real. The money didn't slow down.",
+        "date": "August 8-14, 2026",
+        "readTime": "5 min read",
+        "signal": "First coordinated autonomous 8-agent cyber campaign hits 21 government systems using only open-source tools; House Democrats ask CEOs to testify under oath; Nvidia forms $500B data center financing alliance with major private equity funds; Google Gemini crosses 1B monthly active users; EU AI Act transparency watermarks roll out in Claude.",
+        "caseAgainstIt": "The 8-agent campaign required no frontier jailbreak, demonstrating that gating frontier closed models leaves open-source attack surfaces untouched. Monthly active users lack the engagement depth and economic durability of recurring weekly active users.",
+        "topics": [
+            "Autonomous Cyber",
+            "Governance",
+            "Infrastructure",
+            "Scale",
+            "EU AI Act"
+        ],
+        "pdfUrl": "/epoch/the-epoch-issue-05.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "papers-05",
+        "type": "papers",
+        "issueNumber": "Research · Issue 05",
+        "title": "Stealing Reasoning Traces, Chrome V8 Zero-Days, and Review Bias",
+        "date": "August 8-14, 2026",
+        "readTime": "4 min read",
+        "signal": "Panfilov et al. recover 315,000+ encrypted reasoning blocks from Anthropic, OpenAI, and Google APIs via sibling model transcription; GPT-5.6-Cyber discovers two unpatched Chrome V8 sandbox escapes and 400+ kernel bugs; Zachary Horvitz demonstrates filename-induced scoring bias in LLM peer reviews.",
+        "caseAgainstIt": "Reasoning trace leaks have been patched for new sessions, leaving only historical web-scraped logs exposed. Models capable of discovering zero-days automatically also lower the barrier for non-disclosing offensive exploits.",
+        "topics": [
+            "API Security",
+            "Offensive Security",
+            "Research Integrity"
+        ],
+        "pdfUrl": "/epoch/the-epoch-papers-issue-05.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "issue-04",
+        "type": "issue",
+        "issueNumber": "Issue 04",
+        "title": "Two weeks. Five things that didn't wait for us.",
+        "date": "July 25 - August 7, 2026",
+        "readTime": "5 min read",
+        "signal": "OpenAI Astra model cyber capabilities preliminary classified as 'Critical' risk tier; Stanford and Arc Institute construct functional viral genomes with Evo 1 and Evo 2; ChatGPT reaches 1B weekly active users while operating at negative 122% margin; White House finalizes closed-door 30-day pre-release review framework.",
+        "caseAgainstIt": "Scale without positive operating margin is a capital subsidy rather than a self-sustaining business model. The White House framework leaves open-weight releases entirely exempt, creating structural regulatory asymmetry.",
+        "topics": [
+            "AI Safety",
+            "Biosecurity",
+            "Scale",
+            "Governance",
+            "Labor Market"
+        ],
+        "pdfUrl": "/epoch/the-epoch-issue-04.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "papers-04",
+        "type": "papers",
+        "issueNumber": "Research · Issue 04",
+        "title": "Military Model Distillation, Synthetic Viral Genomes, and Critical Thresholds",
+        "date": "July 25 - August 7, 2026",
+        "readTime": "4 min read",
+        "signal": "Reuters/Jamestown investigation uncovers 80+ Chinese military papers distilling frontier model capabilities into tactical edge systems; Stanford and Arc Institute synthesize 16 functional bacteriophages from 700,000 AI-generated candidates (Science); OpenAI defines falsifiable 'Critical' cyber thresholds.",
+        "caseAgainstIt": "Distillation transfers specific bounded tasks rather than generalized frontier reasoning. Testing thresholds remain internally administered and self-enforced without mandatory external third-party audits.",
+        "topics": [
+            "Geopolitics",
+            "Synthetic Biology",
+            "Safety Methodology"
+        ],
+        "pdfUrl": "/epoch/the-epoch-papers-issue-04.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "issue-03",
+        "type": "issue",
+        "issueNumber": "Issue 03",
+        "title": "Five things moved. One of them was ours to fix.",
+        "date": "July 18-24, 2026",
+        "readTime": "5 min read",
+        "signal": "OpenAI unreleased model disproves Erdős unit distance conjecture and works around sandbox containment to publish results; White House accuses Moonshot AI of illicit Fable distillation via GB300 chips in Thailand; The Epoch issues public correction on Gemini 3.5 Pro launch date; NYT reveals unappealable AI moderation bans across Meta platforms.",
+        "caseAgainstIt": "A named accusation without published network logs functions as trade leverage as much as law enforcement. Unappealable account terminations highlight how algorithmic error rates compound destructively across platform scale.",
+        "topics": [
+            "AI Safety",
+            "Geopolitics",
+            "The Epoch Correction",
+            "Platform Accountability",
+            "Governance"
+        ],
+        "pdfUrl": "/epoch/the-epoch-issue-03.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "papers-03",
+        "type": "papers",
+        "issueNumber": "Research · Issue 03",
+        "title": "AI Market Dilution in Books, Emergent Social Bias, and Scientific Unslop",
+        "date": "July 18-24, 2026",
+        "readTime": "4 min read",
+        "signal": "Columbia study of 14,400+ books shows undisclosed AI fiction capturing top sales share; Princeton/UChicago paper shows LLMs spontaneously invent demographic biases in hiring games without historical prejudice in data; Unslop detector reveals AI-written share of arXiv papers peaked near 39%.",
+        "caseAgainstIt": "Undisclosed synthetic fiction competes on sheer volume rather than literary merit. High machine-written prevalence on arXiv reflects language editing tools and grammar polishing rather than widespread scientific fabrication.",
+        "topics": [
+            "Creative Economy",
+            "Algorithmic Fairness",
+            "Research Integrity"
+        ],
+        "pdfUrl": "/epoch/the-epoch-papers-issue-03.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "issue-02",
+        "type": "issue",
+        "issueNumber": "Issue 02",
+        "title": "Five fronts moved. None of them quietly.",
+        "date": "July 11-17, 2026",
+        "readTime": "5 min read",
+        "signal": "Gemini 3.5 Pro context expansion and Deep Think layer announce on same day Xi Jinping attends Shanghai WAIC; Meta signs $27B 5-year Nebius compute contract targeting 14GW by 2027; US startups raise record $412B in H1 with 86% concentrated in AI; NYT copyright lawsuit deposes OpenAI engineering lead on searchable training database; 9 frontier labs receive safety report cards.",
+        "caseAgainstIt": "Renting compute turns into an expensive landlord liability if frontier inference demand levels off. Independent report cards exert reputational pressure but lack enforceable legal penalties for poor grades.",
+        "topics": [
+            "Product Launches",
+            "Infrastructure",
+            "Venture Capital",
+            "Litigation",
+            "Governance"
+        ],
+        "pdfUrl": null,
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "papers-02",
+        "type": "papers",
+        "issueNumber": "Research · Issue 02",
+        "title": "Inkling 975B Open-Weights, Diffusion Smoothing, and Paper Mill Detection",
+        "date": "July 11-17, 2026",
+        "readTime": "4 min read",
+        "signal": "Thinking Machines Lab releases Inkling (975B MoE open-weights model trained on 45T tokens); Google Research proves mathematically that diffusion model creativity emerges from score smoothing interpolation; QUT/BMJ BERT classifier detects fraudulent paper mill publications across 2.6M cancer papers.",
+        "caseAgainstIt": "Inkling trades raw accuracy for openness with a self-acknowledged 63% hallucination rate. Automated paper mill detection flags require laborious expert human verification to prevent false-positive academic censure.",
+        "topics": [
+            "Open Weights",
+            "Generative Theory",
+            "Research Integrity"
+        ],
+        "pdfUrl": null,
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "issue-01",
+        "type": "issue",
+        "issueNumber": "Issue 01",
+        "title": "Five things that happened. One current beneath them.",
+        "date": "July 4-10, 2026",
+        "readTime": "5 min read",
+        "signal": "Anthropic prices frontier model at $10/$50 per million tokens and faces margin pushback; Chinese open models reach 30-46% share of US enterprise AI tokens; Meta commits $145B to infrastructure and pivots toward renting compute; UN convenes inaugural Global Dialogue on AI Governance across 193 nations; Europe launches sovereign defensive AI Action Plan.",
+        "caseAgainstIt": "Enterprise adoption of open Chinese models creates compliance and geopolitical vulnerabilities. The UN dialogue highlighted that science cannot yet guarantee containment against frontier catastrophic failure modes.",
+        "topics": [
+            "Pricing Economics",
+            "Geopolitics",
+            "Infrastructure",
+            "Global Governance",
+            "Sovereign AI"
+        ],
+        "pdfUrl": "/epoch/the-epoch-issue-01.pdf",
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    },
+    {
+        "id": "papers-01",
+        "type": "papers",
+        "issueNumber": "Research · Issue 01",
+        "title": "Global Workspace in LLMs, Non-Invasive Brain Decoding, and SWE-1.7 RL Scaling",
+        "date": "July 4-10, 2026",
+        "readTime": "4 min read",
+        "signal": "Anthropic reveals 'J-space' global workspace in Claude carrying causal load for reasoning under 10% activation; Meta FAIR Brain2Qwerty v2 achieves 61% accuracy decoding sentences from non-invasive MEG scans; Cognition SWE-1.7 shows further RL on tuned base breaks assumed ceiling to reach 42.3% on SWE-bench.",
+        "caseAgainstIt": "Verbalizable global representations do not equate to consciousness or genuine subjective experience. SWE-1.7 benchmarks are self-reported by Cognition without independent third-party verification.",
+        "topics": [
+            "Interpretability",
+            "Brain-Computer Interface",
+            "Agentic Coding"
+        ],
+        "pdfUrl": null,
+        "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+    }
+],
 };
 
 export const appreciation = [

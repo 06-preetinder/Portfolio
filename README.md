@@ -57,8 +57,9 @@ Built for **Preetinderjeet Singh (Indra)** · AI & Agentic Engineer, Aerospace R
 - Paired with authentic candid photography (wooden chessboards with teacups, gothic vaulted library corridors).
 
 ### 6. The Epoch AI Digest (`EpochSection.jsx` & `Epoch.jsx`)
-- Weekly artificial intelligence research dispatch: *"The signal, and the case against it."*
-- Live LinkedIn integration fetching the latest issue metadata, signal, and counter-argument.
+- **Dual Friday Cadence**: Covers the two weekly releases—the morning 5-story briefing and the evening 3-paper research breakdown across all 7 published issues (14 releases total).
+- **Interactive Release Filtering**: Seamlessly toggle between All Releases, Weekly Issues, and Research Paper editions.
+- **Dual-Perspective Analysis**: Every entry documents **The Signal** alongside the signature **Case Against It** (counter-argument), complete with direct PDF slide downloads and LinkedIn dispatch links.
 
 ### 7. Interactive Q&A Section (`QuestionsSection.jsx`)
 - **Instant Email Delivery**: Connects to `formsubmit.co/ajax/singhpreetinder229@gmail.com` to dispatch questions directly to Preetinder's inbox.
