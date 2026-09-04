@@ -2,9 +2,9 @@ import { authorCollage } from "../data/content";
 
 export default function AuthorsCollage() {
   return (
-    <section className="relative z-10 flex flex-col items-center justify-center px-4 pt-12 md:px-16 lg:px-24 pb-16 font-serif">
+    <section className="relative z-10 flex flex-col items-center justify-center px-3 sm:px-4 pt-12 md:px-16 lg:px-24 pb-16 font-serif overflow-hidden">
       {/* Pod container */}
-      <div className="vignette-pod max-w-5xl w-full p-6 md:p-12 rounded-3xl">
+      <div className="vignette-pod max-w-5xl w-full p-4 sm:p-6 md:p-12 rounded-2xl md:rounded-3xl overflow-hidden">
         {/* Header with divine gold accent */}
         <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-8 px-2 md:px-0">
           <div>
@@ -25,9 +25,9 @@ export default function AuthorsCollage() {
           {authorCollage.map((item, idx) => (
             <div
               key={idx}
-              className="relative p-5 bg-black/70 border-hairline transition-all duration-300 hover:scale-[1.02] hover:z-20 group"
+              className="author-card relative p-4 sm:p-5 bg-black/70 border-hairline transition-all duration-300 hover:scale-[1.02] hover:z-20 group"
               style={{
-                transform: `rotate(${item.rot})`,
+                "--rot": item.rot,
                 boxShadow: "0 10px 30px -10px rgba(0,0,0,0.8)",
               }}
             >

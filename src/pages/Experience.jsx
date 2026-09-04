@@ -2,7 +2,7 @@ import { experience } from "../data/content";
 
 export default function Experience() {
   return (
-    <div className="min-h-screen bg-black text-white font-serif px-6 md:px-16 lg:px-24 pt-32 pb-24">
+    <div className="min-h-screen bg-black text-white font-serif px-4 sm:px-6 md:px-16 lg:px-24 pt-28 md:pt-32 pb-24">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-5xl lowercase glow-text mb-2">experience / credits</h1>
         <p className="text-white/70 text-base mb-12">
@@ -13,7 +13,7 @@ export default function Experience() {
           {experience.map((e) => (
             <div
               key={e.cat}
-              className="border-hairline p-6 md:p-8 bg-black/50 hover:border-white transition-all"
+              className="border-hairline p-4 sm:p-6 md:p-8 bg-black/50 hover:border-white transition-all"
             >
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-3">
                 <div>

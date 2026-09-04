@@ -2,8 +2,8 @@ import { appreciation } from "../data/content";
 
 export default function AppreciationSection() {
   return (
-    <div className="relative z-10 flex items-center justify-center px-4 pt-8 md:px-16 lg:px-24 pb-4">
-      <div className="vignette-pod max-w-5xl w-full p-4 md:p-12 rounded-3xl">
+    <div className="relative z-10 flex items-center justify-center px-3 sm:px-4 pt-8 md:px-16 lg:px-24 pb-4 overflow-hidden">
+      <div className="vignette-pod max-w-5xl w-full p-4 md:p-12 rounded-3xl overflow-hidden">
         <p className="text-white text-sm md:text-base leading-relaxed mb-8 px-4 md:px-0 font-serif lowercase">
           appreciation section. many kind words have been{" "}
           <a href="#questions" className="underline hover:opacity-80">

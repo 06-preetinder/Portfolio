@@ -25,7 +25,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-[#c4a7e7]/30">
+    <div className="min-h-screen bg-black text-white selection:bg-[#c4a7e7]/30 overflow-x-hidden">
       <Nav />
       <main>
         <Routes>

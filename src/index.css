@@ -18,6 +18,8 @@
 html {
   scroll-behavior: smooth;
   background-color: #000000;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -28,6 +30,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 ::selection {
@@ -101,7 +105,7 @@ body {
   }
 }
 
-/* Tilted Appreciation Cards */
+/* Tilted Appreciation & Author Cards */
 .appreciation-card {
   border: 0.5px solid white;
   border-radius: 0.125rem;
@@ -111,10 +115,23 @@ body {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
+.author-card {
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
 .appreciation-card:hover {
   transform: rotate(0deg) scale(1.04);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.22);
   z-index: 20;
+}
+
+@media (max-width: 640px) {
+  .appreciation-card,
+  .author-card {
+    max-width: calc(100vw - 32px);
+    transform: rotate(calc(var(--rot, 0deg) * 0.2)) !important;
+  }
 }
 
 /* Sleek Thoughts & Questions Scrollbar */

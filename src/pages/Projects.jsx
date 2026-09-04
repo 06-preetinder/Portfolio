@@ -2,7 +2,7 @@ import { projects } from "../data/content";
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-black text-white font-serif px-6 md:px-16 lg:px-24 pt-32 pb-24">
+    <div className="min-h-screen bg-black text-white font-serif px-4 sm:px-6 md:px-16 lg:px-24 pt-28 md:pt-32 pb-24">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-5xl lowercase glow-text mb-2">work / releases</h1>
         <p className="text-white/70 text-base mb-12">
@@ -13,7 +13,7 @@ export default function Projects() {
           {projects.map((p) => (
             <div
               key={p.cat}
-              className="border-hairline p-6 md:p-8 bg-black/50 hover:border-white transition-all flex flex-col md:flex-row gap-6 md:gap-8 items-start"
+              className="border-hairline p-4 sm:p-6 md:p-8 bg-black/50 hover:border-white transition-all flex flex-col md:flex-row gap-6 md:gap-8 items-start"
             >
               <div className="w-full md:w-48 h-48 flex-shrink-0 border-hairline-dim overflow-hidden bg-white/5">
                 <img

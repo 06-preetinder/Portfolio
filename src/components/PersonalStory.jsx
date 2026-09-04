@@ -2,10 +2,10 @@ import { profile } from "../data/content";
 
 export default function PersonalStory() {
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center px-4 pt-8 md:px-16 lg:px-24 pb-8 font-serif">
+    <div className="relative z-10 flex flex-col items-center justify-center px-3 sm:px-4 pt-8 md:px-16 lg:px-24 pb-8 font-serif overflow-hidden">
       {/* Manifesto Pod */}
-      <div className="vignette-pod max-w-4xl w-full p-4 md:p-12 rounded-3xl mb-8">
-        <div className="text-white text-sm md:text-base leading-relaxed space-y-4 px-4 md:px-0 break-words">
+      <div className="vignette-pod max-w-4xl w-full p-4 sm:p-6 md:p-12 rounded-2xl md:rounded-3xl mb-8 overflow-hidden">
+        <div className="text-white text-sm md:text-base leading-relaxed space-y-4 px-2 sm:px-4 md:px-0 break-words">
           <div className="flex items-center justify-between text-white/50 font-mono text-xs border-b border-white/10 pb-2">
             <span>august updates, 8/28/26, 3:14am</span>
             <span>// raw notes</span>
@@ -19,7 +19,7 @@ export default function PersonalStory() {
       </div>
 
       {/* Candid Chess & Discipline Section with subtle Jia-style tilt */}
-      <div className="max-w-4xl w-full px-4 md:px-12">
+      <div className="max-w-4xl w-full px-2 sm:px-4 md:px-12 overflow-hidden">
         <div className="flex flex-col md:flex-row gap-6 items-start w-full">
           <div
             className="flex-1 w-full flex flex-col gap-3 min-w-0"
@@ -54,7 +54,7 @@ export default function PersonalStory() {
               />
             </div>
             <p className="text-white/60 text-xs leading-relaxed lowercase font-mono">
-              [ 30.901° N ] late night walks between hypersonic simulation runs.
+              [ 30.901° N ] late night walks between neural simulation runs.
             </p>
           </div>
         </div>

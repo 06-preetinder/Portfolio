@@ -69,7 +69,7 @@ export default function RecruiterDossierModal({ isOpen, onClose }) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto bg-[#0a0a0a] border border-white/20 rounded-2xl shadow-[0_20px_70px_rgba(0,0,0,0.95)] text-white font-serif p-5 sm:p-8"
+        className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto thoughts-scroll bg-[#0a0a0a] border border-white/20 rounded-2xl shadow-[0_20px_70px_rgba(0,0,0,0.95)] text-white font-serif p-4 sm:p-7 md:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top classified telemetry bar */}
@@ -93,9 +93,9 @@ export default function RecruiterDossierModal({ isOpen, onClose }) {
         </div>
 
         {/* Executive summary statement */}
-        <div className="pt-5 pb-3">
+        <div className="pt-4 pb-2 sm:pt-5 sm:pb-3">
           <div className="flex flex-wrap items-baseline gap-2 mb-1">
-            <h2 className="text-2xl sm:text-3xl lowercase font-normal glow-text">
+            <h2 className="text-xl sm:text-3xl lowercase font-normal glow-text">
               {profile.name}
             </h2>
             <span className="font-mono text-xs text-white/50 lowercase">
@@ -109,30 +109,30 @@ export default function RecruiterDossierModal({ isOpen, onClose }) {
         </div>
 
         {/* Quick telemetry matrix */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3 bg-black/60 border border-white/10 rounded-xl font-mono text-xs my-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 p-2.5 sm:p-3 bg-black/60 border border-white/10 rounded-xl font-mono text-xs my-3 sm:my-4">
           <div>
-            <span className="text-white/40 block text-[10px] uppercase tracking-wider">status</span>
-            <span className="text-white/90">ready to ship</span>
+            <span className="text-white/40 block text-[9px] sm:text-[10px] uppercase tracking-wider">status</span>
+            <span className="text-white/90 text-[11px] sm:text-xs">ready to ship</span>
           </div>
           <div>
-            <span className="text-white/40 block text-[10px] uppercase tracking-wider">academics</span>
-            <span className="text-white/90">B.Tech CS · 8 CGPA</span>
+            <span className="text-white/40 block text-[9px] sm:text-[10px] uppercase tracking-wider">academics</span>
+            <span className="text-white/90 text-[11px] sm:text-xs">B.Tech · 8 CGPA</span>
           </div>
           <div>
-            <span className="text-white/40 block text-[10px] uppercase tracking-wider">publication</span>
-            <span className="text-white/90">ICAAV 2026 (DRDO)</span>
+            <span className="text-white/40 block text-[9px] sm:text-[10px] uppercase tracking-wider">publication</span>
+            <span className="text-white/90 text-[11px] sm:text-xs">ICAAV 2026</span>
           </div>
           <div>
-            <span className="text-white/40 block text-[10px] uppercase tracking-wider">leadership</span>
-            <span className="text-white/90">ML Lead @ Lupex</span>
+            <span className="text-white/40 block text-[9px] sm:text-[10px] uppercase tracking-wider">leadership</span>
+            <span className="text-white/90 text-[11px] sm:text-xs">ML Lead @ Lupex</span>
           </div>
         </div>
 
         {/* 3-Pillar Experience Navigation Tabs */}
-        <div className="flex flex-wrap gap-1.5 border-b border-white/15 pb-2.5 mb-4 text-xs font-mono">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-1.5 border-b border-white/15 pb-2.5 mb-4 text-xs font-mono">
           <button
             onClick={() => setActiveTab("who")}
-            className={`px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+            className={`p-2 sm:px-3 sm:py-1.5 rounded-lg border transition-all cursor-pointer text-center text-[10px] sm:text-xs ${
               activeTab === "who"
                 ? "border-white bg-white/10 text-white font-medium shadow-[0_0_10px_rgba(255,255,255,0.1)]"
                 : "border-white/15 text-white/60 hover:text-white hover:border-white/40 bg-black/40"
@@ -142,27 +142,27 @@ export default function RecruiterDossierModal({ isOpen, onClose }) {
           </button>
           <button
             onClick={() => setActiveTab("what")}
-            className={`px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+            className={`p-2 sm:px-3 sm:py-1.5 rounded-lg border transition-all cursor-pointer text-center text-[10px] sm:text-xs ${
               activeTab === "what"
                 ? "border-white bg-white/10 text-white font-medium shadow-[0_0_10px_rgba(255,255,255,0.1)]"
                 : "border-white/15 text-white/60 hover:text-white hover:border-white/40 bg-black/40"
             }`}
           >
-            [ 02 / what i can do for you ]
+            [ 02 / what i do ]
           </button>
           <button
             onClick={() => setActiveTab("why")}
-            className={`px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+            className={`p-2 sm:px-3 sm:py-1.5 rounded-lg border transition-all cursor-pointer text-center text-[10px] sm:text-xs ${
               activeTab === "why"
                 ? "border-white bg-white/10 text-white font-medium shadow-[0_0_10px_rgba(255,255,255,0.1)]"
                 : "border-white/15 text-white/60 hover:text-white hover:border-white/40 bg-black/40"
             }`}
           >
-            [ 03 / why hire me instead ]
+            [ 03 / why hire me ]
           </button>
           <button
             onClick={() => setActiveTab("timeline")}
-            className={`px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+            className={`p-2 sm:px-3 sm:py-1.5 rounded-lg border transition-all cursor-pointer text-center text-[10px] sm:text-xs ${
               activeTab === "timeline"
                 ? "border-white bg-white/10 text-white font-medium shadow-[0_0_10px_rgba(255,255,255,0.1)]"
                 : "border-white/15 text-white/60 hover:text-white hover:border-white/40 bg-black/40"

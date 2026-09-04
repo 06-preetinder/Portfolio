@@ -24,7 +24,7 @@ export default function AsciiPortrait() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative z-10 flex flex-col items-center justify-center py-20">
+    <div ref={containerRef} className="relative z-10 flex flex-col items-center justify-center py-20 px-4 max-w-full overflow-hidden">
       <div
         className="transition-opacity duration-300 border-hairline-dim p-4 bg-black/60"
         style={{ opacity: Math.min(1, opacity * 1.4), width: "fit-content" }}

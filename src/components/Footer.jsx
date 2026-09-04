@@ -11,7 +11,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex items-center gap-6 font-mono text-xs lowercase">
+        <div className="flex flex-wrap items-center gap-4 sm:gap-6 font-mono text-xs lowercase">
           <a
             href={profile.github}
             target="_blank"

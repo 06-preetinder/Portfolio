@@ -6,14 +6,14 @@ export default function ResumeSection() {
   const activeVersion = resumeVersions.find((r) => r.id === activeVersionId) || resumeVersions[0];
 
   return (
-    <section id="resume" className="relative z-10 flex items-center justify-center px-4 py-12 md:px-16 lg:px-24">
-      <div className="vignette-pod max-w-4xl w-full p-6 md:p-12 rounded-3xl text-white font-serif border-hairline">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/20">
+    <section id="resume" className="relative z-10 flex items-center justify-center px-3 sm:px-4 py-12 md:px-16 lg:px-24">
+      <div className="vignette-pod max-w-4xl w-full p-4 sm:p-6 md:p-12 rounded-2xl md:rounded-3xl text-white font-serif border-hairline">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 pb-6 border-b border-white/20">
           <div>
             <h2 className="text-xl md:text-2xl lowercase glow-text mb-1">
               curriculum vitae / targeted resumes
             </h2>
-            <p className="text-sm text-white/70 font-mono">
+            <p className="text-xs sm:text-sm text-white/70 font-mono">
               [3 specialized tracks: ai agentic, ml & systems, data science]
             </p>
           </div>
@@ -21,7 +21,7 @@ export default function ResumeSection() {
           <a
             href={activeVersion.downloadUrl}
             download
-            className="px-5 py-2.5 border-hairline text-sm lowercase hover:bg-white hover:text-black transition-all cursor-pointer flex items-center gap-2 drop-glow"
+            className="w-full sm:w-auto justify-center px-5 py-2.5 border-hairline text-xs sm:text-sm lowercase hover:bg-white hover:text-black transition-all cursor-pointer flex items-center gap-2 drop-glow"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ export default function ResumeSection() {
           <p className="text-white/60 font-mono text-xs uppercase tracking-wider mb-3">
             Select Track:
           </p>
-          <div className="grid md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {resumeVersions.map((v) => (
               <button
                 key={v.id}

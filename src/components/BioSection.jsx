@@ -2,12 +2,12 @@ import { profile } from "../data/content";
 
 export default function BioSection() {
   return (
-    <section id="about" className="relative z-10 flex items-center justify-center min-h-screen p-4 pt-8 md:p-16 lg:p-24">
-      <div className="vignette-pod flex flex-col md:flex-row items-center md:items-start justify-center gap-6 md:gap-10 max-w-4xl w-full p-4 md:p-12 rounded-3xl">
+    <section id="about" className="relative z-10 flex items-center justify-center min-h-screen p-3 sm:p-4 pt-8 md:p-16 lg:p-24">
+      <div className="vignette-pod flex flex-col md:flex-row items-center md:items-start justify-center gap-6 md:gap-10 max-w-4xl w-full p-4 sm:p-6 md:p-12 rounded-2xl md:rounded-3xl">
         {/* Left Column: Portrait & Short intro */}
-        <div className="flex flex-col items-start md:items-center flex-shrink-0 w-full md:w-auto gap-4 md:gap-0 px-4 md:px-0">
+        <div className="flex flex-col items-start md:items-center flex-shrink-0 w-full md:w-auto gap-4 md:gap-0 px-2 sm:px-4 md:px-0">
           <div className="flex flex-row md:flex-col items-start md:items-center gap-4 md:gap-0 w-full">
-            <div className="w-14 h-14 md:w-[250px] md:h-[250px] flex-shrink-0 border-hairline overflow-hidden bg-black/50">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 md:w-[250px] md:h-[250px] flex-shrink-0 border-hairline overflow-hidden bg-black/50">
               <img
                 src="/projects/five.jpg"
                 alt={profile.name}

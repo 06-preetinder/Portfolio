@@ -395,7 +395,7 @@ export default function Hero() {
       <button
         onClick={() => window.dispatchEvent(new CustomEvent("open-dossier"))}
         aria-label="Open 30-second Recruiter Dossier"
-        className="absolute bottom-9 left-6 md:left-10 z-30 flex items-center gap-2 font-mono text-[11px] text-white/70 hover:text-white border-hairline-dim px-3 py-1.5 bg-black/60 hover:bg-white/10 hover:border-white/50 backdrop-blur-sm rounded-full transition-all cursor-pointer glow-text"
+        className="absolute bottom-20 sm:bottom-9 left-4 sm:left-6 md:left-10 z-30 flex items-center gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-[11px] text-white/75 hover:text-white border-hairline-dim px-2.5 py-1 sm:px-3 sm:py-1.5 bg-black/70 hover:bg-white/10 hover:border-white/50 backdrop-blur-md rounded-full transition-all cursor-pointer glow-text shadow-sm"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-[#c4a7e7] animate-pulse" />
         <span>[ 30s recruiter speedrun ]</span>
@@ -404,20 +404,20 @@ export default function Hero() {
 
       {/* If browser blocked autoplay before user's first gesture, show sleek cue */}
       {!isPlaying && !isMuted && (
-        <div className="absolute bottom-16 right-6 md:right-10 z-30 font-mono text-[10px] text-white/70 border-hairline-dim px-2.5 py-1 bg-black/80 tracking-wider flex items-center gap-2 pointer-events-none animate-pulse">
+        <div className="absolute bottom-16 right-3 sm:right-6 md:right-10 z-30 font-mono text-[9px] sm:text-[10px] text-white/70 border-hairline-dim px-2 py-0.5 sm:px-2.5 sm:py-1 bg-black/80 tracking-wider flex items-center gap-1.5 sm:gap-2 pointer-events-none animate-pulse">
           <span className="w-1.5 h-1.5 rounded-full bg-[#c4a7e7] animate-ping" />
           <span>[ click anywhere to start music ]</span>
         </div>
       )}
 
       {/* Track selector buttons at bottom right */}
-      <div className="absolute bottom-9 right-16 md:right-24 z-30 flex items-center gap-4 md:gap-6 glow-text">
+      <div className="absolute bottom-9 right-11 sm:right-16 md:right-24 z-30 flex items-center gap-2.5 sm:gap-4 md:gap-6 glow-text">
         {tracks.map((t, idx) => (
           <button
             key={t.id}
             onClick={() => handleTrackChange(idx)}
             aria-label={t.label}
-            className="text-white text-xs md:text-sm font-mono hover:opacity-100 transition-opacity cursor-pointer"
+            className="text-white text-xs md:text-sm font-mono hover:opacity-100 transition-opacity cursor-pointer px-0.5"
             style={{
               opacity: activeTrack === idx && !isMuted ? 1 : 0.55,
               filter:
@@ -436,7 +436,7 @@ export default function Hero() {
       <button
         onClick={handleToggleMute}
         aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-        className="absolute bottom-9 right-6 md:right-10 text-white hover:opacity-80 transition-opacity z-30 cursor-pointer drop-glow"
+        className="absolute bottom-9 right-3 sm:right-6 md:right-10 text-white hover:opacity-80 transition-opacity z-30 cursor-pointer drop-glow"
       >
         {isMuted ? (
           <svg

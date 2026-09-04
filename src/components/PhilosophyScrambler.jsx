@@ -87,9 +87,9 @@ export default function PhilosophyScrambler() {
         </div>
 
         {/* Large scrambler typography */}
-        <div className="min-h-[72px] md:min-h-[88px] flex items-center justify-center px-4">
+        <div className="min-h-[72px] md:min-h-[88px] flex items-center justify-center px-2 sm:px-4 w-full max-w-full overflow-hidden">
           <p
-            className={`font-mono text-base md:text-2xl text-white tracking-tight leading-relaxed transition-all duration-300 ${
+            className={`font-mono text-sm sm:text-base md:text-2xl text-white tracking-tight leading-relaxed transition-all duration-300 break-words max-w-full ${
               isScrambling ? "text-white/80" : "glow-text"
             }`}
           >

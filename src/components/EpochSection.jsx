@@ -48,7 +48,7 @@ export default function EpochSection() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 font-mono text-xs">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 font-mono text-xs">
             <span className="flex items-center gap-1.5 text-white/70">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>
@@ -85,7 +85,7 @@ export default function EpochSection() {
         </div>
 
         {/* Filter Navigation Tabs */}
-        <div className="flex items-center gap-2 mb-6 font-mono text-xs">
+        <div className="flex flex-wrap items-center gap-2 mb-6 font-mono text-xs">
           <button
             onClick={() => setFilter("all")}
             className={`px-3 py-1.5 border transition-colors cursor-pointer ${

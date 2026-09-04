@@ -2,15 +2,15 @@ import { projects, publication } from "../data/content";
 
 export default function FeaturedProject() {
   return (
-    <div id="work" className="relative z-10 flex flex-col items-center justify-center px-4 pt-4 md:px-16 lg:px-24 pb-8 font-serif">
+    <div id="work" className="relative z-10 flex flex-col items-center justify-center px-3 sm:px-4 pt-4 md:px-16 lg:px-24 pb-8 font-serif">
       {/* Publication Feature Box */}
-      <div className="vignette-pod max-w-5xl w-full p-6 md:p-10 rounded-3xl mb-12 border-hairline">
+      <div className="vignette-pod max-w-5xl w-full p-4 sm:p-6 md:p-10 rounded-2xl md:rounded-3xl mb-8 sm:mb-12 border-hairline">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-3 border-b border-white/20 pb-3">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs uppercase px-2.5 py-0.5 border border-[#c4a7e7] text-[#c4a7e7]">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <span className="font-mono text-[10px] sm:text-xs uppercase px-2 sm:px-2.5 py-0.5 border border-[#c4a7e7] text-[#c4a7e7]">
               {publication.statusBadge}
             </span>
-            <span className="font-mono text-xs text-white/60">
+            <span className="font-mono text-[11px] sm:text-xs text-white/60">
               {publication.conference}
             </span>
           </div>
@@ -20,7 +20,7 @@ export default function FeaturedProject() {
         <h3 className="text-xl md:text-2xl text-white glow-text mb-2">
           {publication.title}
         </h3>
-        <p className="text-white/80 text-sm leading-relaxed">
+        <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
           {publication.summary}
         </p>
         {publication.authors && (
@@ -31,21 +31,21 @@ export default function FeaturedProject() {
       </div>
 
       {/* 4 Projects Showcase */}
-      <div className="vignette-pod max-w-5xl w-full p-4 md:p-12 rounded-3xl">
-        <div className="flex items-baseline justify-between mb-8 px-4 md:px-0">
+      <div className="vignette-pod max-w-5xl w-full p-3 sm:p-6 md:p-12 rounded-2xl md:rounded-3xl">
+        <div className="flex items-baseline justify-between mb-6 sm:mb-8 px-2 sm:px-4 md:px-0">
           <p className="text-white text-base md:text-lg glow-text lowercase">
             selected builds & research projects ({projects.length})
           </p>
-          <span className="font-mono text-xs text-white/40">
+          <span className="font-mono text-[10px] sm:text-xs text-white/40">
             // strictly verified implementations
           </span>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 px-2 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-1 sm:px-2 md:px-0">
           {projects.map((p, idx) => (
             <div
               key={p.cat}
-              className="border-hairline p-5 bg-black/60 hover:border-white transition-all flex flex-col justify-between group"
+              className="border-hairline p-4 sm:p-5 bg-black/60 hover:border-white transition-all flex flex-col justify-between group"
               style={{
                 transform: idx % 2 === 0 ? "rotate(-0.3deg)" : "rotate(0.3deg)",
               }}
