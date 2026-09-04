@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://portfolio-preets-projects-fdbe4ff9.vercel.app"><strong>Live Site →</strong></a> · 
+  <a href="https://portfolio-indra16.vercel.app/"><strong>Live Site →</strong></a> · 
   <a href="https://github.com/06-preetinder/Portfolio"><strong>GitHub Repository</strong></a> · 
   <a href="https://www.linkedin.com/company/the-epoch/"><strong>The Epoch</strong></a>
 </p>
