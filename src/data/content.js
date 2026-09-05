@@ -239,6 +239,22 @@ export const epoch = {
             ],
             "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
         },
+        {
+            "id": "papers-08",
+            "type": "papers",
+            "issueNumber": "Research · Issue 08",
+            "title": "Erdős Conjecture Disproof, NoRA Normalization, and Native 2K Audio-Video",
+            "date": "August 29 - September 4, 2026",
+            "readTime": "4 min read",
+            "signal": "Epoch AI & Thomas Bloom formalize 68 unsolved Erdős problems in Lean where OpenAI's Astra disproves a decades-old Erdős conjecture and sets a genus-2 curve record; NoRA normalizes LoRA internal matrices during training to prevent catastrophic forgetting across pretraining, SFT, and RL; DreamX-Creator generates native 2K audio and video jointly in a single process rather than post-stitching sound onto silent frames.",
+            "caseAgainstIt": "Solving 5 benchmark problems cost over $220,000 in compute and Astra's disproof is 'ineffective' (proving bounds exist without quantifying size), NoRA delivers training stability rather than new frontier capabilities, and joint 2K audio-video generation claims still require independent production verification beyond author-reported benchmarks.",
+            "topics": [
+                "AI for Mathematics",
+                "Model Training",
+                "Generative Media"
+            ],
+            "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+        },
     {
         "id": "issue-07",
         "type": "issue",
@@ -526,6 +542,10 @@ export const appreciation = [
 ];
 
 export const thoughts = [
+  {
+    date: "sep 4th, 2026, 11:30pm",
+    text: "published Research Issue 08 of The Epoch. Astra breaking Erdős and NoRA normalization. back to neural surrogate training runs.",
+  },
   {
     date: "aug 30th, 2026, 11pm",
     text: "neural surrogate simulation batch 41 finished. 0.94 F1 on aerodynamic re-entry profile. 50 pushups and 2 minute plank before bed.",
