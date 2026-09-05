@@ -18,7 +18,28 @@ export default function Nav() {
             onClick={closeMenu}
             className="flex items-center gap-2 text-white hover:opacity-70 transition-opacity glow-text"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-white/90 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] inline-block" />
+            <span className="relative flex items-center justify-center w-4 h-4 sm:w-4.5 sm:h-4.5 shrink-0 transition-transform">
+              <svg
+                viewBox="0 0 64 64"
+                className="w-full h-full animate-[spin_8s_linear_infinite]"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="32" cy="32" r="30" fill="#05030a" stroke="#c4a7e7" strokeWidth="1" strokeOpacity="0.4" />
+                <g>
+                  <path d="M 32 32 C 40 24 50 26 53 34 C 55 42 46 50 36 50 C 24 50 16 40 17 28 C 18 18 28 12 38 13 C 46 14 52 20 54 26" stroke="#c4a7e7" strokeWidth="3.2" strokeLinecap="round" strokeOpacity="0.9" />
+                  <path d="M 32 32 C 24 40 14 38 11 30 C 9 22 18 14 28 14 C 40 14 48 24 47 36 C 46 46 36 52 26 51 C 18 50 12 44 10 38" stroke="#f6c177" strokeWidth="3.2" strokeLinecap="round" strokeOpacity="0.9" />
+                  <ellipse cx="32" cy="32" rx="16" ry="7" transform="rotate(-28 32 32)" stroke="#ffffff" strokeWidth="2.5" strokeOpacity="0.95" />
+                  <circle cx="48" cy="22" r="2.2" fill="#ffffff" />
+                  <circle cx="16" cy="42" r="2.0" fill="#ffffff" />
+                  <circle cx="20" cy="18" r="1.6" fill="#c4a7e7" />
+                  <circle cx="44" cy="46" r="1.6" fill="#f6c177" />
+                </g>
+                <circle cx="32" cy="32" r="9.5" fill="#c4a7e7" fillOpacity="0.45" />
+                <circle cx="32" cy="32" r="7.5" stroke="#ffffff" strokeWidth="2" />
+                <circle cx="32" cy="32" r="5.5" fill="#000000" />
+              </svg>
+            </span>
             <span className="text-sm md:text-base font-serif tracking-wide font-medium">
               {profile.shortName}
             </span>

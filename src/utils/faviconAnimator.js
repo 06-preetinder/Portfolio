@@ -1,6 +1,7 @@
 /**
  * Celestial Black Hole & Rotating Galaxy Favicon Animator
  * Lightweight, battery-friendly, cross-browser tab icon animator.
+ * Uses DOM node replacement to guarantee real-time Chrome & WebKit tab icon repainting.
  */
 
 class FaviconAnimator {
@@ -9,7 +10,6 @@ class FaviconAnimator {
     this.ctx = null;
     this.angle = 0;
     this.timer = null;
-    this.link = null;
     this.fps = 14; // ~71ms interval for silky rotation with near-zero CPU usage
     this.size = 32;
     this.isInitialized = false;
@@ -37,14 +37,23 @@ class FaviconAnimator {
       });
     }
 
-    // Locate or create the primary favicon link element
-    this.link = document.querySelector("link[rel*='icon']");
-    if (!this.link) {
-      this.link = document.createElement("link");
-      this.link.rel = "icon";
-      document.head.appendChild(this.link);
+    // Clean up competing static favicon links so Chrome listens to the dynamic one
+    const staticIcons = document.querySelectorAll("link[rel*='icon']");
+    staticIcons.forEach((el) => {
+      if (el.id !== "dynamic-favicon") {
+        el.remove();
+      }
+    });
+
+    // Ensure our dynamic favicon element exists
+    let dynamicLink = document.getElementById("dynamic-favicon");
+    if (!dynamicLink) {
+      dynamicLink = document.createElement("link");
+      dynamicLink.id = "dynamic-favicon";
+      dynamicLink.rel = "shortcut icon";
+      dynamicLink.type = "image/png";
+      document.head.appendChild(dynamicLink);
     }
-    this.link.type = "image/png";
 
     // Setup offscreen canvas
     this.canvas = document.createElement("canvas");
@@ -82,7 +91,7 @@ class FaviconAnimator {
     ctx.arc(cx, cy, 15.5, 0, Math.PI * 2);
     ctx.fillStyle = "#05030a";
     ctx.fill();
-    ctx.strokeStyle = "rgba(196, 167, 231, 0.35)";
+    ctx.strokeStyle = "rgba(196, 167, 231, 0.4)";
     ctx.lineWidth = 0.75;
     ctx.stroke();
 
@@ -92,10 +101,10 @@ class FaviconAnimator {
 
     // 4 spiral accretion arms
     const arms = [
-      { offset: 0, color: "rgba(196, 167, 231, 0.9)", width: 2.2 },
-      { offset: Math.PI, color: "rgba(246, 193, 119, 0.9)", width: 2.2 },
-      { offset: Math.PI * 0.5, color: "rgba(156, 207, 216, 0.7)", width: 1.5 },
-      { offset: Math.PI * 1.5, color: "rgba(224, 222, 244, 0.7)", width: 1.5 },
+      { offset: 0, color: "rgba(196, 167, 231, 0.92)", width: 2.3 },
+      { offset: Math.PI, color: "rgba(246, 193, 119, 0.92)", width: 2.3 },
+      { offset: Math.PI * 0.5, color: "rgba(156, 207, 216, 0.75)", width: 1.6 },
+      { offset: Math.PI * 1.5, color: "rgba(224, 222, 244, 0.75)", width: 1.6 },
     ];
 
     arms.forEach((arm) => {
@@ -138,8 +147,8 @@ class FaviconAnimator {
     // Gravitational Lensing Halo (Photon Ring Glow)
     const glowGrad = ctx.createRadialGradient(cx, cy, 3.5, cx, cy, 7.5);
     glowGrad.addColorStop(0, "rgba(255, 255, 255, 0.95)");
-    glowGrad.addColorStop(0.4, "rgba(246, 193, 119, 0.8)");
-    glowGrad.addColorStop(0.8, "rgba(196, 167, 231, 0.6)");
+    glowGrad.addColorStop(0.4, "rgba(246, 193, 119, 0.85)");
+    glowGrad.addColorStop(0.8, "rgba(196, 167, 231, 0.65)");
     glowGrad.addColorStop(1, "rgba(196, 167, 231, 0)");
 
     ctx.beginPath();
@@ -162,8 +171,24 @@ class FaviconAnimator {
   }
 
   updateFavicon() {
-    if (!this.canvas || !this.link) return;
-    this.link.href = this.canvas.toDataURL("image/png");
+    if (!this.canvas) return;
+    try {
+      const dataUrl = this.canvas.toDataURL("image/png");
+      const current = document.getElementById("dynamic-favicon");
+      const newLink = document.createElement("link");
+      newLink.id = "dynamic-favicon";
+      newLink.rel = "shortcut icon";
+      newLink.type = "image/png";
+      newLink.href = dataUrl;
+
+      if (current && current.parentNode) {
+        current.parentNode.replaceChild(newLink, current);
+      } else {
+        document.head.appendChild(newLink);
+      }
+    } catch (e) {
+      // ignore
+    }
   }
 
   renderStatic() {
