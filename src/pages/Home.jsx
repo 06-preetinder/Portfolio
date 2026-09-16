@@ -8,7 +8,6 @@ import PersonalStory from "../components/PersonalStory";
 import AuthorsCollage from "../components/AuthorsCollage";
 import AsciiPortrait from "../components/AsciiPortrait";
 import PhilosophyScrambler from "../components/PhilosophyScrambler";
-import FloatingCursorQuote from "../components/FloatingCursorQuote";
 import ThoughtsSection from "../components/ThoughtsSection";
 import EpochSection from "../components/EpochSection";
 import QuestionsSection from "../components/QuestionsSection";
@@ -16,9 +15,6 @@ import QuestionsSection from "../components/QuestionsSection";
 export default function Home() {
   return (
     <div className="relative bg-black text-white selection:bg-[#c4a7e7]/30 min-h-screen">
-      {/* Mouse-following quote */}
-      <FloatingCursorQuote />
-
       {/* Hero with celestial constellations & divine lightning */}
       <Hero />
 
