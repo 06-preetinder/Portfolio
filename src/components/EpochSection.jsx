@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { epoch } from "../data/content";
 import { fetchEpochLinkedInPosts } from "../utils/linkedinFetcher";
-import EpochConstellation from "./EpochConstellation";
 
 export default function EpochSection() {
   const [filter, setFilter] = useState("all"); // "all", "issue", "papers"
-  const [viewMode, setViewMode] = useState("feed"); // "feed" | "constellation"
   const [feedState, setFeedState] = useState({
     source: "curated",
     posts: epoch.dispatches,
@@ -75,87 +73,53 @@ export default function EpochSection() {
           </div>
         </div>
 
-        {/* Cadence Explainer & Mode Selector */}
+        {/* Cadence Explainer */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs md:text-sm text-white/80 mb-6 bg-white/5 p-4 rounded-xl border border-white/10 font-mono">
           <div className="flex items-center gap-2">
             <span className="text-[#c4a7e7]">⚡ cadence:</span>
             <span>two dispatches every friday (morning issue + evening research)</span>
           </div>
-          {/* View mode toggle */}
-          <div className="flex items-center gap-1.5 bg-black/40 p-1 rounded-lg border border-white/10 self-start sm:self-auto">
-            <button
-              type="button"
-              onClick={() => setViewMode("feed")}
-              className={`px-2.5 py-1 rounded text-[11px] transition-all cursor-pointer ${
-                viewMode === "feed"
-                  ? "bg-white/20 text-white font-semibold shadow-sm"
-                  : "text-white/50 hover:text-white"
-              }`}
-            >
-              📄 feed ({issueCount + paperCount})
-            </button>
-            <button
-              type="button"
-              onClick={() => setViewMode("constellation")}
-              className={`px-2.5 py-1 rounded text-[11px] transition-all cursor-pointer flex items-center gap-1 ${
-                viewMode === "constellation"
-                  ? "bg-[#c4a7e7]/25 text-[#c4a7e7] font-semibold border border-[#c4a7e7]/40 shadow-[0_0_10px_rgba(196,167,231,0.2)]"
-                  : "text-white/50 hover:text-[#c4a7e7]"
-              }`}
-            >
-              <span>✦ constellation</span>
-            </button>
-          </div>
+          <span className="text-white/50 text-[11px]">
+            {issueCount} issues published to date
+          </span>
         </div>
 
-        {/* View Mode Rendering: Either Constellation or Filtered Feed */}
-        {viewMode === "constellation" ? (
-          <EpochConstellation
-            onSelectPost={() => {
-              // User clicked a post, could switch to feed view or view post
-            }}
-          />
-        ) : (
-          <>
-            {/* Filter Navigation Tabs */}
-            <div className="flex flex-wrap items-center gap-2 mb-6 font-mono text-xs">
-              <button
-                type="button"
-                onClick={() => setFilter("all")}
-                className={`px-3 py-1.5 border transition-colors cursor-pointer ${
-                  filter === "all"
-                    ? "border-white bg-white/10 text-white shadow-[0_0_10px_rgba(255,255,255,0.15)]"
-                    : "border-white/20 text-white/60 hover:text-white hover:border-white/50"
-                }`}
-              >
-                all releases ({feedState.posts.length})
-              </button>
-              <button
-                type="button"
-                onClick={() => setFilter("issue")}
-                className={`px-3 py-1.5 border transition-colors cursor-pointer ${
-                  filter === "issue"
-                    ? "border-white bg-white/10 text-white shadow-[0_0_10px_rgba(255,255,255,0.15)]"
-                    : "border-white/20 text-white/60 hover:text-white hover:border-white/50"
-                }`}
-              >
-                weekly issues ({issueCount})
-              </button>
-              <button
-                type="button"
-                onClick={() => setFilter("papers")}
-                className={`px-3 py-1.5 border transition-colors cursor-pointer ${
-                  filter === "papers"
-                    ? "border-[#c4a7e7] bg-[#c4a7e7]/10 text-[#c4a7e7] shadow-[0_0_10px_rgba(196,167,231,0.2)]"
-                    : "border-white/20 text-white/60 hover:text-white hover:border-white/50"
-                }`}
-              >
-                research papers ({paperCount})
-              </button>
-            </div>
+        {/* Filter Navigation Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-6 font-mono text-xs">
+          <button
+            onClick={() => setFilter("all")}
+            className={`px-3 py-1.5 border transition-colors cursor-pointer ${
+              filter === "all"
+                ? "border-white bg-white/10 text-white shadow-[0_0_10px_rgba(255,255,255,0.15)]"
+                : "border-white/20 text-white/60 hover:text-white hover:border-white/50"
+            }`}
+          >
+            all releases ({feedState.posts.length})
+          </button>
+          <button
+            onClick={() => setFilter("issue")}
+            className={`px-3 py-1.5 border transition-colors cursor-pointer ${
+              filter === "issue"
+                ? "border-white bg-white/10 text-white shadow-[0_0_10px_rgba(255,255,255,0.15)]"
+                : "border-white/20 text-white/60 hover:text-white hover:border-white/50"
+            }`}
+          >
+            weekly issues ({issueCount})
+          </button>
+          <button
+            onClick={() => setFilter("papers")}
+            className={`px-3 py-1.5 border transition-colors cursor-pointer ${
+              filter === "papers"
+                ? "border-[#c4a7e7] bg-[#c4a7e7]/10 text-[#c4a7e7] shadow-[0_0_10px_rgba(196,167,231,0.2)]"
+                : "border-white/20 text-white/60 hover:text-white hover:border-white/50"
+            }`}
+          >
+            research papers ({paperCount})
+          </button>
+        </div>
 
-            {/* Dispatches List (Contained scrollable feed to keep page length elegant) */}
-            <div className="max-h-[640px] overflow-y-auto thoughts-scroll pr-1.5 sm:pr-2 space-y-4">
+        {/* Dispatches List (Contained scrollable feed to keep page length elegant) */}
+        <div className="max-h-[640px] overflow-y-auto thoughts-scroll pr-1.5 sm:pr-2 space-y-4">
           {filteredPosts.map((post) => (
             <div
               key={post.id}
@@ -231,8 +195,6 @@ export default function EpochSection() {
             <span>scroll feed · two releases every friday</span>
           </span>
         </div>
-        </>
-      )}
       </div>
     </section>
   );

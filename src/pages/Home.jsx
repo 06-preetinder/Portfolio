@@ -3,7 +3,6 @@ import MemeMarquee from "../components/MemeMarquee";
 import BioSection from "../components/BioSection";
 import LiveTerminal from "../components/LiveTerminal";
 import FeaturedProject from "../components/FeaturedProject";
-import GitHubHeatmap from "../components/GitHubHeatmap";
 import ResumeSection from "../components/ResumeSection";
 import AppreciationSection from "../components/AppreciationSection";
 import PersonalStory from "../components/PersonalStory";
@@ -37,9 +36,6 @@ export default function Home() {
 
       {/* 4 Projects Showcase & Publication */}
       <FeaturedProject />
-
-      {/* Engineering Activity Heatmap */}
-      <GitHubHeatmap />
 
       {/* Targeted Resume Center */}
       <ResumeSection />

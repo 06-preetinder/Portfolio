@@ -64,7 +64,7 @@ export default function LiveTerminal() {
     ...COMMAND_OUTPUTS.status,
   ]);
   const [inputVal, setInputVal] = useState("");
-  const terminalBottomRef = useRef(null);
+  const scrollContainerRef = useRef(null);
 
   const executeCommand = (cmdStr) => {
     const trimmed = cmdStr.trim().toLowerCase();
@@ -99,14 +99,16 @@ export default function LiveTerminal() {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
+      e.preventDefault();
       executeCommand(inputVal);
       setInputVal("");
     }
   };
 
+  // Only scroll the internal terminal container, NEVER scroll the browser window
   useEffect(() => {
-    if (terminalBottomRef.current) {
-      terminalBottomRef.current.scrollIntoView({ behavior: "smooth" });
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
     }
   }, [history]);
 
@@ -137,7 +139,10 @@ export default function LiveTerminal() {
             <button
               key={item.cmd}
               type="button"
-              onClick={() => executeCommand(item.cmd)}
+              onClick={(e) => {
+                e.preventDefault();
+                executeCommand(item.cmd);
+              }}
               className="px-2 py-0.5 border border-white/15 hover:border-[#c4a7e7] text-white/70 hover:text-white bg-white/5 rounded text-[11px] transition-colors cursor-pointer"
             >
               $ {item.cmd}
@@ -147,6 +152,7 @@ export default function LiveTerminal() {
 
         {/* Terminal Output Body */}
         <div
+          ref={scrollContainerRef}
           className="thoughts-scroll overflow-y-auto space-y-1.5 pr-2"
           style={{ maxHeight: "240px", minHeight: "160px" }}
         >
@@ -155,7 +161,6 @@ export default function LiveTerminal() {
               {line.text}
             </div>
           ))}
-          <div ref={terminalBottomRef} />
         </div>
 
         {/* Interactive Prompt Input */}
