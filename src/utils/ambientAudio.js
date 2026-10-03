@@ -125,6 +125,29 @@ class AudioEngine {
     return this.isMuted;
   }
 
+  setVolume(vol) {
+    const clamped = Math.max(0, Math.min(1, vol));
+    this.targetVolume = clamped;
+    if (clamped === 0) {
+      this.isMuted = true;
+      if (this.audio) this.audio.volume = 0;
+    } else {
+      this.isMuted = false;
+      if (!this.audio) {
+        this.playTrack(this.currentTrack);
+      } else {
+        this.audio.volume = clamped;
+        if (this.audio.paused) {
+          this.audio.play().catch(() => {});
+        }
+      }
+    }
+  }
+
+  getVolume() {
+    return this.targetVolume;
+  }
+
   stop() {
     if (this.fadeInterval) clearInterval(this.fadeInterval);
     if (this.audio) {
