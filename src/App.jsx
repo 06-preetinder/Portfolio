@@ -7,6 +7,9 @@ import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Epoch from "./pages/Epoch";
 import RecruiterDossierModal from "./components/RecruiterDossierModal";
+import AmbientCursorTrail from "./components/AmbientCursorTrail";
+import ParallaxStarfield from "./components/ParallaxStarfield";
+import TerminalBootIntro from "./components/TerminalBootIntro";
 
 export default function App() {
   const [isDossierOpen, setIsDossierOpen] = useState(false);
@@ -25,9 +28,16 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-[#c4a7e7]/30 overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white selection:bg-[#c4a7e7]/30 overflow-x-hidden relative">
+      {/* Background Parallax Starfield & Ambient Cursor Particle Trail */}
+      <ParallaxStarfield />
+      <AmbientCursorTrail />
+
+      {/* Cinematic First-Time Terminal Boot Sequence */}
+      <TerminalBootIntro />
+
       <Nav />
-      <main>
+      <main className="relative z-10">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />

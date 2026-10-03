@@ -410,68 +410,115 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Track selector buttons at bottom right */}
-      <div className="absolute bottom-9 right-11 sm:right-16 md:right-24 z-30 flex items-center gap-2.5 sm:gap-4 md:gap-6 glow-text">
-        {tracks.map((t, idx) => (
-          <button
-            key={t.id}
-            onClick={() => handleTrackChange(idx)}
-            aria-label={t.label}
-            className="text-white text-xs md:text-sm font-mono hover:opacity-100 transition-opacity cursor-pointer px-0.5"
-            style={{
-              opacity: activeTrack === idx && !isMuted ? 1 : 0.55,
-              filter:
-                activeTrack === idx && !isMuted
-                  ? "drop-shadow(0 0 12px rgba(255,255,255,0.8))"
-                  : "none",
-            }}
-          >
-            <span className="md:hidden">{idx + 1}</span>
-            <span className="hidden md:inline">{t.label}</span>
-          </button>
-        ))}
-      </div>
+      {/* Interactive Now Playing & Track Controls */}
+      <div className="absolute bottom-9 right-3 sm:right-6 md:right-10 z-30 flex items-center gap-2.5 sm:gap-4 md:gap-5">
+        {/* Animated Now Playing Pill */}
+        <button
+          type="button"
+          onClick={handleToggleMute}
+          title={isMuted ? "Audio muted - click to play" : `Playing: ${tracks[activeTrack].label}`}
+          className="hidden sm:flex items-center gap-2 font-mono text-[10px] text-white/75 border-hairline-dim px-2.5 py-1 bg-black/70 hover:bg-white/10 hover:border-white/50 backdrop-blur-md rounded-full transition-all cursor-pointer glow-text shadow-sm"
+        >
+          {/* Waveform Equalizer Bars */}
+          <div className="flex items-end gap-[2px] h-3.5 w-3.5 justify-center">
+            <span
+              className={`w-[2px] rounded-full transition-all ${
+                !isMuted ? "bg-[#c4a7e7] eq-bar-1" : "h-[3px] bg-white/30"
+              }`}
+            />
+            <span
+              className={`w-[2px] rounded-full transition-all ${
+                !isMuted ? "bg-[#9ccfd8] eq-bar-2" : "h-[3px] bg-white/30"
+              }`}
+            />
+            <span
+              className={`w-[2px] rounded-full transition-all ${
+                !isMuted ? "bg-[#f6c177] eq-bar-3" : "h-[3px] bg-white/30"
+              }`}
+            />
+            <span
+              className={`w-[2px] rounded-full transition-all ${
+                !isMuted ? "bg-white eq-bar-4" : "h-[3px] bg-white/30"
+              }`}
+            />
+          </div>
+          <span className="tracking-wide">
+            {!isMuted ? (
+              <>
+                <span className="text-white/40">playing: </span>
+                <span className="text-[#c4a7e7]">{tracks[activeTrack].label}</span>
+              </>
+            ) : (
+              <span className="text-white/50">ambient sound [muted]</span>
+            )}
+          </span>
+        </button>
 
-      {/* Volume toggle icon button */}
-      <button
-        onClick={handleToggleMute}
-        aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-        className="absolute bottom-9 right-3 sm:right-6 md:right-10 text-white hover:opacity-80 transition-opacity z-30 cursor-pointer drop-glow"
-      >
-        {isMuted ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
-            <line x1="22" x2="16" y1="9" y2="15" />
-            <line x1="16" x2="22" y1="9" y2="15" />
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-          </svg>
-        )}
-      </button>
+        {/* Track selector buttons at bottom right */}
+        <div className="flex items-center gap-2.5 sm:gap-3.5 md:gap-5 glow-text">
+          {tracks.map((t, idx) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => handleTrackChange(idx)}
+              aria-label={t.label}
+              className="text-white text-xs md:text-sm font-mono hover:opacity-100 transition-opacity cursor-pointer px-0.5"
+              style={{
+                opacity: activeTrack === idx && !isMuted ? 1 : 0.55,
+                filter:
+                  activeTrack === idx && !isMuted
+                    ? "drop-shadow(0 0 12px rgba(255,255,255,0.8))"
+                    : "none",
+              }}
+            >
+              <span className="md:hidden">{idx + 1}</span>
+              <span className="hidden md:inline">{t.label}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Volume toggle icon button */}
+        <button
+          type="button"
+          onClick={handleToggleMute}
+          aria-label={isMuted ? "Unmute audio" : "Mute audio"}
+          className="text-white hover:opacity-80 transition-opacity cursor-pointer drop-glow"
+        >
+          {isMuted ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+              <line x1="22" x2="16" y1="9" y2="15" />
+              <line x1="16" x2="22" y1="9" y2="15" />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+            </svg>
+          )}
+        </button>
+      </div>
     </div>
   );
 }

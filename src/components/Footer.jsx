@@ -41,6 +41,13 @@ export default function Footer() {
           >
             resume
           </a>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent("trigger-boot-sequence"))}
+            className="hover:opacity-70 text-[#9ccfd8] underline cursor-pointer"
+          >
+            reboot
+          </button>
         </div>
       </div>
     </footer>
