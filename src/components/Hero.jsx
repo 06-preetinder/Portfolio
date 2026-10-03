@@ -6,6 +6,7 @@ export default function Hero() {
   const [activeTrack, setActiveTrack] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.35);
+  const [showVolume, setShowVolume] = useState(false);
   const canvasRef = useRef(null);
 
   const tracks = [
@@ -428,8 +429,12 @@ export default function Hero() {
 
       {/* Interactive Unified Audio & Track Controls */}
       <div className="absolute bottom-9 right-3 sm:right-6 md:right-10 z-30 flex items-center gap-2.5 sm:gap-4 md:gap-5">
-        {/* Unified Equalizer, Now Playing & Volume Control Pod */}
-        <div className="flex items-center gap-2 sm:gap-2.5 font-mono text-[10px] text-white/75 border-hairline-dim px-2.5 py-1 bg-black/75 hover:border-white/50 backdrop-blur-md rounded-full transition-all shadow-sm">
+        {/* Unified Equalizer, Now Playing & Slide-out Volume Control Pod */}
+        <div
+          onMouseEnter={() => setShowVolume(true)}
+          onMouseLeave={() => setShowVolume(false)}
+          className="group flex items-center gap-2 sm:gap-2.5 font-mono text-[10px] text-white/75 border-hairline-dim px-2.5 py-1 bg-black/75 hover:border-white/50 backdrop-blur-md rounded-full transition-all shadow-sm select-none"
+        >
           {/* Waveform Equalizer Bars (clickable to toggle mute) */}
           <button
             type="button"
@@ -460,43 +465,55 @@ export default function Hero() {
             />
           </button>
 
-          {/* Now Playing Title (desktop) */}
-          <span className="hidden sm:inline tracking-wide select-none">
+          {/* Now Playing Title (clickable to toggle mute or reveal volume) */}
+          <button
+            type="button"
+            onClick={() => setShowVolume((v) => !v)}
+            title="Click to toggle volume slider"
+            className="hidden sm:inline tracking-wide cursor-pointer text-left hover:text-white transition-colors p-0 bg-transparent border-none"
+          >
             {!isMuted ? (
               <>
                 <span className="text-white/40">playing: </span>
                 <span className="text-[#c4a7e7]">{tracks[activeTrack].label}</span>
               </>
             ) : (
-              <span className="text-white/40">muted</span>
+              <span className="text-white/40">ambient muted</span>
             )}
-          </span>
+          </button>
 
-          <span className="hidden sm:inline text-white/20">|</span>
-
-          {/* Integrated Volume Slider & Percentage */}
-          <div className="flex items-center gap-1.5" title={`Volume: ${Math.round((isMuted ? 0 : volume) * 100)}%`}>
-            <button
-              type="button"
-              onClick={handleToggleMute}
-              className="text-white/60 hover:text-white transition-colors cursor-pointer text-[10px] leading-none"
-              aria-label="Toggle mute"
-            >
-              {isMuted || volume === 0 ? "🔇" : "🔈"}
-            </button>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.02"
-              value={isMuted ? 0 : volume}
-              onChange={handleVolumeChange}
-              aria-label="Audio Volume Slider"
-              className="w-12 sm:w-16 h-1 accent-[#c4a7e7] bg-white/20 rounded-full cursor-pointer transition-all"
-            />
-            <span className="text-[9px] text-white/50 min-w-[22px] text-right select-none font-mono">
-              {Math.round((isMuted ? 0 : volume) * 100)}%
-            </span>
+          {/* Slide-out Volume Slider (Hidden by default, smoothly expands on hover or click) */}
+          <div
+            className={`flex items-center transition-all duration-300 ease-out overflow-hidden ${
+              showVolume
+                ? "max-w-[145px] opacity-100 ml-1 pl-2 border-l border-white/20"
+                : "max-w-0 opacity-0 ml-0 pl-0 border-l-0"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-1.5 whitespace-nowrap">
+              <button
+                type="button"
+                onClick={handleToggleMute}
+                className="text-white/60 hover:text-white transition-colors cursor-pointer text-[10px] leading-none"
+                aria-label="Toggle mute"
+              >
+                {isMuted || volume === 0 ? "🔇" : "🔈"}
+              </button>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.02"
+                value={isMuted ? 0 : volume}
+                onChange={handleVolumeChange}
+                aria-label="Audio Volume Slider"
+                className="w-12 sm:w-14 h-1 accent-[#c4a7e7] bg-white/20 rounded-full cursor-pointer transition-all"
+              />
+              <span className="text-[9px] text-white/50 min-w-[22px] text-right font-mono">
+                {Math.round((isMuted ? 0 : volume) * 100)}%
+              </span>
+            </div>
           </div>
         </div>
 
