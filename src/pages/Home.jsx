@@ -1,7 +1,6 @@
 import Hero from "../components/Hero";
 import MemeMarquee from "../components/MemeMarquee";
 import BioSection from "../components/BioSection";
-import LiveTerminal from "../components/LiveTerminal";
 import FeaturedProject from "../components/FeaturedProject";
 import ResumeSection from "../components/ResumeSection";
 import AppreciationSection from "../components/AppreciationSection";
@@ -30,9 +29,6 @@ export default function Home() {
 
       {/* Founder Bio Pod */}
       <BioSection />
-
-      {/* Live Systems Telemetry & Typewriter Terminal */}
-      <LiveTerminal />
 
       {/* 4 Projects Showcase & Publication */}
       <FeaturedProject />
