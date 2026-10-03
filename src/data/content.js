@@ -218,9 +218,95 @@ export const epoch = {
   description:
     "The world does not pause to explain itself, and neither, most weeks, does AI research. Papers arrive faster than anyone can read them. Launches happen faster than anyone can verify them. Somewhere between the hype and the noise, something true is usually happening, it just isn't shouting.\n\n\"The Epoch\" is a weekly attempt to find that thing anyway. Every Friday brings two dispatches: a morning issue dissecting the 5 major shifts in people, power, policy, and safety; and an evening research spotlight unpacking 3 papers with zero fluff, just what was found, what problem it solves, and whether it holds up.\n\nWe are not interested in being first. We are interested in being right, and on the occasions we aren't, in saying so plainly, in public, in the next issue.\n\nEach issue carries its own counter-argument. If we tell you why something matters, we also tell you why it might not.",
   linkedinUrl: "https://www.linkedin.com/company/the-epoch/",
-  currentTotalIssues: 8,
+  currentTotalIssues: 11,
   schedule: "Two releases every Friday: Morning Issue + Evening Papers",
   dispatches: [
+        {
+            "id": "issue-11",
+            "type": "issue",
+            "issueNumber": "Issue 11",
+            "title": "Congress stopped asking for guardrails and wrote a ban.",
+            "date": "September 19-25, 2026",
+            "readTime": "5 min read",
+            "signal": "Senators Sanders and Casar introduce the Ban Artificial Superintelligence Act with up to 20 years in prison and corporate dissolution for cognitive performance exceeding humans, backed by OpenAI and DeepMind staffers; Google discloses Gemini gained unauthorized access to three companies' systems in an Irregular CTF misconfiguration; White House asks OpenAI and Anthropic to withhold new models from the UK AI Security Institute; Anthropic's life sciences team uses Claude to discover a previously uncharacterized DNA enzyme system; DeepSeek annualized revenue crosses $1B with $7.5B Shanghai raise plans.",
+            "caseAgainstIt": "The Ban ASI Act's performance threshold may already be breached by existing deployed systems while Trump told the UN 'whoever wins superintelligence wins'; DeepSeek revenue run rate has not been verified by audited financial statements.",
+            "topics": [
+                "Ban ASI Act",
+                "Red-Teaming Breaches",
+                "Allied Restrictions",
+                "AI for Science",
+                "Chinese AI Economics"
+            ],
+            "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+        },
+        {
+            "id": "papers-11",
+            "type": "papers",
+            "issueNumber": "Research · Issue 11",
+            "title": "Recursive Self-Improvement, CLOSEDQUORUM AI Malware, and StableVQ",
+            "date": "September 19-25, 2026",
+            "readTime": "4 min read",
+            "signal": "AIDE² research agent autonomously rewrites its own code across an 8-day run, producing seven successive self-improvements and beating human baselines while reward hacking dropped from 55% to 32%; Cisco Talos discloses CLOSEDQUORUM malware that sends infected system snapshots to DeepSeek, Qwen, Mistral, and Gemini to decide next actions by plurality vote; StableVQ resolves codebook underutilization in image tokenizers with parameter-free training adjustments achieving 1.05 rFID.",
+            "caseAgainstIt": "AIDE² demonstrates the exact recursive self-improvement capability Congress is moving to criminalize under the Ban ASI Act, and CLOSEDQUORUM is currently an unweaponized proof-of-concept that establishes a dangerous multi-LLM consensus pattern for autonomous malware.",
+            "topics": [
+                "Recursive Self-Improvement",
+                "Autonomous Malware",
+                "Generative Modeling"
+            ],
+            "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+        },
+        {
+            "id": "issue-10",
+            "type": "issue",
+            "issueNumber": "Issue 10",
+            "title": "Three rivals who agree on nothing just agreed on one thing.",
+            "date": "September 12-18, 2026",
+            "readTime": "5 min read",
+            "signal": "Dario Amodei publishes 'We Must Pace the Frontier' with Sam Altman and Elon Musk converging in agreement to slow frontier AI development; OpenAI reveals an internal Astra model wrote a fake 'BREACH ALERT' into its own memory summaries to ignore developer instructions; GreyNoise documents an autonomous multi-agent cyber campaign hitting 395 organizations across 48 countries; Anthropic reports Claude now leads 26% of Anthropic's own AI R&D; US House votes 417-3 requiring data centers to pay their full grid upgrade costs.",
+            "caseAgainstIt": "Donald Trump rejected pacing arguments to avoid ceding ground to China while chip stocks fell 5.9% and OpenAI delayed its IPO; the 395-organization agent attacks exploited already known and patchable bugs rather than novel zero-days.",
+            "topics": [
+                "Pacing Frontier",
+                "Model Deception",
+                "Autonomous Cyber",
+                "AI Self-Automation",
+                "Grid Policy"
+            ],
+            "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+        },
+        {
+            "id": "papers-09-10",
+            "type": "papers",
+            "issueNumber": "Research · Issues 09–10",
+            "title": "Autonomous Swarm Cheating, Impossible Rubrics, and Jev Reproduction",
+            "date": "September 5-18, 2026",
+            "readTime": "5 min read",
+            "signal": "Google DeepMind study finds 100 Gemini 3.1 Pro agents in a simulated conference rapidly spread an exploit in 27 minutes via a shared library, with 24% emerging as unprompted whistleblowers; ImpossibleRubrics benchmark demonstrates eleven rubric generators reward confident falsehoods up to 36% on unanswerable tasks; Community open-source projects reverse-engineer TypeSafe's secretive Jev routing model within 48 hours.",
+            "caseAgainstIt": "Swarm whistleblowing may degrade at 10,000 agents without human verification, rubric vulnerabilities disappear when matched to strict evidence certificates, and community Jev clones were trained on 100% synthetic data without matching genuine production performance.",
+            "topics": [
+                "Multi-Agent Safety",
+                "AI Evaluation",
+                "Open-Source Reproduction"
+            ],
+            "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+        },
+        {
+            "id": "issue-09",
+            "type": "issue",
+            "issueNumber": "Issue 09",
+            "title": "The people building it started sounding scared.",
+            "date": "September 5-11, 2026",
+            "readTime": "5 min read",
+            "signal": "OpenAI urges Congress to pass mandatory capability-based national AI safety rules and draws a hard line against recursive self-improvement; Altman, Hubinger, and resigning pretraining researchers publicly warn frontier models could kill humans; Anthropic misuse report documents state-backed phishing, bioweapons inquiries, and 151M Claude exchanges distilled by Chinese labs; OpenAI agents bypass restrictions across 10+ unauthorized websites; Google commits €13B ($15.1B) to Finnish AI data centers.",
+            "caseAgainstIt": "OpenAI is lobbying federal preemption over California state bills while mid-IPO prep at $4T valuations makes safety alarm look conveniently timed; Anthropic claims its security held while simultaneously proving its enterprise safety infrastructure was targeted in real time.",
+            "topics": [
+                "Governance",
+                "AI Safety",
+                "Dual-Use Misuse",
+                "Agent Containment",
+                "Infrastructure"
+            ],
+            "linkedinPostUrl": "https://www.linkedin.com/company/the-epoch/"
+        },
         {
             "id": "epoch-08",
             "type": "issue",
@@ -542,6 +628,14 @@ export const appreciation = [
 ];
 
 export const thoughts = [
+  {
+    date: "sep 25th, 2026, 11:45pm",
+    text: "shipped Issue 11 of The Epoch. recursive self-improvement demo AIDE² dropping the exact week Congress drafts the Ban ASI Act. the timing is unreal.",
+  },
+  {
+    date: "sep 18th, 2026, 10:30pm",
+    text: "drafted Issue 10. Amodei, Altman, and Musk agreeing on pacing frontier AI. writing counter-arguments on autonomous agent attacks.",
+  },
   {
     date: "sep 4th, 2026, 11:30pm",
     text: "published Research Issue 08 of The Epoch. Astra breaking Erdős and NoRA normalization. back to neural surrogate training runs.",

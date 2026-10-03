@@ -53,6 +53,6 @@ export async function fetchEpochLinkedInPosts() {
   return {
     source: "curated",
     posts: epoch.dispatches,
-    lastSync: "September 2026",
+    lastSync: "October 2026",
   };
 }
